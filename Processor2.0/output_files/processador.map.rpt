@@ -1,5 +1,5 @@
 Analysis & Synthesis report for processador
-Tue Dec  5 10:33:32 2017
+Tue Dec  5 14:44:10 2017
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -13,18 +13,23 @@ Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Port Connectivity Checks: "reg4bits:accumulador|FFJK:FF3"
- 10. Port Connectivity Checks: "reg4bits:accumulador|FFJK:FF2"
- 11. Port Connectivity Checks: "reg4bits:accumulador|FFJK:FF1"
- 12. Port Connectivity Checks: "reg4bits:accumulador|FFJK:FF0"
- 13. Port Connectivity Checks: "reg4bits:accumulador"
- 14. Port Connectivity Checks: "alu:alu1|mux2x1_4bits:mux2"
- 15. Port Connectivity Checks: "alu:alu1|subtractor4bits:subtrc|adder4bits:Add0"
- 16. Port Connectivity Checks: "alu:alu1|adder4bits:adder"
- 17. Port Connectivity Checks: "alu:alu1"
- 18. Elapsed Time Per Partition
- 19. Analysis & Synthesis Messages
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Port Connectivity Checks: "alu:alu1|mux2x1_4bits:mux2"
+ 11. Port Connectivity Checks: "alu:alu1|subtractor4bits:subtrc|adder4bits:Add0"
+ 12. Port Connectivity Checks: "alu:alu1|adder4bits:adder"
+ 13. Port Connectivity Checks: "rf:Register_File|mux2x1_4bits:mux_EnRead"
+ 14. Port Connectivity Checks: "rf:Register_File|decoder2x4:RD_decoder"
+ 15. Port Connectivity Checks: "rf:Register_File|reg4bits:R3"
+ 16. Port Connectivity Checks: "rf:Register_File|reg4bits:R2"
+ 17. Port Connectivity Checks: "rf:Register_File|reg4bits:R1"
+ 18. Port Connectivity Checks: "rf:Register_File|reg4bits:R0|FFJK:FF3"
+ 19. Port Connectivity Checks: "rf:Register_File|reg4bits:R0|FFJK:FF2"
+ 20. Port Connectivity Checks: "rf:Register_File|reg4bits:R0|FFJK:FF1"
+ 21. Port Connectivity Checks: "rf:Register_File|reg4bits:R0|FFJK:FF0"
+ 22. Port Connectivity Checks: "rf:Register_File|reg4bits:R0"
+ 23. Elapsed Time Per Partition
+ 24. Analysis & Synthesis Messages
 
 
 
@@ -50,7 +55,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Dec  5 10:33:32 2017      ;
+; Analysis & Synthesis Status        ; Successful - Tue Dec  5 14:44:10 2017      ;
 ; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
 ; Revision Name                      ; processador                                ;
 ; Top-level Entity Name              ; dp                                         ;
@@ -59,7 +64,7 @@ applicable agreement for further details.
 ;     Total combinational functions  ; 0                                          ;
 ;     Dedicated logic registers      ; 0                                          ;
 ; Total registers                    ; 0                                          ;
-; Total pins                         ; 10                                         ;
+; Total pins                         ; 16                                         ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0                                          ;
 ; Embedded Multiplier 9-bit elements ; 0                                          ;
@@ -162,20 +167,22 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                  ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                           ; Library ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------------+---------+
-; dp.vhdl                          ; yes             ; User VHDL File  ; /home/lnsnow/Quartus_Projetos/Processor/dp.vhdl                        ;         ;
-; components/FFJK.vhd              ; yes             ; User VHDL File  ; /home/lnsnow/Quartus_Projetos/Processor/components/FFJK.vhd            ;         ;
-; components/reg4bits.vhd          ; yes             ; User VHDL File  ; /home/lnsnow/Quartus_Projetos/Processor/components/reg4bits.vhd        ;         ;
-; components/mux8x1_4bits.vhd      ; yes             ; User VHDL File  ; /home/lnsnow/Quartus_Projetos/Processor/components/mux8x1_4bits.vhd    ;         ;
-; components/FullAdder.vhd         ; yes             ; User VHDL File  ; /home/lnsnow/Quartus_Projetos/Processor/components/FullAdder.vhd       ;         ;
-; components/adder4bits.vhd        ; yes             ; User VHDL File  ; /home/lnsnow/Quartus_Projetos/Processor/components/adder4bits.vhd      ;         ;
-; components/subtractor4bits.vhd   ; yes             ; User VHDL File  ; /home/lnsnow/Quartus_Projetos/Processor/components/subtractor4bits.vhd ;         ;
-; components/mux2x1_4bits.vhd      ; yes             ; User VHDL File  ; /home/lnsnow/Quartus_Projetos/Processor/components/mux2x1_4bits.vhd    ;         ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                        ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                 ; Library ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------+---------+
+; dp.vhdl                          ; yes             ; User VHDL File  ; /home/lnsnow/workspace/pR0C3Ss0r/Processor2.0/dp.vhdl                        ;         ;
+; components/FFJK.vhd              ; yes             ; User VHDL File  ; /home/lnsnow/workspace/pR0C3Ss0r/Processor2.0/components/FFJK.vhd            ;         ;
+; components/reg4bits.vhd          ; yes             ; User VHDL File  ; /home/lnsnow/workspace/pR0C3Ss0r/Processor2.0/components/reg4bits.vhd        ;         ;
+; components/mux8x1_4bits.vhd      ; yes             ; User VHDL File  ; /home/lnsnow/workspace/pR0C3Ss0r/Processor2.0/components/mux8x1_4bits.vhd    ;         ;
+; components/FullAdder.vhd         ; yes             ; User VHDL File  ; /home/lnsnow/workspace/pR0C3Ss0r/Processor2.0/components/FullAdder.vhd       ;         ;
+; components/adder4bits.vhd        ; yes             ; User VHDL File  ; /home/lnsnow/workspace/pR0C3Ss0r/Processor2.0/components/adder4bits.vhd      ;         ;
+; components/subtractor4bits.vhd   ; yes             ; User VHDL File  ; /home/lnsnow/workspace/pR0C3Ss0r/Processor2.0/components/subtractor4bits.vhd ;         ;
+; components/mux2x1_4bits.vhd      ; yes             ; User VHDL File  ; /home/lnsnow/workspace/pR0C3Ss0r/Processor2.0/components/mux2x1_4bits.vhd    ;         ;
+; components/mux4x1_4bits.vhd      ; yes             ; User VHDL File  ; /home/lnsnow/workspace/pR0C3Ss0r/Processor2.0/components/mux4x1_4bits.vhd    ;         ;
+; components/decoder2x4.vhd        ; yes             ; User VHDL File  ; /home/lnsnow/workspace/pR0C3Ss0r/Processor2.0/components/decoder2x4.vhd      ;         ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------+
@@ -198,7 +205,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;     -- Dedicated logic registers            ; 0     ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
-; I/O pins                                    ; 10    ;
+; I/O pins                                    ; 16    ;
 ; Embedded Multiplier 9-bit elements          ; 0     ;
 +---------------------------------------------+-------+
 
@@ -208,9 +215,22 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; |dp                        ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 10   ; 0            ; |dp                 ;              ;
+; |dp                        ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 16   ; 0            ; |dp                 ;              ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                  ;
++---------------------------------------+---------------------------------------------+
+; Register name                         ; Reason for Removal                          ;
++---------------------------------------+---------------------------------------------+
+; reg4bits:accumulador|FFJK:FF3|aux     ; Stuck at VCC due to stuck port clock_enable ;
+; reg4bits:accumulador|FFJK:FF2|aux     ; Stuck at VCC due to stuck port clock_enable ;
+; reg4bits:accumulador|FFJK:FF1|aux     ; Stuck at VCC due to stuck port clock_enable ;
+; reg4bits:accumulador|FFJK:FF0|aux     ; Stuck at VCC due to stuck port clock_enable ;
+; Total Number of Removed Registers = 4 ;                                             ;
++---------------------------------------+---------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -226,51 +246,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "reg4bits:accumulador|FFJK:FF3"                                                      ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "reg4bits:accumulador|FFJK:FF2"                                                      ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "reg4bits:accumulador|FFJK:FF1"                                                      ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "reg4bits:accumulador|FFJK:FF0"                                                      ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "reg4bits:accumulador"                                                                 ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-; Port   ; Type   ; Severity ; Details                                                                             ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-; output ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +--------------------------------------------------------+
@@ -302,16 +277,98 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "alu:alu1"                                                                                                                                    ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                                                                                                                      ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; force ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; a     ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; b     ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; sw    ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "rf:Register_File|mux2x1_4bits:mux_EnRead"                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; output ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "rf:Register_File|decoder2x4:RD_decoder"                                               ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; output ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------+
+; Port Connectivity Checks: "rf:Register_File|reg4bits:R3" ;
++-------+-------+----------+-------------------------------+
+; Port  ; Type  ; Severity ; Details                       ;
++-------+-------+----------+-------------------------------+
+; clear ; Input ; Info     ; Stuck at GND                  ;
+; set   ; Input ; Info     ; Stuck at GND                  ;
++-------+-------+----------+-------------------------------+
+
+
++----------------------------------------------------------+
+; Port Connectivity Checks: "rf:Register_File|reg4bits:R2" ;
++-------+-------+----------+-------------------------------+
+; Port  ; Type  ; Severity ; Details                       ;
++-------+-------+----------+-------------------------------+
+; clear ; Input ; Info     ; Stuck at GND                  ;
+; set   ; Input ; Info     ; Stuck at GND                  ;
++-------+-------+----------+-------------------------------+
+
+
++----------------------------------------------------------+
+; Port Connectivity Checks: "rf:Register_File|reg4bits:R1" ;
++-------+-------+----------+-------------------------------+
+; Port  ; Type  ; Severity ; Details                       ;
++-------+-------+----------+-------------------------------+
+; clear ; Input ; Info     ; Stuck at GND                  ;
+; set   ; Input ; Info     ; Stuck at GND                  ;
++-------+-------+----------+-------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "rf:Register_File|reg4bits:R0|FFJK:FF3"                                              ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "rf:Register_File|reg4bits:R0|FFJK:FF2"                                              ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "rf:Register_File|reg4bits:R0|FFJK:FF1"                                              ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "rf:Register_File|reg4bits:R0|FFJK:FF0"                                              ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------+
+; Port Connectivity Checks: "rf:Register_File|reg4bits:R0" ;
++-------+-------+----------+-------------------------------+
+; Port  ; Type  ; Severity ; Details                       ;
++-------+-------+----------+-------------------------------+
+; clear ; Input ; Info     ; Stuck at GND                  ;
+; set   ; Input ; Info     ; Stuck at GND                  ;
++-------+-------+----------+-------------------------------+
 
 
 +-------------------------------+
@@ -329,7 +386,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Tue Dec  5 10:33:30 2017
+    Info: Processing started: Tue Dec  5 14:44:09 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off processador -c processador
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 8 design units, including 4 entities, in source file dp.vhdl
@@ -368,12 +425,33 @@ Info (12021): Found 2 design units, including 1 entities, in source file compone
 Info (12021): Found 2 design units, including 1 entities, in source file components/mux2x1_4bits.vhd
     Info (12022): Found design unit 1: mux2x1_4bits-hardware
     Info (12023): Found entity 1: mux2x1_4bits
+Info (12021): Found 2 design units, including 1 entities, in source file components/mux4x1_4bits.vhd
+    Info (12022): Found design unit 1: mux4x1_4bits-behavior
+    Info (12023): Found entity 1: mux4x1_4bits
+Info (12021): Found 2 design units, including 1 entities, in source file components/decoder2x4.vhd
+    Info (12022): Found design unit 1: decoder2x4-hardware
+    Info (12023): Found entity 1: decoder2x4
 Info (12127): Elaborating entity "dp" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at dp.vhdl(242): object "acc_out" assigned a value but never read
-Warning (10541): VHDL Signal Declaration warning at dp.vhdl(244): used implicit default value for signal "acc_ld" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at dp.vhdl(244): used implicit default value for signal "acc_clr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at dp.vhdl(244): used implicit default value for signal "acc_set" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10492): VHDL Process Statement warning at dp.vhdl(262): signal "alu_out" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10541): VHDL Signal Declaration warning at dp.vhdl(295): used implicit default value for signal "alu_SW" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at dp.vhdl(297): used implicit default value for signal "acc_ld" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at dp.vhdl(297): used implicit default value for signal "acc_clr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at dp.vhdl(297): used implicit default value for signal "acc_set" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at dp.vhdl(297): used implicit default value for signal "alu_force" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Info (12128): Elaborating entity "rf" for hierarchy "rf:Register_File"
+Warning (10541): VHDL Signal Declaration warning at dp.vhdl(162): used implicit default value for signal "output" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10036): Verilog HDL or VHDL warning at dp.vhdl(212): object "R_addr_aux" assigned a value but never read
+Info (12128): Elaborating entity "decoder2x4" for hierarchy "rf:Register_File|decoder2x4:WR_decoder"
+Info (12128): Elaborating entity "reg4bits" for hierarchy "rf:Register_File|reg4bits:R0"
+Warning (10036): Verilog HDL or VHDL warning at reg4bits.vhd(33): object "void" assigned a value but never read
+Info (12128): Elaborating entity "FFJK" for hierarchy "rf:Register_File|reg4bits:R0|FFJK:FF0"
+Info (12128): Elaborating entity "mux4x1_4bits" for hierarchy "rf:Register_File|mux4x1_4bits:mux_Read"
+Warning (10492): VHDL Process Statement warning at mux4x1_4bits.vhd(24): signal "A0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at mux4x1_4bits.vhd(26): signal "A1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at mux4x1_4bits.vhd(28): signal "A2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at mux4x1_4bits.vhd(30): signal "A3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (12128): Elaborating entity "mux2x1_4bits" for hierarchy "rf:Register_File|mux2x1_4bits:mux_EnRead"
+Warning (10492): VHDL Process Statement warning at mux2x1_4bits.vhd(21): signal "A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at mux2x1_4bits.vhd(23): signal "B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Info (12128): Elaborating entity "alu" for hierarchy "alu:alu1"
 Warning (10541): VHDL Signal Declaration warning at dp.vhdl(81): used implicit default value for signal "void2" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
 Warning (10541): VHDL Signal Declaration warning at dp.vhdl(81): used implicit default value for signal "void3" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
@@ -391,34 +469,33 @@ Warning (10492): VHDL Process Statement warning at mux8x1_4bits.vhd(40): signal 
 Warning (10492): VHDL Process Statement warning at mux8x1_4bits.vhd(42): signal "A5" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at mux8x1_4bits.vhd(44): signal "A6" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at mux8x1_4bits.vhd(46): signal "A7" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Info (12128): Elaborating entity "mux2x1_4bits" for hierarchy "alu:alu1|mux2x1_4bits:mux1"
-Warning (10492): VHDL Process Statement warning at mux2x1_4bits.vhd(21): signal "A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at mux2x1_4bits.vhd(23): signal "B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Info (12128): Elaborating entity "reg4bits" for hierarchy "reg4bits:accumulador"
-Warning (10036): Verilog HDL or VHDL warning at reg4bits.vhd(33): object "void" assigned a value but never read
-Info (12128): Elaborating entity "FFJK" for hierarchy "reg4bits:accumulador|FFJK:FF0"
-Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "output_4[0]" is stuck at GND
-    Warning (13410): Pin "output_4[1]" is stuck at GND
-    Warning (13410): Pin "output_4[2]" is stuck at GND
-    Warning (13410): Pin "output_4[3]" is stuck at GND
+    Warning (13410): Pin "output_4[0]" is stuck at VCC
+    Warning (13410): Pin "output_4[1]" is stuck at VCC
+    Warning (13410): Pin "output_4[2]" is stuck at VCC
+    Warning (13410): Pin "output_4[3]" is stuck at VCC
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 6 input pin(s) that do not drive logic
+Warning (21074): Design contains 12 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "rst"
     Warning (15610): No output dependent on input pin "clk"
+    Warning (15610): No output dependent on input pin "wr"
+    Warning (15610): No output dependent on input pin "rd"
+    Warning (15610): No output dependent on input pin "R_addr[0]"
+    Warning (15610): No output dependent on input pin "R_addr[1]"
+    Warning (15610): No output dependent on input pin "W_addr[0]"
+    Warning (15610): No output dependent on input pin "W_addr[1]"
     Warning (15610): No output dependent on input pin "imm[0]"
     Warning (15610): No output dependent on input pin "imm[1]"
     Warning (15610): No output dependent on input pin "imm[2]"
     Warning (15610): No output dependent on input pin "imm[3]"
-Info (21057): Implemented 10 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 6 input pins
+Info (21057): Implemented 16 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 12 input pins
     Info (21059): Implemented 4 output pins
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 34 warnings
-    Info: Peak virtual memory: 618 megabytes
-    Info: Processing ended: Tue Dec  5 10:33:32 2017
-    Info: Elapsed time: 00:00:02
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 45 warnings
+    Info: Peak virtual memory: 622 megabytes
+    Info: Processing ended: Tue Dec  5 14:44:10 2017
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:02
 
 

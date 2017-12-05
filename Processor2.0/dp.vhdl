@@ -154,60 +154,91 @@ entity rf is
   ( 
 		rst    : in STD_LOGIC;
       clk    : in STD_LOGIC;
+		W_addr : in std_LOGIC_VECTOR(1 downto 0);
+		R_addr : in std_LOGIC_VECTOR(1 downto 0);
       input  : in std_logic_vector(3 downto 0);
-      sel    : in std_logic_vector(1 downto 0);
 		wr     : in std_LOGIC;
 		rd     : in std_LOGIC;
-      enb    : in std_logic;
       output : out std_logic_vector(3 downto 0)
    );
 		
 end rf;
 
 architecture bhv of rf is
-signal out0, out1, out2, out3 : std_logic_vector(3 downto 0);
-begin
-	process (rst, clk)
-	begin
+
+	component reg4bits is
+		port 
+		(
+			input  : in std_logic_vector (3 downto 0);
+			clk    : in std_logic;
+			clear  : in std_logic;
+			set    : in std_logic;
+			ld     : in std_logic;
+			output : out std_logic_vector (3 downto 0)
+		);
+	end component;
 	
-	  -- take care of rst state
-	  
-	  if(clk'event and clk = '1')then
-		 if enb = '0' then
-			case (sel) is
-			  when "00" => 
-				 out0 <= input;
-			  when "01" => 
-				 -- insert proper statement here
-			  when "10" => 
-				 -- insert proper statement here
-			  when "11" =>
-				 -- insert proper statement here
-			  when others =>
-			end case;
-		 else
-			case (sel) is
-			  when "00" =>
-				 output <= out0;
-			  when "01" =>
-				 output <= out1;
-			  when "10" =>
-				 output <= out2;
-			  when "11" =>
-				 output <= out3;
-			  when others =>
-			end case;
-		 end if;
-	  end if;
-	end process;	
+	component mux4x1_4bits is
+		port
+		(
+			A0      : in std_logic_vector (3 downto 0);
+			A1      : in std_logic_vector (3 downto 0);
+			A2      : in std_logic_vector (3 downto 0);
+			A3      : in std_logic_vector (3 downto 0);
+			SW      : in std_logic_vector (1 downto 0);
+			output  : out std_logic_vector (3 downto 0)
+		);
+	end component;
+	
+	component mux2x1_4bits is
+		port
+		(
+			A      : in std_logic_vector (3 downto 0);
+			B      : in std_logic_vector (3 downto 0);
+			SW      : in std_logic;
+			output  : out std_logic_vector (3 downto 0)
+		);
+	end component;
+	
+	component decoder2x4 is
+		port 
+		(
+			enable : in std_logic;
+			input  : in std_logic_vector (1 downto 0);
+			output : out std_logic_vector(3 downto 0)
+		);
+	end component;
+
+signal out0, out1, out2, out3, W_addr_aux, R_addr_aux, output_aux : std_logic_vector(3 downto 0);
+signal R0_out, R1_out, R2_out, R3_out : std_LOGIC_VECTOR(3 downto 0);
+
+begin
+	
+	WR_decoder: decoder2x4 port map( enable => wr , input => W_addr, output => W_addr_aux );
+
+	R0: reg4bits port map (input => input , clk => clk , clear => '0' , set => '0', ld => W_addr_aux(0) , output => R0_out );
+	R1: reg4bits port map (input => input , clk => clk , clear => '0' , set => '0', ld => W_addr_aux(1) , output => R1_out );
+	R2: reg4bits port map (input => input , clk => clk , clear => '0' , set => '0', ld => W_addr_aux(2) , output => R2_out );
+	R3: reg4bits port map (input => input , clk => clk , clear => '0' , set => '0', ld => W_addr_aux(3) , output => R3_out );
+	
+	RD_decoder: decoder2x4 port map(enable => rd, input => R_addr, output => R_addr_aux );
+	
+	mux_Read: mux4x1_4bits port map(A0 => R0_out, A1 => R1_out, A2 => R2_out, A3 => R3_out, SW => R_addr, output => output_aux);
+	mux_EnRead: mux2x1_4bits port map(A => output_aux, B => "ZZZZ", SW => rd );
+
 end bhv;
 
 library IEEE;
 use IEEE.std_logic_1164.all;
 
 entity dp is
-  port ( rst     : in STD_LOGIC;
+  port ( 
+			rst     : in STD_LOGIC;
          clk     : in STD_LOGIC;
+			wr      : in std_LOGIC;
+			rd      : in std_LOGIC;
+			R_addr  : in std_LOGIC_VECTOR(1 downto 0);
+			W_addr  : in std_LOGIC_VECTOR(1 downto 0);
          imm     : in std_logic_vector(3 downto 0);
          output_4: out STD_LOGIC_VECTOR (3 downto 0)
          --add ports as required
@@ -216,12 +247,33 @@ end dp;
 
 architecture rtl2 of dp is
 
+component rf is
+	port
+	(
+		rst    : in STD_LOGIC;
+      clk    : in STD_LOGIC;
+		W_addr : in std_LOGIC_VECTOR(1 downto 0);
+		R_addr : in std_LOGIC_VECTOR(1 downto 0);
+      input  : in std_logic_vector(3 downto 0);
+		wr     : in std_LOGIC;
+		rd     : in std_LOGIC;
+      output : out std_logic_vector(3 downto 0)
+	);
+end component;
+
+
 component alu is
-  port ( rst   : in STD_LOGIC;
+	port 
+    ( 
+			rst   : in STD_LOGIC;
          clk   : in STD_LOGIC;
-         imm   : in std_logic_vector(3 downto 0);
-         output: out STD_LOGIC_VECTOR (3 downto 0)
-         -- add ports as required
+			force : in std_LOGIC;
+			A     : in std_LOGIC_VECTOR (3 downto 0);
+			B     : in std_logic_vector (3 downto 0);
+			SW    : in std_logic_vector (2 downto 0);
+         imm   : in std_logic_vector (3 downto 0);        
+         output: out STD_LOGIC_VECTOR(3 downto 0)
+		-- add ports as required
     );
 end component;
 
@@ -239,14 +291,21 @@ end component;
 
 -- maybe we should add the other components here......
 
-signal alu_out, acc_out: std_logic_vector(3 downto 0);
+signal alu_out, acc_out, alu_B_in: std_logic_vector(3 downto 0);
+signal alu_SW : std_LOGIC_VECTOR (2 downto 0);
 -- maybe we should add signals for interconnections here.....
-signal acc_ld, acc_clr, acc_set : std_LOGIC;
+signal acc_ld, acc_clr, acc_set, alu_force : std_LOGIC;
 begin
-	alu1: alu port map (rst,clk,imm,alu_out);
+	
+	Register_File: rf port map (input => acc_out ,rst => rst, clk => clk, W_addr => W_addr , wr => wr , R_addr => R_addr , rd => rd , output => alu_B_in);
+	
+	
+	alu1: alu port map (rst => rst,clk => clk, force => alu_force, A => acc_out, B => alu_B_in, SW => alu_SW, imm => imm, output => alu_out);
 	-- maybe this is were we add the port maps for the other components.....
 	
 	accumulador: reg4bits port map(input => alu_out, clk => clk, clear => acc_clr, ld => acc_ld, set => acc_set, output => acc_out);
+	
+	output_4 <= acc_out;
 	
 	process (rst, clk)
 		begin
@@ -259,7 +318,7 @@ begin
 
 			-- take care of reset state
 		  
-			output_4 <= alu_out;
+			-- output_4 <= alu_out;
 		
    end process;
 end rtl2;

@@ -1,15 +1,528 @@
 |dp
+rst => rf:Register_File.rst
 rst => alu:alu1.rst
+clk => rf:Register_File.clk
 clk => alu:alu1.clk
 clk => reg4bits:accumulador.clk
+wr => rf:Register_File.wr
+rd => rf:Register_File.rd
+R_addr[0] => rf:Register_File.R_addr[0]
+R_addr[1] => rf:Register_File.R_addr[1]
+W_addr[0] => rf:Register_File.W_addr[0]
+W_addr[1] => rf:Register_File.W_addr[1]
 imm[0] => alu:alu1.imm[0]
 imm[1] => alu:alu1.imm[1]
 imm[2] => alu:alu1.imm[2]
 imm[3] => alu:alu1.imm[3]
-output_4[0] <= alu:alu1.output[0]
-output_4[1] <= alu:alu1.output[1]
-output_4[2] <= alu:alu1.output[2]
-output_4[3] <= alu:alu1.output[3]
+output_4[0] <= reg4bits:accumulador.output[0]
+output_4[1] <= reg4bits:accumulador.output[1]
+output_4[2] <= reg4bits:accumulador.output[2]
+output_4[3] <= reg4bits:accumulador.output[3]
+
+
+|dp|rf:Register_File
+rst => ~NO_FANOUT~
+clk => reg4bits:R0.clk
+clk => reg4bits:R1.clk
+clk => reg4bits:R2.clk
+clk => reg4bits:R3.clk
+W_addr[0] => decoder2x4:WR_decoder.input[0]
+W_addr[1] => decoder2x4:WR_decoder.input[1]
+R_addr[0] => decoder2x4:RD_decoder.input[0]
+R_addr[0] => mux4x1_4bits:mux_Read.SW[0]
+R_addr[1] => decoder2x4:RD_decoder.input[1]
+R_addr[1] => mux4x1_4bits:mux_Read.SW[1]
+input[0] => reg4bits:R0.input[0]
+input[0] => reg4bits:R1.input[0]
+input[0] => reg4bits:R2.input[0]
+input[0] => reg4bits:R3.input[0]
+input[1] => reg4bits:R0.input[1]
+input[1] => reg4bits:R1.input[1]
+input[1] => reg4bits:R2.input[1]
+input[1] => reg4bits:R3.input[1]
+input[2] => reg4bits:R0.input[2]
+input[2] => reg4bits:R1.input[2]
+input[2] => reg4bits:R2.input[2]
+input[2] => reg4bits:R3.input[2]
+input[3] => reg4bits:R0.input[3]
+input[3] => reg4bits:R1.input[3]
+input[3] => reg4bits:R2.input[3]
+input[3] => reg4bits:R3.input[3]
+wr => decoder2x4:WR_decoder.enable
+rd => decoder2x4:RD_decoder.enable
+rd => mux2x1_4bits:mux_EnRead.SW
+output[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+output[1] <= output[1].DB_MAX_OUTPUT_PORT_TYPE
+output[2] <= output[2].DB_MAX_OUTPUT_PORT_TYPE
+output[3] <= output[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|dp|rf:Register_File|decoder2x4:WR_decoder
+enable => output.IN1
+enable => output.IN1
+enable => output.IN1
+enable => output.IN1
+input[0] => output.IN0
+input[0] => output.IN0
+input[0] => output.IN0
+input[0] => output.IN0
+input[1] => output.IN1
+input[1] => output.IN1
+input[1] => output.IN1
+input[1] => output.IN1
+output[0] <= output.DB_MAX_OUTPUT_PORT_TYPE
+output[1] <= output.DB_MAX_OUTPUT_PORT_TYPE
+output[2] <= output.DB_MAX_OUTPUT_PORT_TYPE
+output[3] <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|dp|rf:Register_File|reg4bits:R0
+input[0] => FFJK:FF0.j
+input[0] => FFJK:FF0.k
+input[1] => FFJK:FF1.j
+input[1] => FFJK:FF1.k
+input[2] => FFJK:FF2.j
+input[2] => FFJK:FF2.k
+input[3] => FFJK:FF3.j
+input[3] => FFJK:FF3.k
+clk => FFJK:FF0.clk
+clk => FFJK:FF1.clk
+clk => FFJK:FF2.clk
+clk => FFJK:FF3.clk
+clear => FFJK:FF0.clear
+clear => FFJK:FF1.clear
+clear => FFJK:FF2.clear
+clear => FFJK:FF3.clear
+set => FFJK:FF0.set
+set => FFJK:FF1.set
+set => FFJK:FF2.set
+set => FFJK:FF3.set
+ld => FFJK:FF0.ld
+ld => FFJK:FF1.ld
+ld => FFJK:FF2.ld
+ld => FFJK:FF3.ld
+output[0] <= FFJK:FF0.Q
+output[1] <= FFJK:FF1.Q
+output[2] <= FFJK:FF2.Q
+output[3] <= FFJK:FF3.Q
+
+
+|dp|rf:Register_File|reg4bits:R0|FFJK:FF0
+j => process_0.IN0
+j => process_0.IN0
+j => process_0.IN0
+k => process_0.IN1
+k => process_0.IN1
+k => process_0.IN1
+clk => aux.CLK
+clear => aux.ACLR
+clear => aux.IN0
+set => aux.IN1
+ld => aux.ENA
+Q <= aux.DB_MAX_OUTPUT_PORT_TYPE
+Qbar <= aux.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|dp|rf:Register_File|reg4bits:R0|FFJK:FF1
+j => process_0.IN0
+j => process_0.IN0
+j => process_0.IN0
+k => process_0.IN1
+k => process_0.IN1
+k => process_0.IN1
+clk => aux.CLK
+clear => aux.ACLR
+clear => aux.IN0
+set => aux.IN1
+ld => aux.ENA
+Q <= aux.DB_MAX_OUTPUT_PORT_TYPE
+Qbar <= aux.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|dp|rf:Register_File|reg4bits:R0|FFJK:FF2
+j => process_0.IN0
+j => process_0.IN0
+j => process_0.IN0
+k => process_0.IN1
+k => process_0.IN1
+k => process_0.IN1
+clk => aux.CLK
+clear => aux.ACLR
+clear => aux.IN0
+set => aux.IN1
+ld => aux.ENA
+Q <= aux.DB_MAX_OUTPUT_PORT_TYPE
+Qbar <= aux.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|dp|rf:Register_File|reg4bits:R0|FFJK:FF3
+j => process_0.IN0
+j => process_0.IN0
+j => process_0.IN0
+k => process_0.IN1
+k => process_0.IN1
+k => process_0.IN1
+clk => aux.CLK
+clear => aux.ACLR
+clear => aux.IN0
+set => aux.IN1
+ld => aux.ENA
+Q <= aux.DB_MAX_OUTPUT_PORT_TYPE
+Qbar <= aux.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|dp|rf:Register_File|reg4bits:R1
+input[0] => FFJK:FF0.j
+input[0] => FFJK:FF0.k
+input[1] => FFJK:FF1.j
+input[1] => FFJK:FF1.k
+input[2] => FFJK:FF2.j
+input[2] => FFJK:FF2.k
+input[3] => FFJK:FF3.j
+input[3] => FFJK:FF3.k
+clk => FFJK:FF0.clk
+clk => FFJK:FF1.clk
+clk => FFJK:FF2.clk
+clk => FFJK:FF3.clk
+clear => FFJK:FF0.clear
+clear => FFJK:FF1.clear
+clear => FFJK:FF2.clear
+clear => FFJK:FF3.clear
+set => FFJK:FF0.set
+set => FFJK:FF1.set
+set => FFJK:FF2.set
+set => FFJK:FF3.set
+ld => FFJK:FF0.ld
+ld => FFJK:FF1.ld
+ld => FFJK:FF2.ld
+ld => FFJK:FF3.ld
+output[0] <= FFJK:FF0.Q
+output[1] <= FFJK:FF1.Q
+output[2] <= FFJK:FF2.Q
+output[3] <= FFJK:FF3.Q
+
+
+|dp|rf:Register_File|reg4bits:R1|FFJK:FF0
+j => process_0.IN0
+j => process_0.IN0
+j => process_0.IN0
+k => process_0.IN1
+k => process_0.IN1
+k => process_0.IN1
+clk => aux.CLK
+clear => aux.ACLR
+clear => aux.IN0
+set => aux.IN1
+ld => aux.ENA
+Q <= aux.DB_MAX_OUTPUT_PORT_TYPE
+Qbar <= aux.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|dp|rf:Register_File|reg4bits:R1|FFJK:FF1
+j => process_0.IN0
+j => process_0.IN0
+j => process_0.IN0
+k => process_0.IN1
+k => process_0.IN1
+k => process_0.IN1
+clk => aux.CLK
+clear => aux.ACLR
+clear => aux.IN0
+set => aux.IN1
+ld => aux.ENA
+Q <= aux.DB_MAX_OUTPUT_PORT_TYPE
+Qbar <= aux.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|dp|rf:Register_File|reg4bits:R1|FFJK:FF2
+j => process_0.IN0
+j => process_0.IN0
+j => process_0.IN0
+k => process_0.IN1
+k => process_0.IN1
+k => process_0.IN1
+clk => aux.CLK
+clear => aux.ACLR
+clear => aux.IN0
+set => aux.IN1
+ld => aux.ENA
+Q <= aux.DB_MAX_OUTPUT_PORT_TYPE
+Qbar <= aux.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|dp|rf:Register_File|reg4bits:R1|FFJK:FF3
+j => process_0.IN0
+j => process_0.IN0
+j => process_0.IN0
+k => process_0.IN1
+k => process_0.IN1
+k => process_0.IN1
+clk => aux.CLK
+clear => aux.ACLR
+clear => aux.IN0
+set => aux.IN1
+ld => aux.ENA
+Q <= aux.DB_MAX_OUTPUT_PORT_TYPE
+Qbar <= aux.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|dp|rf:Register_File|reg4bits:R2
+input[0] => FFJK:FF0.j
+input[0] => FFJK:FF0.k
+input[1] => FFJK:FF1.j
+input[1] => FFJK:FF1.k
+input[2] => FFJK:FF2.j
+input[2] => FFJK:FF2.k
+input[3] => FFJK:FF3.j
+input[3] => FFJK:FF3.k
+clk => FFJK:FF0.clk
+clk => FFJK:FF1.clk
+clk => FFJK:FF2.clk
+clk => FFJK:FF3.clk
+clear => FFJK:FF0.clear
+clear => FFJK:FF1.clear
+clear => FFJK:FF2.clear
+clear => FFJK:FF3.clear
+set => FFJK:FF0.set
+set => FFJK:FF1.set
+set => FFJK:FF2.set
+set => FFJK:FF3.set
+ld => FFJK:FF0.ld
+ld => FFJK:FF1.ld
+ld => FFJK:FF2.ld
+ld => FFJK:FF3.ld
+output[0] <= FFJK:FF0.Q
+output[1] <= FFJK:FF1.Q
+output[2] <= FFJK:FF2.Q
+output[3] <= FFJK:FF3.Q
+
+
+|dp|rf:Register_File|reg4bits:R2|FFJK:FF0
+j => process_0.IN0
+j => process_0.IN0
+j => process_0.IN0
+k => process_0.IN1
+k => process_0.IN1
+k => process_0.IN1
+clk => aux.CLK
+clear => aux.ACLR
+clear => aux.IN0
+set => aux.IN1
+ld => aux.ENA
+Q <= aux.DB_MAX_OUTPUT_PORT_TYPE
+Qbar <= aux.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|dp|rf:Register_File|reg4bits:R2|FFJK:FF1
+j => process_0.IN0
+j => process_0.IN0
+j => process_0.IN0
+k => process_0.IN1
+k => process_0.IN1
+k => process_0.IN1
+clk => aux.CLK
+clear => aux.ACLR
+clear => aux.IN0
+set => aux.IN1
+ld => aux.ENA
+Q <= aux.DB_MAX_OUTPUT_PORT_TYPE
+Qbar <= aux.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|dp|rf:Register_File|reg4bits:R2|FFJK:FF2
+j => process_0.IN0
+j => process_0.IN0
+j => process_0.IN0
+k => process_0.IN1
+k => process_0.IN1
+k => process_0.IN1
+clk => aux.CLK
+clear => aux.ACLR
+clear => aux.IN0
+set => aux.IN1
+ld => aux.ENA
+Q <= aux.DB_MAX_OUTPUT_PORT_TYPE
+Qbar <= aux.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|dp|rf:Register_File|reg4bits:R2|FFJK:FF3
+j => process_0.IN0
+j => process_0.IN0
+j => process_0.IN0
+k => process_0.IN1
+k => process_0.IN1
+k => process_0.IN1
+clk => aux.CLK
+clear => aux.ACLR
+clear => aux.IN0
+set => aux.IN1
+ld => aux.ENA
+Q <= aux.DB_MAX_OUTPUT_PORT_TYPE
+Qbar <= aux.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|dp|rf:Register_File|reg4bits:R3
+input[0] => FFJK:FF0.j
+input[0] => FFJK:FF0.k
+input[1] => FFJK:FF1.j
+input[1] => FFJK:FF1.k
+input[2] => FFJK:FF2.j
+input[2] => FFJK:FF2.k
+input[3] => FFJK:FF3.j
+input[3] => FFJK:FF3.k
+clk => FFJK:FF0.clk
+clk => FFJK:FF1.clk
+clk => FFJK:FF2.clk
+clk => FFJK:FF3.clk
+clear => FFJK:FF0.clear
+clear => FFJK:FF1.clear
+clear => FFJK:FF2.clear
+clear => FFJK:FF3.clear
+set => FFJK:FF0.set
+set => FFJK:FF1.set
+set => FFJK:FF2.set
+set => FFJK:FF3.set
+ld => FFJK:FF0.ld
+ld => FFJK:FF1.ld
+ld => FFJK:FF2.ld
+ld => FFJK:FF3.ld
+output[0] <= FFJK:FF0.Q
+output[1] <= FFJK:FF1.Q
+output[2] <= FFJK:FF2.Q
+output[3] <= FFJK:FF3.Q
+
+
+|dp|rf:Register_File|reg4bits:R3|FFJK:FF0
+j => process_0.IN0
+j => process_0.IN0
+j => process_0.IN0
+k => process_0.IN1
+k => process_0.IN1
+k => process_0.IN1
+clk => aux.CLK
+clear => aux.ACLR
+clear => aux.IN0
+set => aux.IN1
+ld => aux.ENA
+Q <= aux.DB_MAX_OUTPUT_PORT_TYPE
+Qbar <= aux.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|dp|rf:Register_File|reg4bits:R3|FFJK:FF1
+j => process_0.IN0
+j => process_0.IN0
+j => process_0.IN0
+k => process_0.IN1
+k => process_0.IN1
+k => process_0.IN1
+clk => aux.CLK
+clear => aux.ACLR
+clear => aux.IN0
+set => aux.IN1
+ld => aux.ENA
+Q <= aux.DB_MAX_OUTPUT_PORT_TYPE
+Qbar <= aux.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|dp|rf:Register_File|reg4bits:R3|FFJK:FF2
+j => process_0.IN0
+j => process_0.IN0
+j => process_0.IN0
+k => process_0.IN1
+k => process_0.IN1
+k => process_0.IN1
+clk => aux.CLK
+clear => aux.ACLR
+clear => aux.IN0
+set => aux.IN1
+ld => aux.ENA
+Q <= aux.DB_MAX_OUTPUT_PORT_TYPE
+Qbar <= aux.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|dp|rf:Register_File|reg4bits:R3|FFJK:FF3
+j => process_0.IN0
+j => process_0.IN0
+j => process_0.IN0
+k => process_0.IN1
+k => process_0.IN1
+k => process_0.IN1
+clk => aux.CLK
+clear => aux.ACLR
+clear => aux.IN0
+set => aux.IN1
+ld => aux.ENA
+Q <= aux.DB_MAX_OUTPUT_PORT_TYPE
+Qbar <= aux.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|dp|rf:Register_File|decoder2x4:RD_decoder
+enable => output.IN1
+enable => output.IN1
+enable => output.IN1
+enable => output.IN1
+input[0] => output.IN0
+input[0] => output.IN0
+input[0] => output.IN0
+input[0] => output.IN0
+input[1] => output.IN1
+input[1] => output.IN1
+input[1] => output.IN1
+input[1] => output.IN1
+output[0] <= output.DB_MAX_OUTPUT_PORT_TYPE
+output[1] <= output.DB_MAX_OUTPUT_PORT_TYPE
+output[2] <= output.DB_MAX_OUTPUT_PORT_TYPE
+output[3] <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|dp|rf:Register_File|mux4x1_4bits:mux_Read
+A0[0] => Mux3.IN0
+A0[1] => Mux2.IN0
+A0[2] => Mux1.IN0
+A0[3] => Mux0.IN0
+A1[0] => Mux3.IN1
+A1[1] => Mux2.IN1
+A1[2] => Mux1.IN1
+A1[3] => Mux0.IN1
+A2[0] => Mux3.IN2
+A2[1] => Mux2.IN2
+A2[2] => Mux1.IN2
+A2[3] => Mux0.IN2
+A3[0] => Mux3.IN3
+A3[1] => Mux2.IN3
+A3[2] => Mux1.IN3
+A3[3] => Mux0.IN3
+SW[0] => Mux0.IN5
+SW[0] => Mux1.IN5
+SW[0] => Mux2.IN5
+SW[0] => Mux3.IN5
+SW[1] => Mux0.IN4
+SW[1] => Mux1.IN4
+SW[1] => Mux2.IN4
+SW[1] => Mux3.IN4
+output[0] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+output[1] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+output[2] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+output[3] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|dp|rf:Register_File|mux2x1_4bits:mux_EnRead
+A[0] => output.DATAB
+A[1] => output.DATAB
+A[2] => output.DATAB
+A[3] => output.DATAB
+B[0] => output.DATAA
+B[1] => output.DATAA
+B[2] => output.DATAA
+B[3] => output.DATAA
+sw => output.OUTPUTSELECT
+sw => output.OUTPUTSELECT
+sw => output.OUTPUTSELECT
+sw => output.OUTPUTSELECT
+output[0] <= output.DB_MAX_OUTPUT_PORT_TYPE
+output[1] <= output.DB_MAX_OUTPUT_PORT_TYPE
+output[2] <= output.DB_MAX_OUTPUT_PORT_TYPE
+output[3] <= output.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |dp|alu:alu1
