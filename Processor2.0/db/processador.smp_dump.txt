@@ -1,11 +1,20 @@
 
-State Machine - |cpu|ctrl:controller|state
-Name state.done state.s6 state.s5 state.s4 state.s3 state.s2 state.s1 state.s0 
-state.s0 0 0 0 0 0 0 0 0 
-state.s1 0 0 0 0 0 0 1 1 
-state.s2 0 0 0 0 0 1 0 1 
-state.s3 0 0 0 0 1 0 0 1 
-state.s4 0 0 0 1 0 0 0 1 
-state.s5 0 0 1 0 0 0 0 1 
-state.s6 0 1 0 0 0 0 0 1 
-state.done 1 0 0 0 0 0 0 1 
+State Machine - |ctrl|state
+Name state.halt_state state.inv_state state.jmp_state state.orr_state state.andr_state state.sub_state state.add_state state.movr_state state.mova_state state.done state.s6 state.load_state state.s4 state.s3 state.s2 state.s1 state.s0 
+state.s0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.s1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.s2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.s3 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.s4 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.load_state 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.s6 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.done 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.mova_state 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.movr_state 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.add_state 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.sub_state 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.andr_state 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state.orr_state 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.jmp_state 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.inv_state 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.halt_state 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 

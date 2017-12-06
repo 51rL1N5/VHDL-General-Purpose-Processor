@@ -86,7 +86,7 @@ begin
 	adder: adder4bits port map(A => A, B => B, cin => '0', S => add, carry => void);
 	subtrc : subtractor4bits port map(A => A, B => B, S => sub);
 	
-	mux0: mux8x1_4bits port map(SW => SW, A0 => A, A1 => add , A2 => sub , A3 => A and B, A4 => A or B, A5 => not A, A6 => void2 , A7 => void3, output => saida0 );
+	mux0: mux8x1_4bits port map(SW => SW, A0 => A, A1 => add , A2 => sub , A3 => A and B, A4 => A or B, A5 => not A, A6 => B , A7 => void3, output => saida0 );
 	
 	mux1: mux2x1_4bits port map(sw => force, A => saida0, B => imm, output => output);
 	
@@ -316,18 +316,4 @@ begin
 	
 	output_4 <= acc_out;
 	
-	process (rst, clk)
-		begin
-
-			-- this you should change so the output actually
-			-- comes from the accumulator so it follows the
-			-- instruction set. since the accumulator is always 
-			-- involved we want to be able to see the
-			-- results/data changes on the acc.
-
-			-- take care of reset state
-		  
-			-- output_4 <= alu_out;
-		
-   end process;
 end rtl2;
