@@ -1,9 +1,12 @@
 |dp
 rst => rf:Register_File.rst
 rst => alu:alu1.rst
+rst => reg4bits:accumulador.clear
 clk => rf:Register_File.clk
 clk => alu:alu1.clk
 clk => reg4bits:accumulador.clk
+force => alu:alu1.force
+acc_ld => reg4bits:accumulador.ld
 wr => rf:Register_File.wr
 rd => rf:Register_File.rd
 R_addr[0] => rf:Register_File.R_addr[0]
@@ -29,9 +32,7 @@ clk => reg4bits:R3.clk
 W_addr[0] => decoder2x4:WR_decoder.input[0]
 W_addr[1] => decoder2x4:WR_decoder.input[1]
 R_addr[0] => decoder2x4:RD_decoder.input[0]
-R_addr[0] => mux4x1_4bits:mux_Read.SW[0]
 R_addr[1] => decoder2x4:RD_decoder.input[1]
-R_addr[1] => mux4x1_4bits:mux_Read.SW[1]
 input[0] => reg4bits:R0.input[0]
 input[0] => reg4bits:R1.input[0]
 input[0] => reg4bits:R2.input[0]
@@ -50,8 +51,7 @@ input[3] => reg4bits:R2.input[3]
 input[3] => reg4bits:R3.input[3]
 wr => decoder2x4:WR_decoder.enable
 rd => decoder2x4:RD_decoder.enable
-rd => mux2x1_4bits:mux_EnRead.SW
-output[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+output[0] <= output[0].DB_MAX_OUTPUT_PORT_TYPE
 output[1] <= output[1].DB_MAX_OUTPUT_PORT_TYPE
 output[2] <= output[2].DB_MAX_OUTPUT_PORT_TYPE
 output[3] <= output[3].DB_MAX_OUTPUT_PORT_TYPE
@@ -475,58 +475,8 @@ output[2] <= output.DB_MAX_OUTPUT_PORT_TYPE
 output[3] <= output.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|dp|rf:Register_File|mux4x1_4bits:mux_Read
-A0[0] => Mux3.IN0
-A0[1] => Mux2.IN0
-A0[2] => Mux1.IN0
-A0[3] => Mux0.IN0
-A1[0] => Mux3.IN1
-A1[1] => Mux2.IN1
-A1[2] => Mux1.IN1
-A1[3] => Mux0.IN1
-A2[0] => Mux3.IN2
-A2[1] => Mux2.IN2
-A2[2] => Mux1.IN2
-A2[3] => Mux0.IN2
-A3[0] => Mux3.IN3
-A3[1] => Mux2.IN3
-A3[2] => Mux1.IN3
-A3[3] => Mux0.IN3
-SW[0] => Mux0.IN5
-SW[0] => Mux1.IN5
-SW[0] => Mux2.IN5
-SW[0] => Mux3.IN5
-SW[1] => Mux0.IN4
-SW[1] => Mux1.IN4
-SW[1] => Mux2.IN4
-SW[1] => Mux3.IN4
-output[0] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
-output[1] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
-output[2] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
-output[3] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dp|rf:Register_File|mux2x1_4bits:mux_EnRead
-A[0] => output.DATAB
-A[1] => output.DATAB
-A[2] => output.DATAB
-A[3] => output.DATAB
-B[0] => output.DATAA
-B[1] => output.DATAA
-B[2] => output.DATAA
-B[3] => output.DATAA
-sw => output.OUTPUTSELECT
-sw => output.OUTPUTSELECT
-sw => output.OUTPUTSELECT
-sw => output.OUTPUTSELECT
-output[0] <= output.DB_MAX_OUTPUT_PORT_TYPE
-output[1] <= output.DB_MAX_OUTPUT_PORT_TYPE
-output[2] <= output.DB_MAX_OUTPUT_PORT_TYPE
-output[3] <= output.DB_MAX_OUTPUT_PORT_TYPE
-
-
 |dp|alu:alu1
-rst => mux2x1_4bits:mux2.sw
+rst => ~NO_FANOUT~
 clk => ~NO_FANOUT~
 force => mux2x1_4bits:mux1.sw
 A[0] => comb.IN0
@@ -576,10 +526,10 @@ imm[0] => mux2x1_4bits:mux1.B[0]
 imm[1] => mux2x1_4bits:mux1.B[1]
 imm[2] => mux2x1_4bits:mux1.B[2]
 imm[3] => mux2x1_4bits:mux1.B[3]
-output[0] <= mux2x1_4bits:mux2.output[0]
-output[1] <= mux2x1_4bits:mux2.output[1]
-output[2] <= mux2x1_4bits:mux2.output[2]
-output[3] <= mux2x1_4bits:mux2.output[3]
+output[0] <= mux2x1_4bits:mux1.output[0]
+output[1] <= mux2x1_4bits:mux1.output[1]
+output[2] <= mux2x1_4bits:mux1.output[2]
+output[3] <= mux2x1_4bits:mux1.output[3]
 
 
 |dp|alu:alu1|adder4bits:adder
@@ -795,25 +745,6 @@ output[3] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |dp|alu:alu1|mux2x1_4bits:mux1
-A[0] => output.DATAB
-A[1] => output.DATAB
-A[2] => output.DATAB
-A[3] => output.DATAB
-B[0] => output.DATAA
-B[1] => output.DATAA
-B[2] => output.DATAA
-B[3] => output.DATAA
-sw => output.OUTPUTSELECT
-sw => output.OUTPUTSELECT
-sw => output.OUTPUTSELECT
-sw => output.OUTPUTSELECT
-output[0] <= output.DB_MAX_OUTPUT_PORT_TYPE
-output[1] <= output.DB_MAX_OUTPUT_PORT_TYPE
-output[2] <= output.DB_MAX_OUTPUT_PORT_TYPE
-output[3] <= output.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dp|alu:alu1|mux2x1_4bits:mux2
 A[0] => output.DATAB
 A[1] => output.DATAB
 A[2] => output.DATAB

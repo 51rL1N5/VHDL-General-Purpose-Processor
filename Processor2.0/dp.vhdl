@@ -88,9 +88,9 @@ begin
 	
 	mux0: mux8x1_4bits port map(SW => SW, A0 => A, A1 => add , A2 => sub , A3 => A and B, A4 => A or B, A5 => not A, A6 => void2 , A7 => void3, output => saida0 );
 	
-	mux1: mux2x1_4bits port map(sw => force, A => saida0, B => imm, output => saida1);
+	mux1: mux2x1_4bits port map(sw => force, A => saida0, B => imm, output => output);
 	
-	mux2: mux2x1_4bits port map(SW => rst, A => saida1, B => "0000", output => output);
+--	mux2: mux2x1_4bits port map(SW => rst, A => saida1, B => "0000", output => output);
 	
 	process (rst, clk, SW)
 	begin
@@ -215,16 +215,24 @@ signal R0_out, R1_out, R2_out, R3_out : std_LOGIC_VECTOR(3 downto 0);
 begin
 	
 	WR_decoder: decoder2x4 port map( enable => wr , input => W_addr, output => W_addr_aux );
-
+	
+	
+	-- registers 4 bits
 	R0: reg4bits port map (input => input , clk => clk , clear => '0' , set => '0', ld => W_addr_aux(0) , output => R0_out );
 	R1: reg4bits port map (input => input , clk => clk , clear => '0' , set => '0', ld => W_addr_aux(1) , output => R1_out );
 	R2: reg4bits port map (input => input , clk => clk , clear => '0' , set => '0', ld => W_addr_aux(2) , output => R2_out );
 	R3: reg4bits port map (input => input , clk => clk , clear => '0' , set => '0', ld => W_addr_aux(3) , output => R3_out );
 	
-	RD_decoder: decoder2x4 port map(enable => rd, input => R_addr, output => R_addr_aux );
+	RD_decoder: decoder2x4 port map(enable => rd, input => R_addr, output => R_addr_aux);
 	
-	mux_Read: mux4x1_4bits port map(A0 => R0_out, A1 => R1_out, A2 => R2_out, A3 => R3_out, SW => R_addr, output => output_aux);
-	mux_EnRead: mux2x1_4bits port map(A => output_aux, B => "ZZZZ", SW => rd );
+	-- drivers
+	output <= R0_out when R_addr_aux(0) = '1' else "ZZZZ";
+	output <= R1_out when R_addr_aux(1) = '1' else "ZZZZ";
+	output <= R2_out when R_addr_aux(2) = '1' else "ZZZZ";
+	output <= R3_out when R_addr_aux(3) = '1' else "ZZZZ";
+	
+	--mux_Read: mux4x1_4bits port map(A0 => R0_out, A1 => R1_out, A2 => R2_out, A3 => R3_out, SW => R_addr, output => output_aux);
+	--mux_EnRead: mux2x1_4bits port map(A => output_aux, B => "ZZZZ", SW => rd );
 
 end bhv;
 
@@ -235,6 +243,8 @@ entity dp is
   port ( 
 			rst     : in STD_LOGIC;
          clk     : in STD_LOGIC;
+			force   : in std_LOGIC;
+			acc_ld  : in std_LOGIC;
 			wr      : in std_LOGIC;
 			rd      : in std_LOGIC;
 			R_addr  : in std_LOGIC_VECTOR(1 downto 0);
@@ -294,16 +304,15 @@ end component;
 signal alu_out, acc_out, alu_B_in: std_logic_vector(3 downto 0);
 signal alu_SW : std_LOGIC_VECTOR (2 downto 0);
 -- maybe we should add signals for interconnections here.....
-signal acc_ld, acc_clr, acc_set, alu_force : std_LOGIC;
+signal acc_set, alu_force : std_LOGIC;
 begin
 	
 	Register_File: rf port map (input => acc_out ,rst => rst, clk => clk, W_addr => W_addr , wr => wr , R_addr => R_addr , rd => rd , output => alu_B_in);
 	
-	
-	alu1: alu port map (rst => rst,clk => clk, force => alu_force, A => acc_out, B => alu_B_in, SW => alu_SW, imm => imm, output => alu_out);
+	alu1: alu port map (rst => rst,clk => clk, force => force, A => acc_out, B => alu_B_in, SW => alu_SW, imm => imm, output => alu_out);
 	-- maybe this is were we add the port maps for the other components.....
 	
-	accumulador: reg4bits port map(input => alu_out, clk => clk, clear => acc_clr, ld => acc_ld, set => acc_set, output => acc_out);
+	accumulador: reg4bits port map(input => alu_out, clk => clk, clear => rst, ld => acc_ld, set => acc_set, output => acc_out);
 	
 	output_4 <= acc_out;
 	

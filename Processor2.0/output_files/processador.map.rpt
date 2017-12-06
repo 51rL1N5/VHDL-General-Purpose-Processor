@@ -1,5 +1,5 @@
 Analysis & Synthesis report for processador
-Tue Dec  5 14:44:10 2017
+Tue Dec  5 21:19:03 2017
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -15,21 +15,19 @@ Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Registers Removed During Synthesis
   9. General Register Statistics
- 10. Port Connectivity Checks: "alu:alu1|mux2x1_4bits:mux2"
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
  11. Port Connectivity Checks: "alu:alu1|subtractor4bits:subtrc|adder4bits:Add0"
  12. Port Connectivity Checks: "alu:alu1|adder4bits:adder"
- 13. Port Connectivity Checks: "rf:Register_File|mux2x1_4bits:mux_EnRead"
- 14. Port Connectivity Checks: "rf:Register_File|decoder2x4:RD_decoder"
- 15. Port Connectivity Checks: "rf:Register_File|reg4bits:R3"
- 16. Port Connectivity Checks: "rf:Register_File|reg4bits:R2"
- 17. Port Connectivity Checks: "rf:Register_File|reg4bits:R1"
- 18. Port Connectivity Checks: "rf:Register_File|reg4bits:R0|FFJK:FF3"
- 19. Port Connectivity Checks: "rf:Register_File|reg4bits:R0|FFJK:FF2"
- 20. Port Connectivity Checks: "rf:Register_File|reg4bits:R0|FFJK:FF1"
- 21. Port Connectivity Checks: "rf:Register_File|reg4bits:R0|FFJK:FF0"
- 22. Port Connectivity Checks: "rf:Register_File|reg4bits:R0"
- 23. Elapsed Time Per Partition
- 24. Analysis & Synthesis Messages
+ 13. Port Connectivity Checks: "rf:Register_File|reg4bits:R3"
+ 14. Port Connectivity Checks: "rf:Register_File|reg4bits:R2"
+ 15. Port Connectivity Checks: "rf:Register_File|reg4bits:R1"
+ 16. Port Connectivity Checks: "rf:Register_File|reg4bits:R0|FFJK:FF3"
+ 17. Port Connectivity Checks: "rf:Register_File|reg4bits:R0|FFJK:FF2"
+ 18. Port Connectivity Checks: "rf:Register_File|reg4bits:R0|FFJK:FF1"
+ 19. Port Connectivity Checks: "rf:Register_File|reg4bits:R0|FFJK:FF0"
+ 20. Port Connectivity Checks: "rf:Register_File|reg4bits:R0"
+ 21. Elapsed Time Per Partition
+ 22. Analysis & Synthesis Messages
 
 
 
@@ -55,16 +53,16 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Dec  5 14:44:10 2017      ;
+; Analysis & Synthesis Status        ; Successful - Tue Dec  5 21:19:03 2017      ;
 ; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
 ; Revision Name                      ; processador                                ;
 ; Top-level Entity Name              ; dp                                         ;
 ; Family                             ; Cyclone II                                 ;
-; Total logic elements               ; 0                                          ;
-;     Total combinational functions  ; 0                                          ;
-;     Dedicated logic registers      ; 0                                          ;
-; Total registers                    ; 0                                          ;
-; Total pins                         ; 16                                         ;
+; Total logic elements               ; 4                                          ;
+;     Total combinational functions  ; 1                                          ;
+;     Dedicated logic registers      ; 4                                          ;
+; Total registers                    ; 4                                          ;
+; Total pins                         ; 18                                         ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0                                          ;
 ; Embedded Multiplier 9-bit elements ; 0                                          ;
@@ -180,57 +178,78 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; components/adder4bits.vhd        ; yes             ; User VHDL File  ; /home/lnsnow/workspace/pR0C3Ss0r/Processor2.0/components/adder4bits.vhd      ;         ;
 ; components/subtractor4bits.vhd   ; yes             ; User VHDL File  ; /home/lnsnow/workspace/pR0C3Ss0r/Processor2.0/components/subtractor4bits.vhd ;         ;
 ; components/mux2x1_4bits.vhd      ; yes             ; User VHDL File  ; /home/lnsnow/workspace/pR0C3Ss0r/Processor2.0/components/mux2x1_4bits.vhd    ;         ;
-; components/mux4x1_4bits.vhd      ; yes             ; User VHDL File  ; /home/lnsnow/workspace/pR0C3Ss0r/Processor2.0/components/mux4x1_4bits.vhd    ;         ;
 ; components/decoder2x4.vhd        ; yes             ; User VHDL File  ; /home/lnsnow/workspace/pR0C3Ss0r/Processor2.0/components/decoder2x4.vhd      ;         ;
 +----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary         ;
-+---------------------------------------------+-------+
-; Resource                                    ; Usage ;
-+---------------------------------------------+-------+
-;                                             ;       ;
-; Total combinational functions               ; 0     ;
-; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 0     ;
-;     -- 3 input functions                    ; 0     ;
-;     -- <=2 input functions                  ; 0     ;
-;                                             ;       ;
-; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 0     ;
-;     -- arithmetic mode                      ; 0     ;
-;                                             ;       ;
-; Total registers                             ; 0     ;
-;     -- Dedicated logic registers            ; 0     ;
-;     -- I/O registers                        ; 0     ;
-;                                             ;       ;
-; I/O pins                                    ; 16    ;
-; Embedded Multiplier 9-bit elements          ; 0     ;
-+---------------------------------------------+-------+
++------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary          ;
++---------------------------------------------+--------+
+; Resource                                    ; Usage  ;
++---------------------------------------------+--------+
+; Estimated Total logic elements              ; 4      ;
+;                                             ;        ;
+; Total combinational functions               ; 1      ;
+; Logic element usage by number of LUT inputs ;        ;
+;     -- 4 input functions                    ; 1      ;
+;     -- 3 input functions                    ; 0      ;
+;     -- <=2 input functions                  ; 0      ;
+;                                             ;        ;
+; Logic elements by mode                      ;        ;
+;     -- normal mode                          ; 1      ;
+;     -- arithmetic mode                      ; 0      ;
+;                                             ;        ;
+; Total registers                             ; 4      ;
+;     -- Dedicated logic registers            ; 4      ;
+;     -- I/O registers                        ; 0      ;
+;                                             ;        ;
+; I/O pins                                    ; 18     ;
+; Embedded Multiplier 9-bit elements          ; 0      ;
+; Maximum fan-out node                        ; acc_ld ;
+; Maximum fan-out                             ; 4      ;
+; Total fan-out                               ; 23     ;
+; Average fan-out                             ; 1.00   ;
++---------------------------------------------+--------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; |dp                        ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 16   ; 0            ; |dp                 ;              ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                       ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name               ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------+--------------+
+; |dp                        ; 1 (0)             ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 18   ; 0            ; |dp                               ;              ;
+;    |reg4bits:accumulador|  ; 1 (0)             ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dp|reg4bits:accumulador          ;              ;
+;       |FFJK:FF0|           ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dp|reg4bits:accumulador|FFJK:FF0 ;              ;
+;       |FFJK:FF1|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dp|reg4bits:accumulador|FFJK:FF1 ;              ;
+;       |FFJK:FF2|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dp|reg4bits:accumulador|FFJK:FF2 ;              ;
+;       |FFJK:FF3|           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dp|reg4bits:accumulador|FFJK:FF3 ;              ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+-------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                  ;
-+---------------------------------------+---------------------------------------------+
-; Register name                         ; Reason for Removal                          ;
-+---------------------------------------+---------------------------------------------+
-; reg4bits:accumulador|FFJK:FF3|aux     ; Stuck at VCC due to stuck port clock_enable ;
-; reg4bits:accumulador|FFJK:FF2|aux     ; Stuck at VCC due to stuck port clock_enable ;
-; reg4bits:accumulador|FFJK:FF1|aux     ; Stuck at VCC due to stuck port clock_enable ;
-; reg4bits:accumulador|FFJK:FF0|aux     ; Stuck at VCC due to stuck port clock_enable ;
-; Total Number of Removed Registers = 4 ;                                             ;
-+---------------------------------------+---------------------------------------------+
++----------------------------------------------------------------+
+; Registers Removed During Synthesis                             ;
++-------------------------------------------+--------------------+
+; Register name                             ; Reason for Removal ;
++-------------------------------------------+--------------------+
+; rf:Register_File|reg4bits:R1|FFJK:FF1|aux ; Lost fanout        ;
+; rf:Register_File|reg4bits:R0|FFJK:FF1|aux ; Lost fanout        ;
+; rf:Register_File|reg4bits:R3|FFJK:FF1|aux ; Lost fanout        ;
+; rf:Register_File|reg4bits:R2|FFJK:FF1|aux ; Lost fanout        ;
+; rf:Register_File|reg4bits:R1|FFJK:FF2|aux ; Lost fanout        ;
+; rf:Register_File|reg4bits:R0|FFJK:FF2|aux ; Lost fanout        ;
+; rf:Register_File|reg4bits:R3|FFJK:FF2|aux ; Lost fanout        ;
+; rf:Register_File|reg4bits:R2|FFJK:FF2|aux ; Lost fanout        ;
+; rf:Register_File|reg4bits:R1|FFJK:FF3|aux ; Lost fanout        ;
+; rf:Register_File|reg4bits:R0|FFJK:FF3|aux ; Lost fanout        ;
+; rf:Register_File|reg4bits:R3|FFJK:FF3|aux ; Lost fanout        ;
+; rf:Register_File|reg4bits:R2|FFJK:FF3|aux ; Lost fanout        ;
+; rf:Register_File|reg4bits:R1|FFJK:FF0|aux ; Lost fanout        ;
+; rf:Register_File|reg4bits:R0|FFJK:FF0|aux ; Lost fanout        ;
+; rf:Register_File|reg4bits:R3|FFJK:FF0|aux ; Lost fanout        ;
+; rf:Register_File|reg4bits:R2|FFJK:FF0|aux ; Lost fanout        ;
+; Total Number of Removed Registers = 16    ;                    ;
++-------------------------------------------+--------------------+
 
 
 +------------------------------------------------------+
@@ -238,23 +257,24 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
+; Total registers                              ; 4     ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Clear ; 4     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 3     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------------+
-; Port Connectivity Checks: "alu:alu1|mux2x1_4bits:mux2" ;
-+------+-------+----------+------------------------------+
-; Port ; Type  ; Severity ; Details                      ;
-+------+-------+----------+------------------------------+
-; b    ; Input ; Info     ; Stuck at GND                 ;
-+------+-------+----------+------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------+
+; 7:1                ; 3 bits    ; 12 LEs        ; 0 LEs                ; 12 LEs                 ; Yes        ; |dp|reg4bits:accumulador|FFJK:FF1|aux ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |dp|rf:Register_File|output[0]        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------+
@@ -275,24 +295,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; cin   ; Input  ; Info     ; Stuck at GND                                                                        ;
 ; carry ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +-------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "rf:Register_File|mux2x1_4bits:mux_EnRead"                                             ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-; Port   ; Type   ; Severity ; Details                                                                             ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-; output ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "rf:Register_File|decoder2x4:RD_decoder"                                               ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-; Port   ; Type   ; Severity ; Details                                                                             ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
-; output ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+--------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +----------------------------------------------------------+
@@ -386,7 +388,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Tue Dec  5 14:44:09 2017
+    Info: Processing started: Tue Dec  5 21:19:01 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off processador -c processador
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 8 design units, including 4 entities, in source file dp.vhdl
@@ -432,26 +434,13 @@ Info (12021): Found 2 design units, including 1 entities, in source file compone
     Info (12022): Found design unit 1: decoder2x4-hardware
     Info (12023): Found entity 1: decoder2x4
 Info (12127): Elaborating entity "dp" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at dp.vhdl(295): used implicit default value for signal "alu_SW" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at dp.vhdl(297): used implicit default value for signal "acc_ld" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at dp.vhdl(297): used implicit default value for signal "acc_clr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at dp.vhdl(297): used implicit default value for signal "acc_set" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at dp.vhdl(297): used implicit default value for signal "alu_force" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at dp.vhdl(305): used implicit default value for signal "alu_SW" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at dp.vhdl(307): used implicit default value for signal "acc_set" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
 Info (12128): Elaborating entity "rf" for hierarchy "rf:Register_File"
-Warning (10541): VHDL Signal Declaration warning at dp.vhdl(162): used implicit default value for signal "output" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10036): Verilog HDL or VHDL warning at dp.vhdl(212): object "R_addr_aux" assigned a value but never read
 Info (12128): Elaborating entity "decoder2x4" for hierarchy "rf:Register_File|decoder2x4:WR_decoder"
 Info (12128): Elaborating entity "reg4bits" for hierarchy "rf:Register_File|reg4bits:R0"
 Warning (10036): Verilog HDL or VHDL warning at reg4bits.vhd(33): object "void" assigned a value but never read
 Info (12128): Elaborating entity "FFJK" for hierarchy "rf:Register_File|reg4bits:R0|FFJK:FF0"
-Info (12128): Elaborating entity "mux4x1_4bits" for hierarchy "rf:Register_File|mux4x1_4bits:mux_Read"
-Warning (10492): VHDL Process Statement warning at mux4x1_4bits.vhd(24): signal "A0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at mux4x1_4bits.vhd(26): signal "A1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at mux4x1_4bits.vhd(28): signal "A2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at mux4x1_4bits.vhd(30): signal "A3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Info (12128): Elaborating entity "mux2x1_4bits" for hierarchy "rf:Register_File|mux2x1_4bits:mux_EnRead"
-Warning (10492): VHDL Process Statement warning at mux2x1_4bits.vhd(21): signal "A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at mux2x1_4bits.vhd(23): signal "B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Info (12128): Elaborating entity "alu" for hierarchy "alu:alu1"
 Warning (10541): VHDL Signal Declaration warning at dp.vhdl(81): used implicit default value for signal "void2" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
 Warning (10541): VHDL Signal Declaration warning at dp.vhdl(81): used implicit default value for signal "void3" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
@@ -469,33 +458,32 @@ Warning (10492): VHDL Process Statement warning at mux8x1_4bits.vhd(40): signal 
 Warning (10492): VHDL Process Statement warning at mux8x1_4bits.vhd(42): signal "A5" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at mux8x1_4bits.vhd(44): signal "A6" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at mux8x1_4bits.vhd(46): signal "A7" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "output_4[0]" is stuck at VCC
-    Warning (13410): Pin "output_4[1]" is stuck at VCC
-    Warning (13410): Pin "output_4[2]" is stuck at VCC
-    Warning (13410): Pin "output_4[3]" is stuck at VCC
+Info (12128): Elaborating entity "mux2x1_4bits" for hierarchy "alu:alu1|mux2x1_4bits:mux1"
+Warning (10492): VHDL Process Statement warning at mux2x1_4bits.vhd(21): signal "A" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at mux2x1_4bits.vhd(23): signal "B" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
+    Warning (13048): Converted tri-state node "rf:Register_File|output[3]" into a selector
+    Warning (13048): Converted tri-state node "rf:Register_File|output[2]" into a selector
+    Warning (13048): Converted tri-state node "rf:Register_File|output[1]" into a selector
+    Warning (13048): Converted tri-state node "rf:Register_File|output[0]" into a selector
+Info (17049): 16 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 12 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "rst"
-    Warning (15610): No output dependent on input pin "clk"
-    Warning (15610): No output dependent on input pin "wr"
+Warning (21074): Design contains 6 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "rd"
     Warning (15610): No output dependent on input pin "R_addr[0]"
     Warning (15610): No output dependent on input pin "R_addr[1]"
     Warning (15610): No output dependent on input pin "W_addr[0]"
     Warning (15610): No output dependent on input pin "W_addr[1]"
-    Warning (15610): No output dependent on input pin "imm[0]"
-    Warning (15610): No output dependent on input pin "imm[1]"
-    Warning (15610): No output dependent on input pin "imm[2]"
-    Warning (15610): No output dependent on input pin "imm[3]"
-Info (21057): Implemented 16 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 12 input pins
+    Warning (15610): No output dependent on input pin "wr"
+Info (21057): Implemented 22 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 14 input pins
     Info (21059): Implemented 4 output pins
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 45 warnings
-    Info: Peak virtual memory: 622 megabytes
-    Info: Processing ended: Tue Dec  5 14:44:10 2017
-    Info: Elapsed time: 00:00:01
+    Info (21061): Implemented 4 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 30 warnings
+    Info: Peak virtual memory: 623 megabytes
+    Info: Processing ended: Tue Dec  5 21:19:03 2017
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 
 
