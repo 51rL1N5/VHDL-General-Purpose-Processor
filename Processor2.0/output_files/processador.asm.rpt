@@ -1,5 +1,5 @@
 Assembler report for processador
-Wed Dec  6 14:10:14 2017
+Wed Dec  6 15:26:03 2017
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -38,9 +38,9 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Wed Dec  6 14:10:14 2017 ;
+; Assembler Status      ; Successful - Wed Dec  6 15:26:03 2017 ;
 ; Revision Name         ; processador                           ;
-; Top-level Entity Name ; ctrl                                  ;
+; Top-level Entity Name ; dp                                    ;
 ; Family                ; Cyclone II                            ;
 ; Device                ; EP2C5T144C6                           ;
 +-----------------------+---------------------------------------+
@@ -94,8 +94,8 @@ applicable agreement for further details.
 ; Option         ; Setting                  ;
 +----------------+--------------------------+
 ; Device         ; EP2C5T144C6              ;
-; JTAG usercode  ; 0x000751DD               ;
-; Checksum       ; 0x000751DD               ;
+; JTAG usercode  ; 0x0007330A               ;
+; Checksum       ; 0x0007330A               ;
 +----------------+--------------------------+
 
 
@@ -106,7 +106,7 @@ applicable agreement for further details.
 +--------------------+----------------------+
 ; Device             ; EPCS4                ;
 ; JTAG usercode      ; 0x00000000           ;
-; Checksum           ; 0x0752D751           ;
+; Checksum           ; 0x07531F85           ;
 ; Compression Ratio  ; 3                    ;
 +--------------------+----------------------+
 
@@ -117,14 +117,14 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Wed Dec  6 14:10:14 2017
+    Info: Processing started: Wed Dec  6 15:26:02 2017
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off processador -c processador
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 532 megabytes
-    Info: Processing ended: Wed Dec  6 14:10:14 2017
-    Info: Elapsed time: 00:00:00
+    Info: Processing ended: Wed Dec  6 15:26:03 2017
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
 

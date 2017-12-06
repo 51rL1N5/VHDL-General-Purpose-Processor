@@ -2,6 +2,7 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.std_logic_arith.all;
+use IEEE.numeric_std.all;
 
 entity ctrl is
   port ( 
@@ -49,14 +50,16 @@ architecture fsm of ctrl is
 
 	-- as you add more code for your algorithms make sure to increase the
 	-- array size. ie. 2 lines of code here, means array size of 0 to 1.
-	type PM_BLOCK is array (0 to 1) of std_logic_vector(7 downto 0);
+	type PM_BLOCK is array (0 to 15) of std_logic_vector(7 downto 0);
 	constant PM : PM_BLOCK := (	
 
 	-- This algorithm loads an immediate value of 3 and then stops
     "00100100",   -- load 4
 	 "10011111"		-- halt
     );
-  		 
+  	
+	signal tmp : integer ;
+	
 begin
 	process (clk)
 	-- these variables declared here don't change.
@@ -66,7 +69,7 @@ begin
 	variable IR : std_logic_vector(7 downto 0);
 	variable OPCODE : std_logic_vector( 3 downto 0);
 	variable ADDRESS : std_logic_vector (3 downto 0);
-	variable PC : integer range 0 to 1;
+	variable PC : integer range 0 to 15;
     
 	begin
 		-- don't forget to take care of rst
@@ -178,6 +181,41 @@ begin
 			 acc_ld    <= '1';
 			 
 			 state     <= s6;
+		  when sub_state =>
+		    RF_R_addr <= Address(3 downto 2);
+			 RF_rd     <= '1';
+			 alu_SW    <= A_minus_B;
+			 acc_ld    <= '1';
+			 
+			 state     <= s6;
+			 
+		  when andr_state =>
+			 RF_R_addr <= Address(3 downto 2);
+			 RF_rd     <= '1';
+			 alu_SW    <= A_and_B;
+			 acc_ld    <= '1';
+			 
+			 state     <= s6;
+			 
+		  when orr_state =>
+			 RF_R_addr <= Address(3 downto 2);
+			 RF_rd     <= '1';
+			 alu_SW    <= A_or_B;
+			 acc_ld    <= '1';
+			 
+			 state     <= s6;
+		  when jmp_state  =>
+			-- tmp       <= to_integer(to_unsigned(address));
+			-- PC := tmp;
+			 state     <= s6;
+			 
+		  when inv_state  =>
+		    acc_ld    <= '1';
+			 alu_SW    <= not_A;
+			 
+			 state     <= s6;
+		  when halt_state =>
+			 state <= done;
         when others =>
           
       end case;

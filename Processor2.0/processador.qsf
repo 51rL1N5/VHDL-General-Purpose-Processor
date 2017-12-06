@@ -38,7 +38,7 @@
 
 set_global_assignment -name FAMILY "Cyclone II"
 set_global_assignment -name DEVICE AUTO
-set_global_assignment -name TOP_LEVEL_ENTITY ctrl
+set_global_assignment -name TOP_LEVEL_ENTITY Vector_to_integer
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 13.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "13:18:41  NOVEMBER 29, 2017"
 set_global_assignment -name LAST_QUARTUS_VERSION 13.0
@@ -61,6 +61,7 @@ set_global_assignment -name VHDL_FILE components/subtractor4bits.vhd
 set_global_assignment -name VHDL_FILE components/mux2x1_4bits.vhd
 set_global_assignment -name VHDL_FILE components/mux4x1_4bits.vhd
 set_global_assignment -name VHDL_FILE components/decoder2x4.vhd
+set_global_assignment -name VHDL_FILE components/Vector_to_integer.vhd
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
