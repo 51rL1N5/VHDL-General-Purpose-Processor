@@ -1,7 +1,8 @@
 # pR0C3Ss0r
 
-## Authors:   Felipe Oliveira Lins e Silva
-##           Luís Gabriel Pereira Condados
+#### Authors:   
+- Felipe Oliveira Lins e Silva
+- Luís Gabriel Pereira Condados
 
 
 This project is a implementation of a general purpose processor using VHDL. The processor has the following instructions:
