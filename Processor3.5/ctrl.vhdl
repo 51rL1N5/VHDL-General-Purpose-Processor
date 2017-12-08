@@ -70,11 +70,11 @@ architecture fsm of ctrl is
 	constant PM : PM_BLOCK := (	
 
 	-- This algorithm loads an immediate value of 3 and then stops
-   --"OPCOD|aaaa"
-	 LOAD & "0001",  -- ACC := 1           -- comando 0
-	 MOVR & "0000",  -- R[0]:= ACC         -- comando 1
-	 ADD  & "0000",  -- ACC := ACC + 1     -- comando 2
-	 JMP  & "0010",  -- JUMP to 2          -- comando 3
+   --"OPCOD | aaaa"
+	  load & "1001",
+	  movr & "0100",
+	  load & "1000",
+	  andr & "0100",
 	 
 	 HALT & "1111"		-- halt
     );
