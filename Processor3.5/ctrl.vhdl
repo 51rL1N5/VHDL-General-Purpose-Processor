@@ -30,7 +30,7 @@ end ctrl;
 
 architecture fsm of ctrl is
   type state_type is (init,fetch,Decod,done);
-  signal state : state_type; 		
+  signal state : state_type;		
 
 	-- constants declared for ease of reading code
 	
