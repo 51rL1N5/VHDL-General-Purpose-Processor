@@ -69,7 +69,6 @@ architecture fsm of ctrl is
 	type PM_BLOCK is array (0 to 4) of std_logic_vector(7 downto 0);
 	constant PM : PM_BLOCK := (	
 
-	-- This algorithm loads an immediate value of 3 and then stops
    --"OPCOD | aaaa"
 	  load & "0001",
 	  movr & "0100",
