@@ -29,7 +29,7 @@ entity ctrl is
 end ctrl;
 
 architecture fsm of ctrl is
-  type state_type is (s0,s1,s2,s3,s4,s6,done);
+  type state_type is (init,fetch,Decod,done);
   signal state : state_type; 		
 
 	-- constants declared for ease of reading code
@@ -71,10 +71,10 @@ architecture fsm of ctrl is
 
 	-- This algorithm loads an immediate value of 3 and then stops
    --"OPCOD | aaaa"
-	  load & "1001",
+	  load & "0001",
 	  movr & "0100",
-	  load & "1000",
-	  andr & "0100",
+	  add  & "0100",
+	  jmp  & "0010",
 	 
 	 HALT & "1111"		-- halt
     );
@@ -103,47 +103,51 @@ begin
     
       case state is
         
-        when s0 =>    -- steady state
+        when init =>    -- steady state
           PC := 0;
 			 acc_clr <= '0';
 			 RF_clr <= '0';
           if start = '1' then
-            state <= s1;
+            state <= fetch;
           else 
-            state <= s0;
+            state <= init;
           end if;
           
-        when s1 =>				-- fetch instruction
+        when fetch =>				-- fetch instruction
 		    
           IR := PM(PC);
           OPCODE := IR(7 downto 4);
           ADDRESS:= IR(3 downto 0);
-          state <= s2;
+			 
+			 RF_rd   <= '0';
+			 RF_wr   <= '0';
+			 acc_ld  <= '0';
+			 acc_clr <= '0';
           
-        when s2 =>		-- increment PC
+			 state <= Decod;
+	
+        when Decod =>			-- decode instruction
           PC := PC + 1;
-          state <= s4;
-          
-        when s4 =>				-- decode instruction
-          case OPCODE IS
+			 case OPCODE IS
             when load =>                       
-              imm       <= address;                      
-				  Sw_In_ACC <= "00";                                 
+              imm       <= address;               
+				  Sw_In_ACC <= "00";                              
               acc_ld <= '1';
-			     state     <= s6;
+			     
+				  state <= fetch;
 				when mova =>
 				  RF_R_addr <= Address(3 downto 2);
 				  RF_rd     <= '1';
-				  SW_In_ACC <= "01"; -- novo
+				  SW_In_ACC <= "01";
 				  acc_ld    <= '1';
 			 
-			     state     <= s6;
+				  state <= fetch;
 				when movr =>
 					
 					RF_W_addr <= AddRESS(3 downto 2);
 					RF_wr     <= '1';
 					
-					state     <= s6;
+					state <= fetch;
 				when add =>
 					RF_R_addr <= Address(3 downto 2);
 					RF_rd     <= '1';
@@ -151,7 +155,7 @@ begin
 					SW_In_ACC <= "10"; --novo
 					acc_ld    <= '1';
 			 
-					state     <= s6;
+					state <= fetch;
 				when sub =>
 					RF_R_addr <= Address(3 downto 2);
 					RF_rd     <= '1';
@@ -159,7 +163,7 @@ begin
 					SW_In_ACC <= "10"; --novo
 					acc_ld    <= '1';
 			 
-					state     <= s6;
+					state <= fetch;
 				when andr =>
 					RF_R_addr <= Address(3 downto 2);
 					RF_rd     <= '1';
@@ -167,7 +171,7 @@ begin
 					SW_In_ACC <= "10"; --novo
 					acc_ld    <= '1';
 			 
-					state     <= s6;
+					state <= fetch;
 				when orr =>
 					RF_R_addr <= Address(3 downto 2);
 					RF_rd     <= '1';
@@ -175,7 +179,7 @@ begin
 					SW_In_ACC <= "10"; --novo
 					acc_ld    <= '1';
 			 
-					state     <= s6;
+					state <= fetch;
 				when jmp =>
 				
 					PC := 0;
@@ -192,46 +196,37 @@ begin
 						PC := PC + 8;
 					end if;
 					
-					state     <= s6;
+					state <= fetch;
 				when inv =>
 					acc_ld    <= '1';
 					alu_SW    <= not_A;
 					SW_In_ACC <= "10"; 
 			 
-					state     <= s6;
+					state <= fetch;
 				when xorr =>							-- novo
 					acc_ld    <= '1';
 					alu_SW    <= A_xor_B;
 					SW_In_ACC <= "10"; 
 					
-					state     <= s6;
+					state <= fetch;
 				when xnorr =>  						-- novo
 					acc_ld    <= '1';
 					alu_SW    <= A_xnor_B;
 					SW_In_ACC <= "10"; 
 			 
-					state     <= s6;
+					state <= fetch;
 				when nandr =>							-- novo
 					acc_ld    <= '1';
 					alu_SW    <= A_nand_B;
-					SW_In_ACC <= "10"; --novo
+					SW_In_ACC <= "10";
 			 
-					state     <= s6;
+					state <= fetch;
 				when halt =>
 				  state <= done;
-            when "1111" =>				   
-              state <= done;
             when others =>
-              state <= s1;
+              state <= fetch;  -- desse modo ele ignora um comando nao cadastrado
           end case;
-			 
-        when s6 =>                              -- go back for next instruction
-          RF_rd   <= '0';
-			 RF_wr   <= '0';
-			 acc_ld  <= '0';
-			 acc_clr <= '0';
-			 state <= s1;
-          
+ 
         when done =>                            -- stay here forever
           state <= done;
         when others =>
