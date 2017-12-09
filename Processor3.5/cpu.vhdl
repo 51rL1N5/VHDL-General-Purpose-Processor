@@ -11,8 +11,6 @@ entity cpu is
 			
 			output        : out STD_LOGIC_VECTOR (3 downto 0);
 			
-       	a,b,c,d,e,f,g : out std_logic;
-			
 			
 			OPCdisp0      : out std_LOGIC_VECTOR(6 downto 0);
 			OPCdisp1      : out std_LOGIC_VECTOR(6 downto 0);
@@ -145,7 +143,7 @@ begin
   -- opcode decoder
   
   decoder_opcode: opcode_decoder port map ( opcode => actual_instruction, disp0 => OPCdisp0, disp1 => OPCdisp1, disp2 => OPCdisp2, disp3 => OPCdisp3);
---
+
 end struc;
 
 

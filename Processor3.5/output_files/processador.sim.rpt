@@ -1,5 +1,5 @@
 Simulator report for processador
-Sat Dec  9 02:22:14 2017
+Sat Dec 09 03:24:36 2017
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -45,41 +45,41 @@ applicable agreement for further details.
 +-----------------------------+--------------+
 ; Simulation Start Time       ; 0 ps         ;
 ; Simulation End Time         ; 1.0 us       ;
-; Simulation Netlist Size     ; 10635 nodes  ;
-; Simulation Coverage         ;      35.79 % ;
+; Simulation Netlist Size     ; 10628 nodes  ;
+; Simulation Coverage         ;      35.81 % ;
 ; Total Number of Transitions ; 42524        ;
 ; Simulation Breakpoints      ; 0            ;
 ; Family                      ; Cyclone II   ;
 +-----------------------------+--------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Simulator Settings                                                                                                                                                                       ;
-+--------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+---------------+
-; Option                                                                                     ; Setting                                                                     ; Default Value ;
-+--------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+---------------+
-; Simulation mode                                                                            ; Functional                                                                  ; Timing        ;
-; Start time                                                                                 ; 0 ns                                                                        ; 0 ns          ;
-; Simulation results format                                                                  ; VWF                                                                         ;               ;
-; Vector input source                                                                        ; /home/linksnow/workspace/processador/pR0C3Ss0r/Processor3.5/cpu_teste_0.vwf ;               ;
-; Add pins automatically to simulation output waveforms                                      ; On                                                                          ; On            ;
-; Check outputs                                                                              ; Off                                                                         ; Off           ;
-; Report simulation coverage                                                                 ; On                                                                          ; On            ;
-; Display complete 1/0 value coverage report                                                 ; On                                                                          ; On            ;
-; Display missing 1-value coverage report                                                    ; On                                                                          ; On            ;
-; Display missing 0-value coverage report                                                    ; On                                                                          ; On            ;
-; Detect setup and hold time violations                                                      ; Off                                                                         ; Off           ;
-; Detect glitches                                                                            ; Off                                                                         ; Off           ;
-; Disable timing delays in Timing Simulation                                                 ; Off                                                                         ; Off           ;
-; Generate Signal Activity File                                                              ; Off                                                                         ; Off           ;
-; Generate VCD File for PowerPlay Power Analyzer                                             ; Off                                                                         ; Off           ;
-; Group bus channels in simulation results                                                   ; Off                                                                         ; Off           ;
-; Preserve fewer signal transitions to reduce memory requirements                            ; On                                                                          ; On            ;
-; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE                                                                  ; INPUT_EDGE    ;
-; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off                                                                         ; Off           ;
-; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off                                                                         ;               ;
-; Perform Glitch Filtering in Timing Simulation                                              ; Auto                                                                        ; Auto          ;
-+--------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+---------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                                                                   ;
++--------------------------------------------------------------------------------------------+---------------------------------------------------------+---------------+
+; Option                                                                                     ; Setting                                                 ; Default Value ;
++--------------------------------------------------------------------------------------------+---------------------------------------------------------+---------------+
+; Simulation mode                                                                            ; Functional                                              ; Timing        ;
+; Start time                                                                                 ; 0 ns                                                    ; 0 ns          ;
+; Simulation results format                                                                  ; VWF                                                     ;               ;
+; Vector input source                                                                        ; D:/Documents/GitHub/pR0C3Ss0r/Processor3.5/Waveform.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On                                                      ; On            ;
+; Check outputs                                                                              ; Off                                                     ; Off           ;
+; Report simulation coverage                                                                 ; On                                                      ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On                                                      ; On            ;
+; Display missing 1-value coverage report                                                    ; On                                                      ; On            ;
+; Display missing 0-value coverage report                                                    ; On                                                      ; On            ;
+; Detect setup and hold time violations                                                      ; Off                                                     ; Off           ;
+; Detect glitches                                                                            ; Off                                                     ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off                                                     ; Off           ;
+; Generate Signal Activity File                                                              ; Off                                                     ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off                                                     ; Off           ;
+; Group bus channels in simulation results                                                   ; Off                                                     ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On                                                      ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE                                              ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off                                                     ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off                                                     ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto                                                    ; Auto          ;
++--------------------------------------------------------------------------------------------+---------------------------------------------------------+---------------+
 
 
 +----------------------+
@@ -94,13 +94,13 @@ Please use Quartus II 64-Bit to view the waveform report data.
 +-----------------------------------------------------+--------------+
 ; Type                                                ; Value        ;
 +-----------------------------------------------------+--------------+
-; Total coverage as a percentage                      ;      35.79 % ;
-; Total nodes checked                                 ; 10635        ;
-; Total output ports checked                          ; 10635        ;
+; Total coverage as a percentage                      ;      35.81 % ;
+; Total nodes checked                                 ; 10628        ;
+; Total output ports checked                          ; 10628        ;
 ; Total output ports with complete 1/0-value coverage ; 3806         ;
-; Total output ports with no 1/0-value coverage       ; 4822         ;
-; Total output ports with no 1-value coverage         ; 5809         ;
-; Total output ports with no 0-value coverage         ; 5842         ;
+; Total output ports with no 1/0-value coverage       ; 4815         ;
+; Total output ports with no 1-value coverage         ; 5802         ;
+; Total output ports with no 0-value coverage         ; 5835         ;
 +-----------------------------------------------------+--------------+
 
 
@@ -3926,13 +3926,6 @@ The following table displays output ports that do not toggle to 1 during simulat
 ; Node Name                                                                                                      ; Output Port Name                                                                                               ; Output Port Type ;
 +----------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+------------------+
 ; |cpu|start                                                                                                     ; |cpu|start                                                                                                     ; out              ;
-; |cpu|a                                                                                                         ; |cpu|a                                                                                                         ; pin_out          ;
-; |cpu|b                                                                                                         ; |cpu|b                                                                                                         ; pin_out          ;
-; |cpu|c                                                                                                         ; |cpu|c                                                                                                         ; pin_out          ;
-; |cpu|d                                                                                                         ; |cpu|d                                                                                                         ; pin_out          ;
-; |cpu|e                                                                                                         ; |cpu|e                                                                                                         ; pin_out          ;
-; |cpu|f                                                                                                         ; |cpu|f                                                                                                         ; pin_out          ;
-; |cpu|g                                                                                                         ; |cpu|g                                                                                                         ; pin_out          ;
 ; |cpu|OPCdisp0[1]                                                                                               ; |cpu|OPCdisp0[1]                                                                                               ; pin_out          ;
 ; |cpu|OPCdisp0[2]                                                                                               ; |cpu|OPCdisp0[2]                                                                                               ; pin_out          ;
 ; |cpu|OPCdisp0[6]                                                                                               ; |cpu|OPCdisp0[6]                                                                                               ; pin_out          ;
@@ -9744,13 +9737,6 @@ The following table displays output ports that do not toggle to 0 during simulat
 ; Node Name                                                                                                      ; Output Port Name                                                                                               ; Output Port Type ;
 +----------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+------------------+
 ; |cpu|output[3]                                                                                                 ; |cpu|output[3]                                                                                                 ; pin_out          ;
-; |cpu|a                                                                                                         ; |cpu|a                                                                                                         ; pin_out          ;
-; |cpu|b                                                                                                         ; |cpu|b                                                                                                         ; pin_out          ;
-; |cpu|c                                                                                                         ; |cpu|c                                                                                                         ; pin_out          ;
-; |cpu|d                                                                                                         ; |cpu|d                                                                                                         ; pin_out          ;
-; |cpu|e                                                                                                         ; |cpu|e                                                                                                         ; pin_out          ;
-; |cpu|f                                                                                                         ; |cpu|f                                                                                                         ; pin_out          ;
-; |cpu|g                                                                                                         ; |cpu|g                                                                                                         ; pin_out          ;
 ; |cpu|OPCdisp0[0]                                                                                               ; |cpu|OPCdisp0[0]                                                                                               ; pin_out          ;
 ; |cpu|OPCdisp0[1]                                                                                               ; |cpu|OPCdisp0[1]                                                                                               ; pin_out          ;
 ; |cpu|OPCdisp0[2]                                                                                               ; |cpu|OPCdisp0[2]                                                                                               ; pin_out          ;
@@ -15601,18 +15587,18 @@ The following table displays output ports that do not toggle to 0 during simulat
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Simulator
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Sat Dec  9 02:22:13 2017
+    Info: Processing started: Sat Dec 09 03:24:35 2017
 Info: Command: quartus_sim --simulation_results_format=VWF processador -c processador
-Info (324025): Using vector source file "/home/linksnow/workspace/processador/pR0C3Ss0r/Processor3.5/cpu_teste_0.vwf"
+Info (324025): Using vector source file "D:/Documents/GitHub/pR0C3Ss0r/Processor3.5/Waveform.vwf"
 Info (310003): Option to preserve fewer signal transitions to reduce memory requirements is enabled
     Info (310004): Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
 Info (310002): Simulation partitioned into 1 sub-simulations
-Info (328053): Simulation coverage is      35.79 %
+Info (328053): Simulation coverage is      35.81 %
 Info (328052): Number of transitions in simulation is 42524
 Info (324045): Vector file processador.sim.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
 Info: Quartus II 64-Bit Simulator was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 666 megabytes
-    Info: Processing ended: Sat Dec  9 02:22:14 2017
+    Info: Peak virtual memory: 385 megabytes
+    Info: Processing ended: Sat Dec 09 03:24:36 2017
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

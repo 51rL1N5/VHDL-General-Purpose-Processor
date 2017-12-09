@@ -1,0 +1,85 @@
+|comparador_4bits
+a[0] => comparador_full:comp_3.a
+a[1] => comparador_full:comp_2.a
+a[2] => comparador_full:comp_1.a
+a[3] => comparador_full:comp_0.a
+b[0] => comparador_full:comp_3.b
+b[1] => comparador_full:comp_2.b
+b[2] => comparador_full:comp_1.b
+b[3] => comparador_full:comp_0.b
+in_gt => comparador_full:comp_0.in_gt
+in_eq => comparador_full:comp_0.in_eq
+in_it => comparador_full:comp_0.in_it
+out_gt <= comparador_full:comp_3.out_gt
+out_eq <= comparador_full:comp_3.out_eq
+out_it <= comparador_full:comp_3.out_it
+
+
+|comparador_4bits|comparador_full:comp_0
+a => out_gt.IN0
+a => out_eq.IN0
+a => out_it.IN0
+b => out_it.IN1
+b => out_eq.IN1
+b => out_gt.IN1
+in_gt => out_gt.IN1
+in_eq => out_gt.IN1
+in_eq => out_it.IN1
+in_eq => out_eq.IN1
+in_it => out_it.IN1
+out_gt <= out_gt.DB_MAX_OUTPUT_PORT_TYPE
+out_eq <= out_eq.DB_MAX_OUTPUT_PORT_TYPE
+out_it <= out_it.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparador_4bits|comparador_full:comp_1
+a => out_gt.IN0
+a => out_eq.IN0
+a => out_it.IN0
+b => out_it.IN1
+b => out_eq.IN1
+b => out_gt.IN1
+in_gt => out_gt.IN1
+in_eq => out_gt.IN1
+in_eq => out_it.IN1
+in_eq => out_eq.IN1
+in_it => out_it.IN1
+out_gt <= out_gt.DB_MAX_OUTPUT_PORT_TYPE
+out_eq <= out_eq.DB_MAX_OUTPUT_PORT_TYPE
+out_it <= out_it.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparador_4bits|comparador_full:comp_2
+a => out_gt.IN0
+a => out_eq.IN0
+a => out_it.IN0
+b => out_it.IN1
+b => out_eq.IN1
+b => out_gt.IN1
+in_gt => out_gt.IN1
+in_eq => out_gt.IN1
+in_eq => out_it.IN1
+in_eq => out_eq.IN1
+in_it => out_it.IN1
+out_gt <= out_gt.DB_MAX_OUTPUT_PORT_TYPE
+out_eq <= out_eq.DB_MAX_OUTPUT_PORT_TYPE
+out_it <= out_it.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|comparador_4bits|comparador_full:comp_3
+a => out_gt.IN0
+a => out_eq.IN0
+a => out_it.IN0
+b => out_it.IN1
+b => out_eq.IN1
+b => out_gt.IN1
+in_gt => out_gt.IN1
+in_eq => out_gt.IN1
+in_eq => out_it.IN1
+in_eq => out_eq.IN1
+in_it => out_it.IN1
+out_gt <= out_gt.DB_MAX_OUTPUT_PORT_TYPE
+out_eq <= out_eq.DB_MAX_OUTPUT_PORT_TYPE
+out_it <= out_it.DB_MAX_OUTPUT_PORT_TYPE
+
+
