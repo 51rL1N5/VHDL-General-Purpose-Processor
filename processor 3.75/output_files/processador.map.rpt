@@ -1,0 +1,665 @@
+Analysis & Synthesis report for processador
+Sat Dec 09 04:54:51 2017
+Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |cpu|ctrl:controller|state
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Port Connectivity Checks: "opcode_decoder:decoder_opcode|bin_to_disp:converter3"
+ 13. Port Connectivity Checks: "opcode_decoder:decoder_opcode|bin_to_disp:converter2"
+ 14. Port Connectivity Checks: "opcode_decoder:decoder_opcode|bin_to_disp:converter1"
+ 15. Port Connectivity Checks: "opcode_decoder:decoder_opcode|bin_to_disp:converter0"
+ 16. Port Connectivity Checks: "bin2bcd_12bit:bin2bcd"
+ 17. Port Connectivity Checks: "dp:datapath|comparador_4bits:IFZERO"
+ 18. Port Connectivity Checks: "dp:datapath|reg4bits:accumulador"
+ 19. Port Connectivity Checks: "dp:datapath|mux4x1_4bits:ACC_IN"
+ 20. Port Connectivity Checks: "dp:datapath|alu:alu1|subtractor4bits:subtrc|adder4bits:Add0"
+ 21. Port Connectivity Checks: "dp:datapath|alu:alu1|adder4bits:adder"
+ 22. Port Connectivity Checks: "dp:datapath|rf:Register_File|reg4bits:R3"
+ 23. Port Connectivity Checks: "dp:datapath|rf:Register_File|reg4bits:R2"
+ 24. Port Connectivity Checks: "dp:datapath|rf:Register_File|reg4bits:R1"
+ 25. Port Connectivity Checks: "dp:datapath|rf:Register_File|reg4bits:R0|FFJK:FF3"
+ 26. Port Connectivity Checks: "dp:datapath|rf:Register_File|reg4bits:R0|FFJK:FF2"
+ 27. Port Connectivity Checks: "dp:datapath|rf:Register_File|reg4bits:R0|FFJK:FF1"
+ 28. Port Connectivity Checks: "dp:datapath|rf:Register_File|reg4bits:R0|FFJK:FF0"
+ 29. Port Connectivity Checks: "dp:datapath|rf:Register_File|reg4bits:R0"
+ 30. Elapsed Time Per Partition
+ 31. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                    ;
++------------------------------------+--------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sat Dec 09 04:54:51 2017      ;
+; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
+; Revision Name                      ; processador                                ;
+; Top-level Entity Name              ; cpu                                        ;
+; Family                             ; Cyclone II                                 ;
+; Total logic elements               ; 105                                        ;
+;     Total combinational functions  ; 78                                         ;
+;     Dedicated logic registers      ; 50                                         ;
+; Total registers                    ; 50                                         ;
+; Total pins                         ; 48                                         ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 0                                          ;
+; Embedded Multiplier 9-bit elements ; 0                                          ;
+; Total PLLs                         ; 0                                          ;
++------------------------------------+--------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Top-level entity name                                                      ; cpu                ; processador        ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                              ;
++----------------------------------+-----------------+-----------------------+------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type             ; File Name with Absolute Path                                                 ; Library ;
++----------------------------------+-----------------+-----------------------+------------------------------------------------------------------------------+---------+
+; components/comparador_4bits.vhd  ; yes             ; User VHDL File        ; D:/Documents/GitHub/pR0C3Ss0r/processor 3.75/components/comparador_4bits.vhd ;         ;
+; components/bin_to_disp.vhd       ; yes             ; User VHDL File        ; D:/Documents/GitHub/pR0C3Ss0r/processor 3.75/components/bin_to_disp.vhd      ;         ;
+; components/bin2bcd_12bit.vhd     ; yes             ; User VHDL File        ; D:/Documents/GitHub/pR0C3Ss0r/processor 3.75/components/bin2bcd_12bit.vhd    ;         ;
+; dp.vhdl                          ; yes             ; User VHDL File        ; D:/Documents/GitHub/pR0C3Ss0r/processor 3.75/dp.vhdl                         ;         ;
+; ctrl.vhdl                        ; yes             ; User VHDL File        ; D:/Documents/GitHub/pR0C3Ss0r/processor 3.75/ctrl.vhdl                       ;         ;
+; cpu.vhdl                         ; yes             ; User VHDL File        ; D:/Documents/GitHub/pR0C3Ss0r/processor 3.75/cpu.vhdl                        ;         ;
+; components/FFJK.vhd              ; yes             ; User VHDL File        ; D:/Documents/GitHub/pR0C3Ss0r/processor 3.75/components/FFJK.vhd             ;         ;
+; components/reg4bits.vhd          ; yes             ; User VHDL File        ; D:/Documents/GitHub/pR0C3Ss0r/processor 3.75/components/reg4bits.vhd         ;         ;
+; components/mux8x1_4bits.vhd      ; yes             ; User VHDL File        ; D:/Documents/GitHub/pR0C3Ss0r/processor 3.75/components/mux8x1_4bits.vhd     ;         ;
+; components/FullAdder.vhd         ; yes             ; User VHDL File        ; D:/Documents/GitHub/pR0C3Ss0r/processor 3.75/components/FullAdder.vhd        ;         ;
+; components/adder4bits.vhd        ; yes             ; User VHDL File        ; D:/Documents/GitHub/pR0C3Ss0r/processor 3.75/components/adder4bits.vhd       ;         ;
+; components/subtractor4bits.vhd   ; yes             ; User VHDL File        ; D:/Documents/GitHub/pR0C3Ss0r/processor 3.75/components/subtractor4bits.vhd  ;         ;
+; components/mux4x1_4bits.vhd      ; yes             ; User VHDL File        ; D:/Documents/GitHub/pR0C3Ss0r/processor 3.75/components/mux4x1_4bits.vhd     ;         ;
+; components/decoder2x4.vhd        ; yes             ; User VHDL File        ; D:/Documents/GitHub/pR0C3Ss0r/processor 3.75/components/decoder2x4.vhd       ;         ;
+; components/opcode_decoder.vhd    ; yes             ; User VHDL File        ; D:/Documents/GitHub/pR0C3Ss0r/processor 3.75/components/opcode_decoder.vhd   ;         ;
+; comparador_full.vhd              ; yes             ; Auto-Found VHDL File  ; d:/documents/github/pr0c3ss0r/processor 3.75/components/comparador_full.vhd  ;         ;
++----------------------------------+-----------------+-----------------------+------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 105   ;
+;                                             ;       ;
+; Total combinational functions               ; 78    ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 50    ;
+;     -- 3 input functions                    ; 13    ;
+;     -- <=2 input functions                  ; 15    ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 78    ;
+;     -- arithmetic mode                      ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 50    ;
+;     -- Dedicated logic registers            ; 50    ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 48    ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 50    ;
+; Total fan-out                               ; 444   ;
+; Average fan-out                             ; 2.52  ;
++---------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                           ;
++-----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node        ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                            ; Library Name ;
++-----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------+--------------+
+; |cpu                              ; 78 (0)            ; 50 (0)       ; 0           ; 0            ; 0       ; 0         ; 48   ; 0            ; |cpu                                                                           ;              ;
+;    |bin2bcd_12bit:bin2bcd|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|bin2bcd_12bit:bin2bcd                                                     ;              ;
+;    |bin_to_disp:bin_decoder_ones| ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|bin_to_disp:bin_decoder_ones                                              ;              ;
+;    |ctrl:controller|              ; 33 (33)           ; 30 (30)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|ctrl:controller                                                           ;              ;
+;    |dp:datapath|                  ; 37 (0)            ; 20 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|dp:datapath                                                               ;              ;
+;       |alu:alu1|                  ; 3 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|dp:datapath|alu:alu1                                                      ;              ;
+;          |adder4bits:adder|       ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|dp:datapath|alu:alu1|adder4bits:adder                                     ;              ;
+;             |FullAdder:FA1|       ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|dp:datapath|alu:alu1|adder4bits:adder|FullAdder:FA1                       ;              ;
+;          |mux8x1_4bits:OUPUT|     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|dp:datapath|alu:alu1|mux8x1_4bits:OUPUT                                   ;              ;
+;          |subtractor4bits:subtrc| ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|dp:datapath|alu:alu1|subtractor4bits:subtrc                               ;              ;
+;             |adder4bits:Add0|     ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|dp:datapath|alu:alu1|subtractor4bits:subtrc|adder4bits:Add0               ;              ;
+;                |FullAdder:FA1|    ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|dp:datapath|alu:alu1|subtractor4bits:subtrc|adder4bits:Add0|FullAdder:FA1 ;              ;
+;       |comparador_4bits:IFZERO|   ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|dp:datapath|comparador_4bits:IFZERO                                       ;              ;
+;          |comparador_full:comp_3| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|dp:datapath|comparador_4bits:IFZERO|comparador_full:comp_3                ;              ;
+;       |mux4x1_4bits:ACC_IN|       ; 18 (18)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|dp:datapath|mux4x1_4bits:ACC_IN                                           ;              ;
+;       |reg4bits:accumulador|      ; 1 (0)             ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|dp:datapath|reg4bits:accumulador                                          ;              ;
+;          |FFJK:FF0|               ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|dp:datapath|reg4bits:accumulador|FFJK:FF0                                 ;              ;
+;          |FFJK:FF1|               ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|dp:datapath|reg4bits:accumulador|FFJK:FF1                                 ;              ;
+;          |FFJK:FF2|               ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|dp:datapath|reg4bits:accumulador|FFJK:FF2                                 ;              ;
+;          |FFJK:FF3|               ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|dp:datapath|reg4bits:accumulador|FFJK:FF3                                 ;              ;
+;       |rf:Register_File|          ; 14 (9)            ; 16 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|dp:datapath|rf:Register_File                                              ;              ;
+;          |decoder2x4:RD_decoder|  ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|dp:datapath|rf:Register_File|decoder2x4:RD_decoder                        ;              ;
+;          |decoder2x4:WR_decoder|  ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|dp:datapath|rf:Register_File|decoder2x4:WR_decoder                        ;              ;
+;          |reg4bits:R0|            ; 0 (0)             ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R0                                  ;              ;
+;             |FFJK:FF0|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R0|FFJK:FF0                         ;              ;
+;             |FFJK:FF1|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R0|FFJK:FF1                         ;              ;
+;             |FFJK:FF2|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R0|FFJK:FF2                         ;              ;
+;             |FFJK:FF3|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R0|FFJK:FF3                         ;              ;
+;          |reg4bits:R1|            ; 0 (0)             ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R1                                  ;              ;
+;             |FFJK:FF0|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R1|FFJK:FF0                         ;              ;
+;             |FFJK:FF1|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R1|FFJK:FF1                         ;              ;
+;             |FFJK:FF2|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R1|FFJK:FF2                         ;              ;
+;             |FFJK:FF3|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R1|FFJK:FF3                         ;              ;
+;          |reg4bits:R2|            ; 0 (0)             ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R2                                  ;              ;
+;             |FFJK:FF0|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R2|FFJK:FF0                         ;              ;
+;             |FFJK:FF1|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R2|FFJK:FF1                         ;              ;
+;             |FFJK:FF2|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R2|FFJK:FF2                         ;              ;
+;             |FFJK:FF3|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R2|FFJK:FF3                         ;              ;
+;          |reg4bits:R3|            ; 0 (0)             ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R3                                  ;              ;
+;             |FFJK:FF0|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R3|FFJK:FF0                         ;              ;
+;             |FFJK:FF1|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R3|FFJK:FF1                         ;              ;
+;             |FFJK:FF2|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R3|FFJK:FF2                         ;              ;
+;             |FFJK:FF3|            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R3|FFJK:FF3                         ;              ;
++-----------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------+
+; State Machine - |cpu|ctrl:controller|state                                                          ;
++-----------------------+-----------------------+------------+-------------+-------------+------------+
+; Name                  ; state.jmp_if_zero_jmp ; state.done ; state.Decod ; state.fetch ; state.init ;
++-----------------------+-----------------------+------------+-------------+-------------+------------+
+; state.init            ; 0                     ; 0          ; 0           ; 0           ; 0          ;
+; state.fetch           ; 0                     ; 0          ; 0           ; 1           ; 1          ;
+; state.Decod           ; 0                     ; 0          ; 1           ; 0           ; 1          ;
+; state.done            ; 0                     ; 1          ; 0           ; 0           ; 1          ;
+; state.jmp_if_zero_jmp ; 1                     ; 0          ; 0           ; 0           ; 1          ;
++-----------------------+-----------------------+------------+-------------+-------------+------------+
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++---------------------------------------+-----------------------------------------+
+; Register name                         ; Reason for Removal                      ;
++---------------------------------------+-----------------------------------------+
+; ctrl:controller|acc_clr               ; Stuck at GND due to stuck port data_in  ;
+; ctrl:controller|ADDRESS[2]            ; Merged with ctrl:controller|ADDRESS[1]  ;
+; ctrl:controller|imm[2]                ; Merged with ctrl:controller|imm[1]      ;
+; ctrl:controller|OPCODE[1]             ; Merged with ctrl:controller|OPCODE[0]   ;
+; ctrl:controller|SW_In_ACC[0]          ; Stuck at GND due to stuck port data_in  ;
+; ctrl:controller|now_inst[1]           ; Merged with ctrl:controller|now_inst[0] ;
+; ctrl:controller|Alu_SW[1]             ; Merged with ctrl:controller|Alu_SW[2]   ;
+; ctrl:controller|PC[3]                 ; Lost fanout                             ;
+; Total Number of Removed Registers = 8 ;                                         ;
++---------------------------------------+-----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 50    ;
+; Number of registers using Synchronous Clear  ; 2     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 42    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |cpu|ctrl:controller|now_inst[2]                   ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 2 LEs                ; 8 LEs                  ; Yes        ; |cpu|ctrl:controller|now_inst[0]                   ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 4 LEs                ; 6 LEs                  ; Yes        ; |cpu|ctrl:controller|SW_In_ACC[0]                  ;
+; 8:1                ; 3 bits    ; 15 LEs        ; 6 LEs                ; 9 LEs                  ; Yes        ; |cpu|ctrl:controller|Alu_SW[0]                     ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 0 LEs                ; 10 LEs                 ; Yes        ; |cpu|ctrl:controller|RF_R_addr[1]                  ;
+; 11:1               ; 3 bits    ; 21 LEs        ; 21 LEs               ; 0 LEs                  ; Yes        ; |cpu|dp:datapath|reg4bits:accumulador|FFJK:FF2|aux ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |cpu|ctrl:controller|PC[3]                         ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |cpu|dp:datapath|rf:Register_File|output[0]        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
+
+
++----------------------------------------------------------------------------------+
+; Port Connectivity Checks: "opcode_decoder:decoder_opcode|bin_to_disp:converter3" ;
++---------+-------+----------+-----------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                             ;
++---------+-------+----------+-----------------------------------------------------+
+; a[3..1] ; Input ; Info     ; Stuck at GND                                        ;
++---------+-------+----------+-----------------------------------------------------+
+
+
++----------------------------------------------------------------------------------+
+; Port Connectivity Checks: "opcode_decoder:decoder_opcode|bin_to_disp:converter2" ;
++---------+-------+----------+-----------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                             ;
++---------+-------+----------+-----------------------------------------------------+
+; a[3..1] ; Input ; Info     ; Stuck at GND                                        ;
++---------+-------+----------+-----------------------------------------------------+
+
+
++----------------------------------------------------------------------------------+
+; Port Connectivity Checks: "opcode_decoder:decoder_opcode|bin_to_disp:converter1" ;
++---------+-------+----------+-----------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                             ;
++---------+-------+----------+-----------------------------------------------------+
+; a[3..1] ; Input ; Info     ; Stuck at GND                                        ;
++---------+-------+----------+-----------------------------------------------------+
+
+
++----------------------------------------------------------------------------------+
+; Port Connectivity Checks: "opcode_decoder:decoder_opcode|bin_to_disp:converter0" ;
++---------+-------+----------+-----------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                             ;
++---------+-------+----------+-----------------------------------------------------+
+; a[3..1] ; Input ; Info     ; Stuck at GND                                        ;
++---------+-------+----------+-----------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "bin2bcd_12bit:bin2bcd"                                                                      ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                             ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; binin[11..4] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; hundreds     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; thousands    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dp:datapath|comparador_4bits:IFZERO"                                                  ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; b      ; Input  ; Info     ; Stuck at GND                                                                        ;
+; in_gt  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; in_eq  ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; in_it  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; out_gt ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; out_it ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------+
+; Port Connectivity Checks: "dp:datapath|reg4bits:accumulador" ;
++------+-------+----------+------------------------------------+
+; Port ; Type  ; Severity ; Details                            ;
++------+-------+----------+------------------------------------+
+; set  ; Input ; Info     ; Stuck at GND                       ;
++------+-------+----------+------------------------------------+
+
+
++-------------------------------------------------------------+
+; Port Connectivity Checks: "dp:datapath|mux4x1_4bits:ACC_IN" ;
++------+-------+----------+-----------------------------------+
+; Port ; Type  ; Severity ; Details                           ;
++------+-------+----------+-----------------------------------+
+; a3   ; Input ; Info     ; Stuck at GND                      ;
++------+-------+----------+-----------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dp:datapath|alu:alu1|subtractor4bits:subtrc|adder4bits:Add0"                         ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; cin   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; carry ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dp:datapath|alu:alu1|adder4bits:adder"                                               ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; cin   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; carry ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------+
+; Port Connectivity Checks: "dp:datapath|rf:Register_File|reg4bits:R3" ;
++-------+-------+----------+-------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                   ;
++-------+-------+----------+-------------------------------------------+
+; clear ; Input ; Info     ; Stuck at GND                              ;
+; set   ; Input ; Info     ; Stuck at GND                              ;
++-------+-------+----------+-------------------------------------------+
+
+
++----------------------------------------------------------------------+
+; Port Connectivity Checks: "dp:datapath|rf:Register_File|reg4bits:R2" ;
++-------+-------+----------+-------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                   ;
++-------+-------+----------+-------------------------------------------+
+; clear ; Input ; Info     ; Stuck at GND                              ;
+; set   ; Input ; Info     ; Stuck at GND                              ;
++-------+-------+----------+-------------------------------------------+
+
+
++----------------------------------------------------------------------+
+; Port Connectivity Checks: "dp:datapath|rf:Register_File|reg4bits:R1" ;
++-------+-------+----------+-------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                   ;
++-------+-------+----------+-------------------------------------------+
+; clear ; Input ; Info     ; Stuck at GND                              ;
+; set   ; Input ; Info     ; Stuck at GND                              ;
++-------+-------+----------+-------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dp:datapath|rf:Register_File|reg4bits:R0|FFJK:FF3"                                  ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dp:datapath|rf:Register_File|reg4bits:R0|FFJK:FF2"                                  ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dp:datapath|rf:Register_File|reg4bits:R0|FFJK:FF1"                                  ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dp:datapath|rf:Register_File|reg4bits:R0|FFJK:FF0"                                  ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------+
+; Port Connectivity Checks: "dp:datapath|rf:Register_File|reg4bits:R0" ;
++-------+-------+----------+-------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                   ;
++-------+-------+----------+-------------------------------------------+
+; clear ; Input ; Info     ; Stuck at GND                              ;
+; set   ; Input ; Info     ; Stuck at GND                              ;
++-------+-------+----------+-------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+    Info: Processing started: Sat Dec 09 04:54:48 2017
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off processador -c processador
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file components/comparador_4bits.vhd
+    Info (12022): Found design unit 1: comparador_4bits-hardware
+    Info (12023): Found entity 1: comparador_4bits
+Info (12021): Found 2 design units, including 1 entities, in source file components/bin_to_disp.vhd
+    Info (12022): Found design unit 1: bin_to_disp-bin_to_disp
+    Info (12023): Found entity 1: bin_to_disp
+Info (12021): Found 2 design units, including 1 entities, in source file components/bin2bcd_12bit.vhd
+    Info (12022): Found design unit 1: bin2bcd_12bit-bin2bcd_12bit
+    Info (12023): Found entity 1: bin2bcd_12bit
+Info (12021): Found 6 design units, including 3 entities, in source file dp.vhdl
+    Info (12022): Found design unit 1: alu-bhv
+    Info (12022): Found design unit 2: rf-bhv
+    Info (12022): Found design unit 3: dp-rtl2
+    Info (12023): Found entity 1: alu
+    Info (12023): Found entity 2: rf
+    Info (12023): Found entity 3: dp
+Info (12021): Found 2 design units, including 1 entities, in source file ctrl.vhdl
+    Info (12022): Found design unit 1: ctrl-fsm
+    Info (12023): Found entity 1: ctrl
+Info (12021): Found 2 design units, including 1 entities, in source file cpu.vhdl
+    Info (12022): Found design unit 1: cpu-struc
+    Info (12023): Found entity 1: cpu
+Info (12021): Found 2 design units, including 1 entities, in source file components/ffjk.vhd
+    Info (12022): Found design unit 1: FFJK-hardware
+    Info (12023): Found entity 1: FFJK
+Info (12021): Found 2 design units, including 1 entities, in source file components/reg4bits.vhd
+    Info (12022): Found design unit 1: reg4bits-hardware
+    Info (12023): Found entity 1: reg4bits
+Info (12021): Found 2 design units, including 1 entities, in source file components/mux8x1_4bits.vhd
+    Info (12022): Found design unit 1: mux8x1_4bits-config
+    Info (12023): Found entity 1: mux8x1_4bits
+Info (12021): Found 2 design units, including 1 entities, in source file components/fulladder.vhd
+    Info (12022): Found design unit 1: FullAdder-hardware
+    Info (12023): Found entity 1: FullAdder
+Info (12021): Found 2 design units, including 1 entities, in source file components/adder4bits.vhd
+    Info (12022): Found design unit 1: adder4bits-hardware
+    Info (12023): Found entity 1: adder4bits
+Info (12021): Found 2 design units, including 1 entities, in source file components/subtractor4bits.vhd
+    Info (12022): Found design unit 1: subtractor4bits-hardware
+    Info (12023): Found entity 1: subtractor4bits
+Info (12021): Found 2 design units, including 1 entities, in source file components/mux2x1_4bits.vhd
+    Info (12022): Found design unit 1: mux2x1_4bits-hardware
+    Info (12023): Found entity 1: mux2x1_4bits
+Info (12021): Found 2 design units, including 1 entities, in source file components/mux4x1_4bits.vhd
+    Info (12022): Found design unit 1: mux4x1_4bits-behavior
+    Info (12023): Found entity 1: mux4x1_4bits
+Info (12021): Found 2 design units, including 1 entities, in source file components/decoder2x4.vhd
+    Info (12022): Found design unit 1: decoder2x4-hardware
+    Info (12023): Found entity 1: decoder2x4
+Info (12021): Found 2 design units, including 1 entities, in source file components/vector_to_integer.vhd
+    Info (12022): Found design unit 1: Vector_to_integer-behavior
+    Info (12023): Found entity 1: Vector_to_integer
+Info (12021): Found 2 design units, including 1 entities, in source file components/opcode_decoder.vhd
+    Info (12022): Found design unit 1: opcode_decoder-hardware
+    Info (12023): Found entity 1: opcode_decoder
+Info (12127): Elaborating entity "cpu" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at cpu.vhdl(124): object "void0" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at cpu.vhdl(125): object "void1" assigned a value but never read
+Info (12128): Elaborating entity "ctrl" for hierarchy "ctrl:controller"
+Info (12128): Elaborating entity "dp" for hierarchy "dp:datapath"
+Info (12128): Elaborating entity "rf" for hierarchy "dp:datapath|rf:Register_File"
+Info (12128): Elaborating entity "decoder2x4" for hierarchy "dp:datapath|rf:Register_File|decoder2x4:WR_decoder"
+Info (12128): Elaborating entity "reg4bits" for hierarchy "dp:datapath|rf:Register_File|reg4bits:R0"
+Warning (10036): Verilog HDL or VHDL warning at reg4bits.vhd(33): object "void" assigned a value but never read
+Info (12128): Elaborating entity "FFJK" for hierarchy "dp:datapath|rf:Register_File|reg4bits:R0|FFJK:FF0"
+Info (12128): Elaborating entity "alu" for hierarchy "dp:datapath|alu:alu1"
+Warning (10036): Verilog HDL or VHDL warning at dp.vhdl(62): object "void" assigned a value but never read
+Info (12128): Elaborating entity "adder4bits" for hierarchy "dp:datapath|alu:alu1|adder4bits:adder"
+Info (12128): Elaborating entity "FullAdder" for hierarchy "dp:datapath|alu:alu1|adder4bits:adder|FullAdder:FA0"
+Info (12128): Elaborating entity "subtractor4bits" for hierarchy "dp:datapath|alu:alu1|subtractor4bits:subtrc"
+Warning (10036): Verilog HDL or VHDL warning at subtractor4bits.vhd(27): object "void" assigned a value but never read
+Info (12128): Elaborating entity "mux8x1_4bits" for hierarchy "dp:datapath|alu:alu1|mux8x1_4bits:OUPUT"
+Warning (10492): VHDL Process Statement warning at mux8x1_4bits.vhd(32): signal "A0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at mux8x1_4bits.vhd(34): signal "A1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at mux8x1_4bits.vhd(36): signal "A2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at mux8x1_4bits.vhd(38): signal "A3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at mux8x1_4bits.vhd(40): signal "A4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at mux8x1_4bits.vhd(42): signal "A5" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at mux8x1_4bits.vhd(44): signal "A6" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at mux8x1_4bits.vhd(46): signal "A7" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (12128): Elaborating entity "mux4x1_4bits" for hierarchy "dp:datapath|mux4x1_4bits:ACC_IN"
+Warning (10492): VHDL Process Statement warning at mux4x1_4bits.vhd(24): signal "A0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at mux4x1_4bits.vhd(26): signal "A1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at mux4x1_4bits.vhd(28): signal "A2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at mux4x1_4bits.vhd(30): signal "A3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (12128): Elaborating entity "comparador_4bits" for hierarchy "dp:datapath|comparador_4bits:IFZERO"
+Warning (12125): Using design file components/comparador_full.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info (12022): Found design unit 1: comparador_full-hardware
+    Info (12023): Found entity 1: comparador_full
+Info (12128): Elaborating entity "comparador_full" for hierarchy "dp:datapath|comparador_4bits:IFZERO|comparador_full:comp_0"
+Info (12128): Elaborating entity "bin2bcd_12bit" for hierarchy "bin2bcd_12bit:bin2bcd"
+Info (12128): Elaborating entity "bin_to_disp" for hierarchy "bin_to_disp:bin_decoder_ones"
+Info (12128): Elaborating entity "opcode_decoder" for hierarchy "opcode_decoder:decoder_opcode"
+Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
+    Warning (13048): Converted tri-state node "dp:datapath|rf:Register_File|output[3]" into a selector
+    Warning (13048): Converted tri-state node "dp:datapath|rf:Register_File|output[2]" into a selector
+    Warning (13048): Converted tri-state node "dp:datapath|rf:Register_File|output[1]" into a selector
+    Warning (13048): Converted tri-state node "dp:datapath|rf:Register_File|output[0]" into a selector
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "OPCdisp0[1]" is stuck at GND
+    Warning (13410): Pin "OPCdisp0[2]" is stuck at GND
+    Warning (13410): Pin "OPCdisp0[6]" is stuck at VCC
+    Warning (13410): Pin "OPCdisp1[1]" is stuck at GND
+    Warning (13410): Pin "OPCdisp1[2]" is stuck at GND
+    Warning (13410): Pin "OPCdisp1[6]" is stuck at VCC
+    Warning (13410): Pin "OPCdisp2[1]" is stuck at GND
+    Warning (13410): Pin "OPCdisp2[2]" is stuck at GND
+    Warning (13410): Pin "OPCdisp2[6]" is stuck at VCC
+    Warning (13410): Pin "OPCdisp3[1]" is stuck at GND
+    Warning (13410): Pin "OPCdisp3[2]" is stuck at GND
+    Warning (13410): Pin "OPCdisp3[6]" is stuck at VCC
+    Warning (13410): Pin "display1[1]" is stuck at GND
+    Warning (13410): Pin "display1[2]" is stuck at GND
+    Warning (13410): Pin "display1[6]" is stuck at VCC
+Info (17049): 1 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 154 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 46 output pins
+    Info (21061): Implemented 106 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 40 warnings
+    Info: Peak virtual memory: 554 megabytes
+    Info: Processing ended: Sat Dec 09 04:54:51 2017
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
+
+
