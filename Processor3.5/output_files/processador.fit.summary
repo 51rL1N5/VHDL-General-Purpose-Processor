@@ -1,16 +1,16 @@
-Fitter Status : Successful - Thu Dec 07 15:08:08 2017
+Fitter Status : Successful - Fri Dec 08 16:27:10 2017
 Quartus II 64-Bit Version : 13.0.0 Build 156 04/24/2013 SJ Web Edition
 Revision Name : processador
-Top-level Entity Name : dp
+Top-level Entity Name : cpu
 Family : Cyclone II
-Device : EP2C5T144C6
+Device : EP2C35F672C6
 Timing Models : Final
-Total logic elements : 46 / 4,608 ( < 1 % )
-    Total combinational functions : 41 / 4,608 ( < 1 % )
-    Dedicated logic registers : 20 / 4,608 ( < 1 % )
-Total registers : 20
-Total pins : 23 / 89 ( 26 % )
+Total logic elements : 87 / 33,216 ( < 1 % )
+    Total combinational functions : 83 / 33,216 ( < 1 % )
+    Dedicated logic registers : 46 / 33,216 ( < 1 % )
+Total registers : 46
+Total pins : 13 / 475 ( 3 % )
 Total virtual pins : 0
-Total memory bits : 0 / 119,808 ( 0 % )
-Embedded Multiplier 9-bit elements : 0 / 26 ( 0 % )
-Total PLLs : 0 / 2 ( 0 % )
+Total memory bits : 0 / 483,840 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 70 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )
