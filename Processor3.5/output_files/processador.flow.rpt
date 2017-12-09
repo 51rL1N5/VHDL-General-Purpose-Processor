@@ -1,5 +1,9 @@
 Flow report for processador
+<<<<<<< HEAD
 Sat Dec  9 02:22:02 2017
+=======
+Fri Dec 08 17:30:48 2017
+>>>>>>> 11aee444fe1828aa9ab10ba64b08b77acfe15462
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -40,16 +44,30 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Flow Summary                                                                    ;
 +------------------------------------+--------------------------------------------+
+<<<<<<< HEAD
 ; Flow Status                        ; Successful - Sat Dec  9 02:22:02 2017      ;
+=======
+; Flow Status                        ; Successful - Fri Dec 08 17:30:47 2017      ;
+>>>>>>> 11aee444fe1828aa9ab10ba64b08b77acfe15462
 ; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
 ; Revision Name                      ; processador                                ;
 ; Top-level Entity Name              ; cpu                                        ;
 ; Family                             ; Cyclone II                                 ;
+<<<<<<< HEAD
 ; Total logic elements               ; 87 / 4,608 ( 2 % )                         ;
 ;     Total combinational functions  ; 84 / 4,608 ( 2 % )                         ;
 ;     Dedicated logic registers      ; 43 / 4,608 ( < 1 % )                       ;
 ; Total registers                    ; 43                                         ;
 ; Total pins                         ; 55 / 89 ( 62 % )                           ;
+=======
+; Device                             ; EP2C35F672C6                               ;
+; Timing Models                      ; Final                                      ;
+; Total logic elements               ; 91                                         ;
+;     Total combinational functions  ; 73                                         ;
+;     Dedicated logic registers      ; 43                                         ;
+; Total registers                    ; 43                                         ;
+; Total pins                         ; 10                                         ;
+>>>>>>> 11aee444fe1828aa9ab10ba64b08b77acfe15462
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0 / 119,808 ( 0 % )                        ;
 ; Embedded Multiplier 9-bit elements ; 0 / 26 ( 0 % )                             ;
@@ -64,12 +82,17 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
+<<<<<<< HEAD
 ; Start date & time ; 12/09/2017 02:20:10 ;
+=======
+; Start date & time ; 12/08/2017 17:30:45 ;
+>>>>>>> 11aee444fe1828aa9ab10ba64b08b77acfe15462
 ; Main task         ; Compilation         ;
 ; Revision Name     ; processador         ;
 +-------------------+---------------------+
 
 
+<<<<<<< HEAD
 +----------------------------------------------------------------------------------------------------------------+
 ; Flow Non-Default Global Settings                                                                               ;
 +-------------------------------------+---------------------------+---------------+-------------+----------------+
@@ -119,6 +142,43 @@ applicable agreement for further details.
 ; EDA Netlist Writer        ; Vulcan           ; Ubuntu 16.04.3 ; 16         ; x86_64         ;
 ; EDA Netlist Writer        ; Vulcan           ; Ubuntu 16.04.3 ; 16         ; x86_64         ;
 +---------------------------+------------------+----------------+------------+----------------+
+=======
++----------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                     ;
++-------------------------------------+---------------------------------+---------------+-------------+----------------+
+; Assignment Name                     ; Value                           ; Default Value ; Entity Name ; Section Id     ;
++-------------------------------------+---------------------------------+---------------+-------------+----------------+
+; COMPILER_SIGNATURE_ID               ; 215729423766835.151276504510028 ; --            ; --          ; --             ;
+; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                     ; --            ; --          ; eda_simulation ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)       ; <None>        ; --          ; --             ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                              ; --            ; --          ; --             ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                               ; --            ; --          ; --             ;
+; PARTITION_COLOR                     ; 16764057                        ; --            ; cpu         ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING           ; --            ; cpu         ; Top            ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                          ; --            ; cpu         ; Top            ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                    ; --            ; --          ; --             ;
+; TOP_LEVEL_ENTITY                    ; cpu                             ; processador   ; --          ; --             ;
++-------------------------------------+---------------------------------+---------------+-------------+----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                        ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis ; 00:00:02     ; 1.0                     ; 576 MB              ; 00:00:02                           ;
+; Total                ; 00:00:02     ; --                      ; --                  ; 00:00:02                           ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++-----------------------------------------------------------------------------------+
+; Flow OS Summary                                                                   ;
++----------------------+------------------+-----------+------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
++----------------------+------------------+-----------+------------+----------------+
+; Analysis & Synthesis ; G-Notebook       ; Windows 7 ; 6.2        ; x86_64         ;
++----------------------+------------------+-----------+------------+----------------+
+>>>>>>> 11aee444fe1828aa9ab10ba64b08b77acfe15462
 
 
 ------------

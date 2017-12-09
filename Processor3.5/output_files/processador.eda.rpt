@@ -1,5 +1,9 @@
 EDA Netlist Writer report for processador
+<<<<<<< HEAD
 Sat Dec  9 02:22:02 2017
+=======
+Fri Dec 08 16:27:22 2017
+>>>>>>> 11aee444fe1828aa9ab10ba64b08b77acfe15462
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -36,7 +40,11 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
+<<<<<<< HEAD
 ; EDA Netlist Writer Status ; Successful - Sat Dec  9 02:22:02 2017 ;
+=======
+; EDA Netlist Writer Status ; Successful - Fri Dec 08 16:27:22 2017 ;
+>>>>>>> 11aee444fe1828aa9ab10ba64b08b77acfe15462
 ; Revision Name             ; processador                           ;
 ; Top-level Entity Name     ; cpu                                   ;
 ; Family                    ; Cyclone II                            ;
@@ -50,7 +58,12 @@ applicable agreement for further details.
 ; Option                                                                                            ; Setting                   ;
 +---------------------------------------------------------------------------------------------------+---------------------------+
 ; Tool Name                                                                                         ; ModelSim-Altera (Verilog) ;
+<<<<<<< HEAD
 ; Generate netlist for functional simulation only                                                   ; On                        ;
+=======
+; Generate netlist for functional simulation only                                                   ; Off                       ;
+; Time scale                                                                                        ; 1 ps                      ;
+>>>>>>> 11aee444fe1828aa9ab10ba64b08b77acfe15462
 ; Truncate long hierarchy paths                                                                     ; Off                       ;
 ; Map illegal HDL characters                                                                        ; Off                       ;
 ; Flatten buses into individual nodes                                                               ; Off                       ;
@@ -65,6 +78,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------------------+---------------------------+
 
 
+<<<<<<< HEAD
 +------------------------------------------------------------------------------------------------+
 ; Simulation Generated Files                                                                     ;
 +------------------------------------------------------------------------------------------------+
@@ -72,6 +86,18 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------------------------+
 ; /home/linksnow/workspace/processador/pR0C3Ss0r/Processor3.5/simulation/modelsim/processador.vo ;
 +------------------------------------------------------------------------------------------------+
+=======
++---------------------------------------------------------------------------------------+
+; Simulation Generated Files                                                            ;
++---------------------------------------------------------------------------------------+
+; Generated Files                                                                       ;
++---------------------------------------------------------------------------------------+
+; D:/Documents/GitHub/pR0C3Ss0r/Processor3.5/simulation/modelsim/processador.vo         ;
+; D:/Documents/GitHub/pR0C3Ss0r/Processor3.5/simulation/modelsim/processador_fast.vo    ;
+; D:/Documents/GitHub/pR0C3Ss0r/Processor3.5/simulation/modelsim/processador_v.sdo      ;
+; D:/Documents/GitHub/pR0C3Ss0r/Processor3.5/simulation/modelsim/processador_v_fast.sdo ;
++---------------------------------------------------------------------------------------+
+>>>>>>> 11aee444fe1828aa9ab10ba64b08b77acfe15462
 
 
 +-----------------------------+
@@ -80,12 +106,21 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit EDA Netlist Writer
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
+<<<<<<< HEAD
     Info: Processing started: Sat Dec  9 02:22:02 2017
 Info: Command: quartus_eda --functional=on --simulation=on --tool=modelsim_oem --format=verilog processador -c processador
 Info (204019): Generated file processador.vo in folder "/home/linksnow/workspace/processador/pR0C3Ss0r/Processor3.5/simulation/modelsim/" for EDA simulation tool
 Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 804 megabytes
     Info: Processing ended: Sat Dec  9 02:22:03 2017
+=======
+    Info: Processing started: Fri Dec 08 16:27:21 2017
+Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off processador -c processador
+Info (204026): Generated files "processador.vo", "processador_fast.vo", "processador_v.sdo" and "processador_v_fast.sdo" in directory "D:/Documents/GitHub/pR0C3Ss0r/Processor3.5/simulation/modelsim/" for EDA simulation tool
+Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 449 megabytes
+    Info: Processing ended: Fri Dec 08 16:27:22 2017
+>>>>>>> 11aee444fe1828aa9ab10ba64b08b77acfe15462
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:00
 

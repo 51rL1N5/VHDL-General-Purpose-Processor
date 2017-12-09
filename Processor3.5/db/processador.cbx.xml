@@ -1,6 +1,7 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="processador">
+<<<<<<< HEAD
 		<CBX_INST_ENTRY INSTANCE_NAME="|cpu|bin_to_disp:bin_decoder_tens|lpm_mux:Mux3" CBX_FILE_NAME="mux_joc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|cpu|ctrl:controller|lpm_mux:Mux29" CBX_FILE_NAME="mux_joc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|cpu|bin_to_disp:bin_decoder_tens|lpm_mux:Mux4" CBX_FILE_NAME="mux_t4d.tdf"/>
@@ -82,5 +83,7 @@
 		<CBX_INST_ENTRY INSTANCE_NAME="|cpu|opcode_decoder:decoder_opcode|bin_to_disp:converter0|lpm_mux:Mux1" CBX_FILE_NAME="mux_joc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|cpu|opcode_decoder:decoder_opcode|bin_to_disp:converter0|lpm_mux:Mux2" CBX_FILE_NAME="mux_joc.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|cpu|opcode_decoder:decoder_opcode|bin_to_disp:converter2|lpm_mux:Mux0" CBX_FILE_NAME="mux_joc.tdf"/>
+=======
+>>>>>>> 11aee444fe1828aa9ab10ba64b08b77acfe15462
 	</PROJECT>
 </LOG_ROOT>
