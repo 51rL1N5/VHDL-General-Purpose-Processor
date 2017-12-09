@@ -1,5 +1,5 @@
 Analysis & Synthesis report for processador
-Sat Dec 09 04:54:51 2017
+Sat Dec  9 20:18:31 2017
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -62,7 +62,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Dec 09 04:54:51 2017      ;
+; Analysis & Synthesis Status        ; Successful - Sat Dec  9 20:18:31 2017      ;
 ; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
 ; Revision Name                      ; processador                                ;
 ; Top-level Entity Name              ; cpu                                        ;
@@ -174,28 +174,28 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                              ;
-+----------------------------------+-----------------+-----------------------+------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type             ; File Name with Absolute Path                                                 ; Library ;
-+----------------------------------+-----------------+-----------------------+------------------------------------------------------------------------------+---------+
-; components/comparador_4bits.vhd  ; yes             ; User VHDL File        ; D:/Documents/GitHub/pR0C3Ss0r/processor 3.75/components/comparador_4bits.vhd ;         ;
-; components/bin_to_disp.vhd       ; yes             ; User VHDL File        ; D:/Documents/GitHub/pR0C3Ss0r/processor 3.75/components/bin_to_disp.vhd      ;         ;
-; components/bin2bcd_12bit.vhd     ; yes             ; User VHDL File        ; D:/Documents/GitHub/pR0C3Ss0r/processor 3.75/components/bin2bcd_12bit.vhd    ;         ;
-; dp.vhdl                          ; yes             ; User VHDL File        ; D:/Documents/GitHub/pR0C3Ss0r/processor 3.75/dp.vhdl                         ;         ;
-; ctrl.vhdl                        ; yes             ; User VHDL File        ; D:/Documents/GitHub/pR0C3Ss0r/processor 3.75/ctrl.vhdl                       ;         ;
-; cpu.vhdl                         ; yes             ; User VHDL File        ; D:/Documents/GitHub/pR0C3Ss0r/processor 3.75/cpu.vhdl                        ;         ;
-; components/FFJK.vhd              ; yes             ; User VHDL File        ; D:/Documents/GitHub/pR0C3Ss0r/processor 3.75/components/FFJK.vhd             ;         ;
-; components/reg4bits.vhd          ; yes             ; User VHDL File        ; D:/Documents/GitHub/pR0C3Ss0r/processor 3.75/components/reg4bits.vhd         ;         ;
-; components/mux8x1_4bits.vhd      ; yes             ; User VHDL File        ; D:/Documents/GitHub/pR0C3Ss0r/processor 3.75/components/mux8x1_4bits.vhd     ;         ;
-; components/FullAdder.vhd         ; yes             ; User VHDL File        ; D:/Documents/GitHub/pR0C3Ss0r/processor 3.75/components/FullAdder.vhd        ;         ;
-; components/adder4bits.vhd        ; yes             ; User VHDL File        ; D:/Documents/GitHub/pR0C3Ss0r/processor 3.75/components/adder4bits.vhd       ;         ;
-; components/subtractor4bits.vhd   ; yes             ; User VHDL File        ; D:/Documents/GitHub/pR0C3Ss0r/processor 3.75/components/subtractor4bits.vhd  ;         ;
-; components/mux4x1_4bits.vhd      ; yes             ; User VHDL File        ; D:/Documents/GitHub/pR0C3Ss0r/processor 3.75/components/mux4x1_4bits.vhd     ;         ;
-; components/decoder2x4.vhd        ; yes             ; User VHDL File        ; D:/Documents/GitHub/pR0C3Ss0r/processor 3.75/components/decoder2x4.vhd       ;         ;
-; components/opcode_decoder.vhd    ; yes             ; User VHDL File        ; D:/Documents/GitHub/pR0C3Ss0r/processor 3.75/components/opcode_decoder.vhd   ;         ;
-; comparador_full.vhd              ; yes             ; Auto-Found VHDL File  ; d:/documents/github/pr0c3ss0r/processor 3.75/components/comparador_full.vhd  ;         ;
-+----------------------------------+-----------------+-----------------------+------------------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                             ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                      ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------+---------+
+; components/comparador_full.vhd   ; yes             ; User VHDL File  ; /home/linksnow/workspace/pR0C3Ss0r/processor 3.75/components/comparador_full.vhd  ;         ;
+; components/comparador_4bits.vhd  ; yes             ; User VHDL File  ; /home/linksnow/workspace/pR0C3Ss0r/processor 3.75/components/comparador_4bits.vhd ;         ;
+; components/bin_to_disp.vhd       ; yes             ; User VHDL File  ; /home/linksnow/workspace/pR0C3Ss0r/processor 3.75/components/bin_to_disp.vhd      ;         ;
+; components/bin2bcd_12bit.vhd     ; yes             ; User VHDL File  ; /home/linksnow/workspace/pR0C3Ss0r/processor 3.75/components/bin2bcd_12bit.vhd    ;         ;
+; dp.vhdl                          ; yes             ; User VHDL File  ; /home/linksnow/workspace/pR0C3Ss0r/processor 3.75/dp.vhdl                         ;         ;
+; ctrl.vhdl                        ; yes             ; User VHDL File  ; /home/linksnow/workspace/pR0C3Ss0r/processor 3.75/ctrl.vhdl                       ;         ;
+; cpu.vhdl                         ; yes             ; User VHDL File  ; /home/linksnow/workspace/pR0C3Ss0r/processor 3.75/cpu.vhdl                        ;         ;
+; components/FFJK.vhd              ; yes             ; User VHDL File  ; /home/linksnow/workspace/pR0C3Ss0r/processor 3.75/components/FFJK.vhd             ;         ;
+; components/reg4bits.vhd          ; yes             ; User VHDL File  ; /home/linksnow/workspace/pR0C3Ss0r/processor 3.75/components/reg4bits.vhd         ;         ;
+; components/mux8x1_4bits.vhd      ; yes             ; User VHDL File  ; /home/linksnow/workspace/pR0C3Ss0r/processor 3.75/components/mux8x1_4bits.vhd     ;         ;
+; components/FullAdder.vhd         ; yes             ; User VHDL File  ; /home/linksnow/workspace/pR0C3Ss0r/processor 3.75/components/FullAdder.vhd        ;         ;
+; components/adder4bits.vhd        ; yes             ; User VHDL File  ; /home/linksnow/workspace/pR0C3Ss0r/processor 3.75/components/adder4bits.vhd       ;         ;
+; components/subtractor4bits.vhd   ; yes             ; User VHDL File  ; /home/linksnow/workspace/pR0C3Ss0r/processor 3.75/components/subtractor4bits.vhd  ;         ;
+; components/mux4x1_4bits.vhd      ; yes             ; User VHDL File  ; /home/linksnow/workspace/pR0C3Ss0r/processor 3.75/components/mux4x1_4bits.vhd     ;         ;
+; components/decoder2x4.vhd        ; yes             ; User VHDL File  ; /home/linksnow/workspace/pR0C3Ss0r/processor 3.75/components/decoder2x4.vhd       ;         ;
+; components/opcode_decoder.vhd    ; yes             ; User VHDL File  ; /home/linksnow/workspace/pR0C3Ss0r/processor 3.75/components/opcode_decoder.vhd   ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------+
@@ -532,9 +532,21 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Sat Dec 09 04:54:48 2017
+    Info: Processing started: Sat Dec  9 20:18:30 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off processador -c processador
 Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file components/reg8bits.vhd
+    Info (12022): Found design unit 1: reg8bits-hardware
+    Info (12023): Found entity 1: reg8bits
+Info (12021): Found 2 design units, including 1 entities, in source file components/divisor_freq.vhd
+    Info (12022): Found design unit 1: divisor_freq-hardware
+    Info (12023): Found entity 1: divisor_freq
+Info (12021): Found 2 design units, including 1 entities, in source file components/comparador_full.vhd
+    Info (12022): Found design unit 1: comparador_full-hardware
+    Info (12023): Found entity 1: comparador_full
+Info (12021): Found 2 design units, including 1 entities, in source file components/BinToBCD_8bits.vhd
+    Info (12022): Found design unit 1: BinToBCD_8bits-behavior
+    Info (12023): Found entity 1: BinToBCD_8bits
 Info (12021): Found 2 design units, including 1 entities, in source file components/comparador_4bits.vhd
     Info (12022): Found design unit 1: comparador_4bits-hardware
     Info (12023): Found entity 1: comparador_4bits
@@ -557,7 +569,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file ctrl.vh
 Info (12021): Found 2 design units, including 1 entities, in source file cpu.vhdl
     Info (12022): Found design unit 1: cpu-struc
     Info (12023): Found entity 1: cpu
-Info (12021): Found 2 design units, including 1 entities, in source file components/ffjk.vhd
+Info (12021): Found 2 design units, including 1 entities, in source file components/FFJK.vhd
     Info (12022): Found design unit 1: FFJK-hardware
     Info (12023): Found entity 1: FFJK
 Info (12021): Found 2 design units, including 1 entities, in source file components/reg4bits.vhd
@@ -566,7 +578,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file compone
 Info (12021): Found 2 design units, including 1 entities, in source file components/mux8x1_4bits.vhd
     Info (12022): Found design unit 1: mux8x1_4bits-config
     Info (12023): Found entity 1: mux8x1_4bits
-Info (12021): Found 2 design units, including 1 entities, in source file components/fulladder.vhd
+Info (12021): Found 2 design units, including 1 entities, in source file components/FullAdder.vhd
     Info (12022): Found design unit 1: FullAdder-hardware
     Info (12023): Found entity 1: FullAdder
 Info (12021): Found 2 design units, including 1 entities, in source file components/adder4bits.vhd
@@ -584,7 +596,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file compone
 Info (12021): Found 2 design units, including 1 entities, in source file components/decoder2x4.vhd
     Info (12022): Found design unit 1: decoder2x4-hardware
     Info (12023): Found entity 1: decoder2x4
-Info (12021): Found 2 design units, including 1 entities, in source file components/vector_to_integer.vhd
+Info (12021): Found 2 design units, including 1 entities, in source file components/Vector_to_integer.vhd
     Info (12022): Found design unit 1: Vector_to_integer-behavior
     Info (12023): Found entity 1: Vector_to_integer
 Info (12021): Found 2 design units, including 1 entities, in source file components/opcode_decoder.vhd
@@ -621,9 +633,6 @@ Warning (10492): VHDL Process Statement warning at mux4x1_4bits.vhd(26): signal 
 Warning (10492): VHDL Process Statement warning at mux4x1_4bits.vhd(28): signal "A2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10492): VHDL Process Statement warning at mux4x1_4bits.vhd(30): signal "A3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Info (12128): Elaborating entity "comparador_4bits" for hierarchy "dp:datapath|comparador_4bits:IFZERO"
-Warning (12125): Using design file components/comparador_full.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info (12022): Found design unit 1: comparador_full-hardware
-    Info (12023): Found entity 1: comparador_full
 Info (12128): Elaborating entity "comparador_full" for hierarchy "dp:datapath|comparador_4bits:IFZERO|comparador_full:comp_0"
 Info (12128): Elaborating entity "bin2bcd_12bit" for hierarchy "bin2bcd_12bit:bin2bcd"
 Info (12128): Elaborating entity "bin_to_disp" for hierarchy "bin_to_disp:bin_decoder_ones"
@@ -656,10 +665,10 @@ Info (21057): Implemented 154 device resources after synthesis - the final resou
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 46 output pins
     Info (21061): Implemented 106 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 40 warnings
-    Info: Peak virtual memory: 554 megabytes
-    Info: Processing ended: Sat Dec 09 04:54:51 2017
-    Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:03
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 39 warnings
+    Info: Peak virtual memory: 637 megabytes
+    Info: Processing ended: Sat Dec  9 20:18:32 2017
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
 
 

@@ -11,7 +11,7 @@ entity cpu is
 			
 			output        : out STD_LOGIC_VECTOR (3 downto 0);
 			
-			
+			-- opcode
 			OPCdisp0      : out std_LOGIC_VECTOR(6 downto 0);
 			OPCdisp1      : out std_LOGIC_VECTOR(6 downto 0);
 			OPCdisp2      : out std_LOGIC_VECTOR(6 downto 0);
