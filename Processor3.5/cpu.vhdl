@@ -10,7 +10,6 @@ entity cpu is
          clk           : in STD_LOGIC;
 			
 			output        : out STD_LOGIC_VECTOR (3 downto 0);
-<<<<<<< HEAD
 			
        	a,b,c,d,e,f,g : out std_logic;
 			
@@ -25,9 +24,6 @@ entity cpu is
 			display1      : out std_LOGIC_VECTOR(6 downto 0)
 			
 			-- add ports as required
-=======
-			OPCODE        : out std_LOGIC_VECTOR(3 downto 0)
->>>>>>> 11aee444fe1828aa9ab10ba64b08b77acfe15462
         );
 end cpu;
 
@@ -50,9 +46,7 @@ component ctrl
 			
 			Alu_SW    : out std_logic_vector(2 downto 0);
 			SW_In_ACC : out std_logic_vector(1 downto 0);
-         imm       : out std_logic_vector(3 downto 0);
-			
-			code      : out std_logic_vector(3 downto 0)
+         imm       : out std_logic_vector(3 downto 0)
           -- add ports as required
 		   
 		  );
@@ -119,10 +113,10 @@ signal RF_W_addr: std_LOGIC_VECTOR(1 downto 0);
 signal RF_R_addr: std_LOGIC_vector(1 downto 0);
 signal RF_clr   : std_LOGIC;
 
-signal acc_clr  : std_LOGIC;
-signal acc_ld   : std_LOGIC;
+signal acc_clr : std_LOGIC;
+signal acc_ld  : std_LOGIC;
 
-signal SW_ALU   : std_LOGIC_VECTOR(2 downto 0);
+signal SW_ALU  : std_LOGIC_VECTOR(2 downto 0);
 signal SW_in_ACC: std_LOGIC_VECTOR(1 downto 0);
 
 signal void0   : std_LOGIC_VECTOR(3 downto 0);
@@ -134,7 +128,6 @@ signal actual_instruction : std_LOGIC_VECTOR(3 downto 0);
 
 begin
 
-<<<<<<< HEAD
   controller: ctrl port map(start => start, clk => clk, now_inst=> actual_instruction, RF_wr => RF_wr, RF_rd => RF_rd, RF_clr => RF_clr, RF_W_addr => RF_W_addr, RF_R_addr => RF_R_addr, acc_clr => acc_clr, acc_ld => acc_ld, ALU_SW => SW_ALU, SW_in_ACC => SW_in_ACC,  imm => immediate);
   
   datapath: dp port map(SW_I_ACC => SW_In_ACC, SW_ALU => SW_ALU, rst => RF_clr, clk => clk, acc_ld => acc_ld, acc_clr => acc_clr, RF_wr => RF_Wr, RF_rd => RF_rd, R_addr => RF_R_addr, W_addr => RF_W_addr, imm => immediate, output_4 => cpu_out);
@@ -152,12 +145,6 @@ begin
   -- opcode decoder
   
   decoder_opcode: opcode_decoder port map ( opcode => actual_instruction, disp0 => OPCdisp0, disp1 => OPCdisp1, disp2 => OPCdisp2, disp3 => OPCdisp3);
-=======
-  controller: ctrl port map(start => start, clk => not clk, RF_wr => RF_wr, RF_rd => RF_rd, RF_clr => RF_clr, RF_W_addr => RF_W_addr, RF_R_addr => RF_R_addr, acc_clr => acc_clr, acc_ld => acc_ld, ALU_SW => SW_ALU, SW_in_ACC => SW_in_ACC,  imm => immediate, code => OPCODE);
-  
-  datapath: dp port map(SW_I_ACC => SW_In_ACC, SW_ALU => SW_ALU, rst => RF_clr, clk => not clk, acc_ld => acc_ld, acc_clr => acc_clr, RF_wr => RF_Wr, RF_rd => RF_rd, R_addr => RF_R_addr, W_addr => RF_W_addr, imm => immediate, output_4 => output);
-  			
->>>>>>> 11aee444fe1828aa9ab10ba64b08b77acfe15462
 
 end struc;
 

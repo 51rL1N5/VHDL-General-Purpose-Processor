@@ -19,7 +19,7 @@ begin
 	process(clk_in,contagem)
 	begin
 		if(clk_in'event and clk_in = '1') then
-			if(contagem = 524288) then
+			if(contagem = 25000000) then
 				estado <= not estado;
 				contagem <= 1;
 			else

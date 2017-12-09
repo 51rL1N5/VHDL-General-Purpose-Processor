@@ -24,16 +24,14 @@ entity ctrl is
 			
 			Alu_SW    : out std_logic_vector(2 downto 0);
 			SW_In_ACC : out std_logic_vector(1 downto 0);
-         imm       : out std_logic_vector(3 downto 0);
-			
-			code      : out std_logic_vector(3 downto 0)
+         imm       : out std_logic_vector(3 downto 0)
 			-- you will need to add more ports here as design grows
        );
 end ctrl;
 
 architecture fsm of ctrl is
   type state_type is (init,fetch,Decod,done);
-  signal state : state_type;		
+  signal state : state_type; 		
 
 	-- constants declared for ease of reading code
 	
@@ -126,7 +124,6 @@ begin
 			 acc_ld  <= '0';
 			 acc_clr <= '0';
           
-			 code  <= OPCODE;
 			 state <= Decod;
 	
         when Decod =>			-- decode instruction
