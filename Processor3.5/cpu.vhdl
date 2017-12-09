@@ -11,8 +11,19 @@ entity cpu is
 			
 			output        : out STD_LOGIC_VECTOR (3 downto 0);
 			
-       	a,b,c,d,e,f,g : out std_logic
-          -- add ports as required
+       	a,b,c,d,e,f,g : out std_logic;
+			
+			
+			OPCdisp0      : out std_LOGIC_VECTOR(6 downto 0);
+			OPCdisp1      : out std_LOGIC_VECTOR(6 downto 0);
+			OPCdisp2      : out std_LOGIC_VECTOR(6 downto 0);
+			OPCdisp3      : out std_LOGIC_VECTOR(6 downto 0);
+			
+			-- result
+         display0      : out std_LOGIC_VECTOR(6 downto 0);
+			display1      : out std_LOGIC_VECTOR(6 downto 0)
+			
+			-- add ports as required
         );
 end cpu;
 
@@ -22,7 +33,7 @@ component ctrl
    port ( 		
 			start     : in STD_LOGIC;
          clk       : in STD_LOGIC;
-			
+			now_inst  : out std_logic_vector(3 downto 0);
 			
 			RF_wr     : out std_LOGIC;
 			RF_rd     : out std_LOGIC;
@@ -62,6 +73,37 @@ component dp
         );
 end component;
 
+component bin2bcd_12bit is
+	port
+	(
+		binIN     : in  STD_LOGIC_VECTOR (11 downto 0);
+      ones      : out  STD_LOGIC_VECTOR (3 downto 0);
+      tens      : out  STD_LOGIC_VECTOR (3 downto 0);
+      hundreds  : out  STD_LOGIC_VECTOR (3 downto 0);
+      thousands : out  STD_LOGIC_VECTOR (3 downto 0)
+	);
+end component;
+
+component bin_to_disp is
+	port
+	(
+		a   :  in std_logic_vector(3 downto 0);
+		disp: out std_logic_vector(6 downto 0)
+	);
+end component;
+
+component opcode_decoder is
+	port
+	(
+		opcode : in std_logic_vector(3 downto 0);
+		
+		disp0  : out std_logic_vector(6 downto 0);
+		disp1  : out std_logic_vector(6 downto 0);
+		disp2  : out std_logic_vector(6 downto 0);
+		disp3  : out std_logic_vector(6 downto 0)
+	);
+end component;
+
 signal immediate : std_logic_vector(3 downto 0);
 signal cpu_out  : std_logic_vector(3 downto 0);
 
@@ -77,115 +119,32 @@ signal acc_ld  : std_LOGIC;
 signal SW_ALU  : std_LOGIC_VECTOR(2 downto 0);
 signal SW_in_ACC: std_LOGIC_VECTOR(1 downto 0);
 
+signal void0   : std_LOGIC_VECTOR(3 downto 0);
+signal void1   : std_LOGIC_VECTOR(3 downto 0);
+signal tens_tmp: std_LOGIC_VECTOR(3 downto 0);
+signal ones_tmp: std_LOGIC_VECTOR(3 downto 0);
+
+signal actual_instruction : std_LOGIC_VECTOR(3 downto 0);
 
 begin
 
--- notice how the output from the datapath is tied to a signal
--- this output signal is then used as input for a decoder.
--- we can also see the output as "output".
--- the output from the datapath should be coming from the accumulator.
--- this is because all actions take place on the accumulator, including
--- all results of any alu operation. naturally, this is because of the 
--- nature of the instruction set.
-
-  controller: ctrl port map(start => start, clk => clk, RF_wr => RF_wr, RF_rd => RF_rd, RF_clr => RF_clr, RF_W_addr => RF_W_addr, RF_R_addr => RF_R_addr, acc_clr => acc_clr, acc_ld => acc_ld, ALU_SW => SW_ALU, SW_in_ACC => SW_in_ACC,  imm => immediate);
+  controller: ctrl port map(start => start, clk => clk, now_inst=> actual_instruction, RF_wr => RF_wr, RF_rd => RF_rd, RF_clr => RF_clr, RF_W_addr => RF_W_addr, RF_R_addr => RF_R_addr, acc_clr => acc_clr, acc_ld => acc_ld, ALU_SW => SW_ALU, SW_in_ACC => SW_in_ACC,  imm => immediate);
   
   datapath: dp port map(SW_I_ACC => SW_In_ACC, SW_ALU => SW_ALU, rst => RF_clr, clk => clk, acc_ld => acc_ld, acc_clr => acc_clr, RF_wr => RF_Wr, RF_rd => RF_rd, R_addr => RF_R_addr, W_addr => RF_W_addr, imm => immediate, output_4 => cpu_out);
   
   output <= cpu_out;
   
-  process(clk, cpu_out)
-  begin
-    -- take care of rst case here
-
-    if(clk'event and clk='1') then
-    -- this acts like a BCD to 7-segment decoder,
-    -- can see output in waveforms as cpu_out
-       case cpu_out is
-         when "0000" =>
-           a <= '0'; 
-			  b <= '0'; 
-			  c <= '0'; 
-			  d <= '0'; 
-           e <= '0'; 
-			  f <= '0'; 
-			  g <= '1';
-         when "0001" =>
-           a <= '1'; 
-			  b <= '0'; 
-			  c <= '0'; 
-			  d <= '1'; 
-           e <= '1'; 
-			  f <= '1'; 
-			  g <= '1';
-         when "0010" =>
-			  a <= '0'; 
-			  b <= '0'; 
-			  c <= '1'; 
-			  d <= '0'; 
-           e <= '0'; 
-			  f <= '1'; 
-			  g <= '0';
-         when "0011" =>
-           a <= '0'; 
-			  b <= '0'; 
-			  c <= '0'; 
-			  d <= '0'; 
-           e <= '1'; 
-			  f <= '1'; 
-			  g <= '0';
-         when "0100" =>
-           a <= '1'; 
-			  b <= '0'; 
-			  c <= '0'; 
-			  d <= '1'; 
-           e <= '1'; 
-			  f <= '0'; 
-			  g <= '0';
-         when "0101" =>
-           a <= '0'; 
-			  b <= '1'; 
-			  c <= '0'; 
-			  d <= '0'; 
-           e <= '1'; 
-			  f <= '0'; 
-			  g <= '0';
-         when "0110" =>
-           a <= '0'; 
-			  b <= '1'; 
-			  c <= '0'; 
-			  d <= '0'; 
-           e <= '0'; 
-			  f <= '0'; 
-			  g <= '0';
-         when "0111" =>
-           a <= '0'; 
-			  b <= '0'; 
-			  c <= '0'; 
-			  d <= '1'; 
-           e <= '1'; 
-			  f <= '1'; 
-			  g <= '1';
-         when "1000" =>
-           a <= '0'; 
-			  b <= '0'; 
-			  c <= '0'; 
-			  d <= '0'; 
-           e <= '0'; 
-			  f <= '0'; 
-			  g <= '0';
-         when "1001" =>
-           a <= '0'; 
-			  b <= '0'; 
-			  c <= '0'; 
-			  d <= '0'; 
-           e <= '0'; 
-			  f <= '1'; 
-			  g <= '0';
-         when others =>
-       end case;
-    end if;
-  end process;							
+  
+  -- result
+  bin2bcd: bin2bcd_12bit port map( binIN => "00000000" & cpu_out , ones => ones_tmp , tens => tens_tmp , hundreds => void0 , thousands => void1);
+  
+  
+  bin_decoder_ones: bin_to_disp port map (a => ones_tmp, disp => display0);
+  bin_decoder_tens: bin_to_disp port map (a => tens_tmp, disp => display1);
+  
+  -- opcode decoder
+  
+  decoder_opcode: opcode_decoder port map ( opcode => actual_instruction, disp0 => OPCdisp0, disp1 => OPCdisp1, disp2 => OPCdisp2, disp3 => OPCdisp3);
 
 end struc;
 

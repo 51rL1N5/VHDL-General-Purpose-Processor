@@ -10,6 +10,7 @@ entity ctrl is
 			
          start     : in STD_LOGIC;
          clk       : in STD_LOGIC;
+			now_inst  : out std_logic_vector(3 downto 0);
 			
 			
 			RF_wr     : out std_LOGIC;
@@ -132,19 +133,24 @@ begin
               imm       <= address;               
 				  Sw_In_ACC <= "00";                              
               acc_ld <= '1';
-			     
+			     now_inst <= load;
+				  
 				  state <= fetch;
 				when mova =>
 				  RF_R_addr <= Address(3 downto 2);
 				  RF_rd     <= '1';
 				  SW_In_ACC <= "01";
 				  acc_ld    <= '1';
-			 
+				  
+				  now_inst  <= mova;
+					
 				  state <= fetch;
 				when movr =>
 					
 					RF_W_addr <= AddRESS(3 downto 2);
 					RF_wr     <= '1';
+					
+					now_inst  <= movr;
 					
 					state <= fetch;
 				when add =>
@@ -153,6 +159,8 @@ begin
 					alu_SW    <= A_sum_B;
 					SW_In_ACC <= "10"; --novo
 					acc_ld    <= '1';
+					
+					now_inst  <= add;
 			 
 					state <= fetch;
 				when sub =>
@@ -161,6 +169,8 @@ begin
 					alu_SW    <= A_minus_B;
 					SW_In_ACC <= "10"; --novo
 					acc_ld    <= '1';
+					
+					now_inst  <= sub;
 			 
 					state <= fetch;
 				when andr =>
@@ -169,6 +179,8 @@ begin
 					alu_SW    <= A_and_B;
 					SW_In_ACC <= "10"; --novo
 					acc_ld    <= '1';
+					
+					now_inst  <= andr;
 			 
 					state <= fetch;
 				when orr =>
@@ -177,6 +189,8 @@ begin
 					alu_SW    <= A_or_B;
 					SW_In_ACC <= "10"; --novo
 					acc_ld    <= '1';
+					
+					now_inst <= orr;
 			 
 					state <= fetch;
 				when jmp =>
@@ -195,11 +209,15 @@ begin
 						PC := PC + 8;
 					end if;
 					
+					now_inst <= jmp;
+					
 					state <= fetch;
 				when inv =>
 					acc_ld    <= '1';
 					alu_SW    <= not_A;
 					SW_In_ACC <= "10"; 
+					
+					now_inst <= inv;
 			 
 					state <= fetch;
 				when xorr =>							-- novo
@@ -207,20 +225,28 @@ begin
 					alu_SW    <= A_xor_B;
 					SW_In_ACC <= "10"; 
 					
+					now_inst <= xorr;
+					
 					state <= fetch;
 				when xnorr =>  						-- novo
 					acc_ld    <= '1';
 					alu_SW    <= A_xnor_B;
 					SW_In_ACC <= "10"; 
 			 
+					now_inst  <= xnorr;
+			 
 					state <= fetch;
 				when nandr =>							-- novo
 					acc_ld    <= '1';
 					alu_SW    <= A_nand_B;
 					SW_In_ACC <= "10";
+					
+					now_inst  <= nandr;
 			 
 					state <= fetch;
 				when halt =>
+				  now_inst <= halt;
+				  
 				  state <= done;
             when others =>
               state <= fetch;  -- desse modo ele ignora um comando nao cadastrado
