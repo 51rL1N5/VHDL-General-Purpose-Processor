@@ -1,5 +1,5 @@
 Analysis & Synthesis report for processador
-Sat Dec  9 02:20:11 2017
+Sat Dec  9 03:04:49 2017
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -62,7 +62,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Dec  9 02:20:11 2017      ;
+; Analysis & Synthesis Status        ; Successful - Sat Dec  9 03:04:49 2017      ;
 ; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
 ; Revision Name                      ; processador                                ;
 ; Top-level Entity Name              ; cpu                                        ;
@@ -518,7 +518,7 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Sat Dec  9 02:20:09 2017
+    Info: Processing started: Sat Dec  9 03:04:47 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off processador -c processador
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file components/bin_to_disp.vhd
@@ -649,8 +649,8 @@ Info (21057): Implemented 156 device resources after synthesis - the final resou
     Info (21059): Implemented 53 output pins
     Info (21061): Implemented 101 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 53 warnings
-    Info: Peak virtual memory: 633 megabytes
-    Info: Processing ended: Sat Dec  9 02:20:11 2017
+    Info: Peak virtual memory: 637 megabytes
+    Info: Processing ended: Sat Dec  9 03:04:49 2017
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 
