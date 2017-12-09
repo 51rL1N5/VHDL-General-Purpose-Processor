@@ -145,7 +145,7 @@ begin
   -- opcode decoder
   
   decoder_opcode: opcode_decoder port map ( opcode => actual_instruction, disp0 => OPCdisp0, disp1 => OPCdisp1, disp2 => OPCdisp2, disp3 => OPCdisp3);
-
+--
 end struc;
 
 
