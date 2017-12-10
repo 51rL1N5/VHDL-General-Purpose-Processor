@@ -1,7 +1,0 @@
-
-State Machine - |cpu|ctrl:controller|state
-Name state.done state.Decod state.fetch state.init 
-state.init 0 0 0 0 
-state.fetch 0 0 1 1 
-state.Decod 0 1 0 1 
-state.done 1 0 0 1 
