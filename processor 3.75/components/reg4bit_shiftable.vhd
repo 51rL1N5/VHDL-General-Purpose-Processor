@@ -70,7 +70,7 @@ begin
 	FF0: FFJK port map ( j => aux1_FF0, k => not aux1_FF0, clk => clk, clear => clear, set => set, ld => ld, Q=> outputFF0, Qbar => void(0));
 	
 	muxLFF1: mux2x1_1bit port map (A => input(1), B => outputFF0, SW => shft_l, output => aux0_FF1);
-	muxRFF1: mux2x1_1bit port map (A => aux0_FF0, B => outputFF2, SW => shft_r, output => aux1_FF1);
+	muxRFF1: mux2x1_1bit port map (A => aux0_FF1, B => outputFF2, SW => shft_r, output => aux1_FF1);
 	
 	FF1: FFJK port map ( j => aux1_FF1, k => not aux1_FF1, clk => clk, clear => clear, set => set, ld => ld, Q=> outputFF1, Qbar => void(1));
 	

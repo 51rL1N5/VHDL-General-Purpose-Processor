@@ -1,5 +1,5 @@
 Simulator report for processador
-Sun Dec 10 00:14:25 2017
+Sun Dec 10 00:45:21 2017
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -45,9 +45,9 @@ applicable agreement for further details.
 +-----------------------------+--------------+
 ; Simulation Start Time       ; 0 ps         ;
 ; Simulation End Time         ; 1.0 us       ;
-; Simulation Netlist Size     ; 37 nodes     ;
-; Simulation Coverage         ;      69.44 % ;
-; Total Number of Transitions ; 121          ;
+; Simulation Netlist Size     ; 38 nodes     ;
+; Simulation Coverage         ;      65.79 % ;
+; Total Number of Transitions ; 129          ;
 ; Simulation Breakpoints      ; 0            ;
 ; Family                      ; Cyclone II   ;
 +-----------------------------+--------------+
@@ -94,13 +94,13 @@ Please use Quartus II 64-Bit to view the waveform report data.
 +-----------------------------------------------------+--------------+
 ; Type                                                ; Value        ;
 +-----------------------------------------------------+--------------+
-; Total coverage as a percentage                      ;      69.44 % ;
-; Total nodes checked                                 ; 37           ;
-; Total output ports checked                          ; 36           ;
+; Total coverage as a percentage                      ;      65.79 % ;
+; Total nodes checked                                 ; 38           ;
+; Total output ports checked                          ; 38           ;
 ; Total output ports with complete 1/0-value coverage ; 25           ;
 ; Total output ports with no 1/0-value coverage       ; 7            ;
 ; Total output ports with no 1-value coverage         ; 7            ;
-; Total output ports with no 0-value coverage         ; 11           ;
+; Total output ports with no 0-value coverage         ; 13           ;
 +-----------------------------------------------------+--------------+
 
 
@@ -111,13 +111,13 @@ The following table displays output ports that toggle between 1 and 0 during sim
 ; Node Name                                     ; Output Port Name                              ; Output Port Type ;
 +-----------------------------------------------+-----------------------------------------------+------------------+
 ; |reg4bit_shiftable|input[0]                   ; |reg4bit_shiftable|input[0]                   ; out              ;
+; |reg4bit_shiftable|input[1]                   ; |reg4bit_shiftable|input[1]                   ; out              ;
 ; |reg4bit_shiftable|input[2]                   ; |reg4bit_shiftable|input[2]                   ; out              ;
 ; |reg4bit_shiftable|input[3]                   ; |reg4bit_shiftable|input[3]                   ; out              ;
 ; |reg4bit_shiftable|clk                        ; |reg4bit_shiftable|clk                        ; out              ;
 ; |reg4bit_shiftable|ld                         ; |reg4bit_shiftable|ld                         ; out              ;
 ; |reg4bit_shiftable|shft_l                     ; |reg4bit_shiftable|shft_l                     ; out              ;
 ; |reg4bit_shiftable|output[0]                  ; |reg4bit_shiftable|output[0]                  ; pin_out          ;
-; |reg4bit_shiftable|output[1]                  ; |reg4bit_shiftable|output[1]                  ; pin_out          ;
 ; |reg4bit_shiftable|FFJK:FF3|aux~0             ; |reg4bit_shiftable|FFJK:FF3|aux~0             ; out              ;
 ; |reg4bit_shiftable|FFJK:FF3|aux~1             ; |reg4bit_shiftable|FFJK:FF3|aux~1             ; out              ;
 ; |reg4bit_shiftable|mux2x1_1bit:muxRFF3|output ; |reg4bit_shiftable|mux2x1_1bit:muxRFF3|output ; out              ;
@@ -128,8 +128,8 @@ The following table displays output ports that toggle between 1 and 0 during sim
 ; |reg4bit_shiftable|mux2x1_1bit:muxLFF2|output ; |reg4bit_shiftable|mux2x1_1bit:muxLFF2|output ; out              ;
 ; |reg4bit_shiftable|FFJK:FF1|aux~0             ; |reg4bit_shiftable|FFJK:FF1|aux~0             ; out              ;
 ; |reg4bit_shiftable|FFJK:FF1|aux~1             ; |reg4bit_shiftable|FFJK:FF1|aux~1             ; out              ;
-; |reg4bit_shiftable|FFJK:FF1|aux               ; |reg4bit_shiftable|FFJK:FF1|aux               ; regout           ;
 ; |reg4bit_shiftable|mux2x1_1bit:muxRFF1|output ; |reg4bit_shiftable|mux2x1_1bit:muxRFF1|output ; out              ;
+; |reg4bit_shiftable|mux2x1_1bit:muxLFF1|output ; |reg4bit_shiftable|mux2x1_1bit:muxLFF1|output ; out              ;
 ; |reg4bit_shiftable|FFJK:FF0|aux~0             ; |reg4bit_shiftable|FFJK:FF0|aux~0             ; out              ;
 ; |reg4bit_shiftable|FFJK:FF0|aux~1             ; |reg4bit_shiftable|FFJK:FF0|aux~1             ; out              ;
 ; |reg4bit_shiftable|FFJK:FF0|aux               ; |reg4bit_shiftable|FFJK:FF0|aux               ; regout           ;
@@ -163,12 +163,14 @@ The following table displays output ports that do not toggle to 0 during simulat
 ; |reg4bit_shiftable|clear          ; |reg4bit_shiftable|clear          ; out              ;
 ; |reg4bit_shiftable|set            ; |reg4bit_shiftable|set            ; out              ;
 ; |reg4bit_shiftable|shft_r         ; |reg4bit_shiftable|shft_r         ; out              ;
+; |reg4bit_shiftable|output[1]      ; |reg4bit_shiftable|output[1]      ; pin_out          ;
 ; |reg4bit_shiftable|output[2]      ; |reg4bit_shiftable|output[2]      ; pin_out          ;
 ; |reg4bit_shiftable|output[3]      ; |reg4bit_shiftable|output[3]      ; pin_out          ;
 ; |reg4bit_shiftable|FFJK:FF3|aux   ; |reg4bit_shiftable|FFJK:FF3|aux   ; regout           ;
 ; |reg4bit_shiftable|FFJK:FF3|aux~3 ; |reg4bit_shiftable|FFJK:FF3|aux~3 ; out0             ;
 ; |reg4bit_shiftable|FFJK:FF2|aux   ; |reg4bit_shiftable|FFJK:FF2|aux   ; regout           ;
 ; |reg4bit_shiftable|FFJK:FF2|aux~3 ; |reg4bit_shiftable|FFJK:FF2|aux~3 ; out0             ;
+; |reg4bit_shiftable|FFJK:FF1|aux   ; |reg4bit_shiftable|FFJK:FF1|aux   ; regout           ;
 ; |reg4bit_shiftable|FFJK:FF1|aux~3 ; |reg4bit_shiftable|FFJK:FF1|aux~3 ; out0             ;
 ; |reg4bit_shiftable|FFJK:FF0|aux~3 ; |reg4bit_shiftable|FFJK:FF0|aux~3 ; out0             ;
 +-----------------------------------+-----------------------------------+------------------+
@@ -187,7 +189,7 @@ The following table displays output ports that do not toggle to 0 during simulat
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Simulator
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Sun Dec 10 00:14:25 2017
+    Info: Processing started: Sun Dec 10 00:45:21 2017
 Info: Command: quartus_sim --simulation_results_format=VWF processador -c processador
 Info (324025): Using vector source file "/home/linksnow/workspace/pR0C3Ss0r/processor 3.75/waveforms/reg4bit_shiftable.vwf"
 Info (310003): Option to preserve fewer signal transitions to reduce memory requirements is enabled
@@ -197,12 +199,12 @@ Warning (324036): Found clock-sensitive change during active clock edge at time 
 Warning (324036): Found clock-sensitive change during active clock edge at time 140.0 ns on register "|reg4bit_shiftable|FFJK:FF1|aux"
 Warning (324036): Found clock-sensitive change during active clock edge at time 140.0 ns on register "|reg4bit_shiftable|FFJK:FF0|aux"
 Info (310002): Simulation partitioned into 1 sub-simulations
-Info (328053): Simulation coverage is      69.44 %
-Info (328052): Number of transitions in simulation is 121
+Info (328053): Simulation coverage is      65.79 %
+Info (328052): Number of transitions in simulation is 129
 Info (324045): Vector file processador.sim.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
 Info: Quartus II 64-Bit Simulator was successful. 0 errors, 4 warnings
     Info: Peak virtual memory: 654 megabytes
-    Info: Processing ended: Sun Dec 10 00:14:25 2017
+    Info: Processing ended: Sun Dec 10 00:45:21 2017
     Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:00
 

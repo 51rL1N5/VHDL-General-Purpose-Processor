@@ -298,8 +298,7 @@ TRANSITION_LIST("output[1]")
 	{
 		REPEAT = 1;
 		LEVEL 0 FOR 100.0;
-		LEVEL 1 FOR 160.0;
-		LEVEL 0 FOR 740.0;
+		LEVEL 1 FOR 900.0;
 	}
 }
 
