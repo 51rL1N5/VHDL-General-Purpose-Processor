@@ -1,5 +1,5 @@
 Flow report for processador
-Sun Dec 10 00:45:11 2017
+Sun Dec 10 01:00:18 2017
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -40,22 +40,22 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Flow Summary                                                                    ;
 +------------------------------------+--------------------------------------------+
-; Flow Status                        ; Successful - Sun Dec 10 00:45:11 2017      ;
+; Flow Status                        ; Successful - Sun Dec 10 01:00:18 2017      ;
 ; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
 ; Revision Name                      ; processador                                ;
-; Top-level Entity Name              ; reg4bit_shiftable                          ;
+; Top-level Entity Name              ; cpu                                        ;
 ; Family                             ; Cyclone II                                 ;
-; Total logic elements               ; 16 / 4,608 ( < 1 % )                       ;
-;     Total combinational functions  ; 16 / 4,608 ( < 1 % )                       ;
-;     Dedicated logic registers      ; 4 / 4,608 ( < 1 % )                        ;
-; Total registers                    ; 4                                          ;
-; Total pins                         ; 14 / 89 ( 16 % )                           ;
-; Total virtual pins                 ; 0                                          ;
-; Total memory bits                  ; 0 / 119,808 ( 0 % )                        ;
-; Embedded Multiplier 9-bit elements ; 0 / 26 ( 0 % )                             ;
-; Total PLLs                         ; 0 / 2 ( 0 % )                              ;
-; Device                             ; EP2C5T144C6                                ;
+; Device                             ; EP2C35F672C6                               ;
 ; Timing Models                      ; Final                                      ;
+; Total logic elements               ; 94 / 33,216 ( < 1 % )                      ;
+;     Total combinational functions  ; 78 / 33,216 ( < 1 % )                      ;
+;     Dedicated logic registers      ; 50 / 33,216 ( < 1 % )                      ;
+; Total registers                    ; 50                                         ;
+; Total pins                         ; 48 / 475 ( 10 % )                          ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 0 / 483,840 ( 0 % )                        ;
+; Embedded Multiplier 9-bit elements ; 0 / 70 ( 0 % )                             ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                              ;
 +------------------------------------+--------------------------------------------+
 
 
@@ -64,28 +64,30 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/10/2017 00:45:00 ;
+; Start date & time ; 12/10/2017 01:00:03 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; processador         ;
 +-------------------+---------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                                   ;
-+-------------------------------------+---------------------------------------------------------+---------------+-------------------+----------------+
-; Assignment Name                     ; Value                                                   ; Default Value ; Entity Name       ; Section Id     ;
-+-------------------------------------+---------------------------------------------------------+---------------+-------------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 0.151287750012210                                       ; --            ; --                ; --             ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST     ; On                                                      ; --            ; --                ; eda_simulation ;
-; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                                             ; --            ; --                ; eda_simulation ;
-; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)                               ; <None>        ; --                ; --             ;
-; PARTITION_COLOR                     ; 16764057                                                ; --            ; reg4bit_shiftable ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                                   ; --            ; reg4bit_shiftable ; Top            ;
-; PARTITION_NETLIST_TYPE              ; SOURCE                                                  ; --            ; reg4bit_shiftable ; Top            ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                                            ; --            ; --                ; --             ;
-; SEARCH_PATH                         ; d:\documents\github\pr0c3ss0r\processor 3.75\components ; --            ; --                ; --             ;
-; TOP_LEVEL_ENTITY                    ; reg4bit_shiftable                                       ; processador   ; --                ; --             ;
-+-------------------------------------+---------------------------------------------------------+---------------+-------------------+----------------+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                             ;
++-------------------------------------+---------------------------------------------------------+---------------+-------------+----------------+
+; Assignment Name                     ; Value                                                   ; Default Value ; Entity Name ; Section Id     ;
++-------------------------------------+---------------------------------------------------------+---------------+-------------+----------------+
+; COMPILER_SIGNATURE_ID               ; 0.151287840312860                                       ; --            ; --          ; --             ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST     ; On                                                      ; --            ; --          ; eda_simulation ;
+; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                                             ; --            ; --          ; eda_simulation ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)                               ; <None>        ; --          ; --             ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                                      ; --            ; --          ; --             ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                                       ; --            ; --          ; --             ;
+; PARTITION_COLOR                     ; 16764057                                                ; --            ; cpu         ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                                   ; --            ; cpu         ; Top            ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                                                  ; --            ; cpu         ; Top            ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                                            ; --            ; --          ; --             ;
+; SEARCH_PATH                         ; d:\documents\github\pr0c3ss0r\processor 3.75\components ; --            ; --          ; --             ;
+; TOP_LEVEL_ENTITY                    ; cpu                                                     ; processador   ; --          ; --             ;
++-------------------------------------+---------------------------------------------------------+---------------+-------------+----------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -93,12 +95,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:01     ; 1.0                     ; 598 MB              ; 00:00:01                           ;
-; Fitter                    ; 00:00:02     ; 1.0                     ; 637 MB              ; 00:00:02                           ;
-; Assembler                 ; 00:00:00     ; 1.0                     ; 530 MB              ; 00:00:01                           ;
-; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 505 MB              ; 00:00:00                           ;
-; EDA Netlist Writer        ; 00:00:00     ; 1.0                     ; 782 MB              ; 00:00:00                           ;
-; Total                     ; 00:00:04     ; --                      ; --                  ; 00:00:04                           ;
+; Analysis & Synthesis      ; 00:00:01     ; 1.0                     ; 611 MB              ; 00:00:02                           ;
+; Fitter                    ; 00:00:05     ; 1.0                     ; 720 MB              ; 00:00:05                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 550 MB              ; 00:00:02                           ;
+; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 500 MB              ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:00     ; 1.0                     ; 788 MB              ; 00:00:00                           ;
+; Total                     ; 00:00:08     ; --                      ; --                  ; 00:00:10                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
