@@ -1,3 +1,4 @@
+/* Simulator = Quartus II Simulator */
 /*
 WARNING: Do NOT edit the input and output ports in this file in a text
 editor if you plan to continue editing the block that represents it in
@@ -26,7 +27,7 @@ HEADER
 	TIME_UNIT = ns;
 	DATA_OFFSET = 0.0;
 	DATA_DURATION = 1000.0;
-	SIMULATION_TIME = 1000.0;
+	SIMULATION_TIME = 0.0;
 	GRID_PHASE = 0.0;
 	GRID_PERIOD = 10.0;
 	GRID_DUTY_CYCLE = 50;
@@ -277,8 +278,7 @@ TRANSITION_LIST("output[3]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 100.0;
-		LEVEL 1 FOR 900.0;
+		LEVEL X FOR 1000.0;
 	}
 }
 
@@ -287,8 +287,7 @@ TRANSITION_LIST("output[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 100.0;
-		LEVEL 1 FOR 900.0;
+		LEVEL X FOR 1000.0;
 	}
 }
 
@@ -297,9 +296,7 @@ TRANSITION_LIST("output[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 100.0;
-		LEVEL 1 FOR 160.0;
-		LEVEL 0 FOR 740.0;
+		LEVEL X FOR 1000.0;
 	}
 }
 
@@ -308,9 +305,7 @@ TRANSITION_LIST("output[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 100.0;
-		LEVEL 1 FOR 160.0;
-		LEVEL 0 FOR 740.0;
+		LEVEL X FOR 1000.0;
 	}
 }
 

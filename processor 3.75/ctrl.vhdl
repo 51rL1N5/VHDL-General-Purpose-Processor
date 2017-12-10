@@ -74,8 +74,8 @@ architecture fsm of ctrl is
 	constant PM : PM_BLOCK := (	
 
    --"OPCOD | aaaa"
-	  load & "0000",
-	  movr & "1000",
+	  load & "0000",    -- Acc = 0000
+	  movr & "1000",	  -- R[10] = Acc
 	  jmpz & "1001",    -- if R[10] = 0, pule pra l1
 	  load & "1111",    -- l0
 	  load & "0000",    -- l1

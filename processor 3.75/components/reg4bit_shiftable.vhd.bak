@@ -1,0 +1,65 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity reg4bit_shiftable is
+	port
+	(
+		input  : in std_logic_vector (3 downto 0);
+		clk    : in std_logic;
+		clear  : in std_logic;
+		set    : in std_logic;
+		ld     : in std_logic;
+		shft_r : in std_logic;
+		shft_l : in std_logic;
+		output : out std_logic_vector (3 downto 0)
+	);
+end reg4bit_shiftable;
+
+architecture hardware of reg4bit_shiftable is
+
+	component mux2x1_4bits is
+		port
+		(
+			A      : in std_logic_vector(3 downto 0);
+			B      : in std_logic_vector(3 downto 0);
+			sw     : in std_logic;
+			output : out std_logic_vector(3 downto 0)
+		);
+	end component;
+
+	component FFJK is
+		port
+		( 
+			j    : in std_logic;
+			k    : in std_logic;
+			clk  : in std_logic;
+			clear: in std_logic;
+			set  : in std_logic;
+			ld   : in std_logic;
+			Q    : out std_logic;
+			Qbar : out std_logic
+		);
+	end component;
+
+signal aux0_FF0  : std_logic;
+signal aux1_FF0  : std_logic;
+
+signal outputFF0 : std_logic;
+signal outputFF1 : std_logic;
+signal outputFF2 : std_logic;
+signal outputFF3 : std_logic;
+
+begin
+	
+	muxLFF0: mux2x1_4bits port map (A => input(0),B =>'0' , SW => shft_l, output => aux0_FF0 );
+	muxRFF0: mux2x1_4bits port map (A => aux_FF0, B => outputFF1, SW => shft_r, output => aux1_FF0 );
+	
+	
+	FF0: FFJK port map ( j => aux1_FF0, k => not input(0), clk => clk, clear => clear, set => set, ld => ld, Q=> outputFF0, Qbar => void(0));
+	FF1: FFJK port map ( j => input(1), k => not input(1), clk => clk, clear => clear, set => set, ld => ld, Q=> outputFF1, Qbar => void(1));
+	FF2: FFJK port map ( j => input(2), k => not input(2), clk => clk, clear => clear, set => set, ld => ld, Q=> outputFF2, Qbar => void(2));
+	FF3: FFJK port map ( j => input(3), k => not input(3), clk => clk, clear => clear, set => set, ld => ld, Q=> outputFF3, Qbar => void(3));
+	
+	
+
+end hardware;

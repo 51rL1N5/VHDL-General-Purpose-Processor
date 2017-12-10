@@ -38,7 +38,7 @@
 
 set_global_assignment -name FAMILY "Cyclone II"
 set_global_assignment -name DEVICE AUTO
-set_global_assignment -name TOP_LEVEL_ENTITY cpu
+set_global_assignment -name TOP_LEVEL_ENTITY reg4bit_shiftable
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 13.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "13:18:41  NOVEMBER 29, 2017"
 set_global_assignment -name LAST_QUARTUS_VERSION 13.0
@@ -49,10 +49,6 @@ set_global_assignment -name SIMULATION_MODE FUNCTIONAL
 set_global_assignment -name VECTOR_OUTPUT_FORMAT VWF
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST ON -section_id eda_simulation
 set_global_assignment -name SEARCH_PATH "d:\\documents\\github\\pr0c3ss0r\\processor 3.75\\components"
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE "/home/linksnow/workspace/pR0C3Ss0r/processor 3.75/teste_JMPZ.vwf"
 set_global_assignment -name VHDL_FILE components/reg8bits.vhd
 set_global_assignment -name VHDL_FILE components/divisor_freq.vhd
 set_global_assignment -name VHDL_FILE components/comparador_full.vhd
@@ -79,4 +75,11 @@ set_global_assignment -name VECTOR_WAVEFORM_FILE cpu_teste_0.vwf
 set_global_assignment -name VHDL_FILE components/opcode_decoder.vhd
 set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE teste_JMPZ.vwf
+set_global_assignment -name VHDL_FILE components/reg4bit_shiftable.vhd
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name VHDL_FILE components/mux2x1_1bit.vhd
+set_global_assignment -name VECTOR_WAVEFORM_FILE waveforms/reg4bit_shiftable.vwf
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE "/home/linksnow/workspace/pR0C3Ss0r/processor 3.75/waveforms/reg4bit_shiftable.vwf"
