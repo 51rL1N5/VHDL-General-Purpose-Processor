@@ -19,12 +19,16 @@ entity ctrl is
 			RF_R_addr : out std_logic_vector(1 downto 0);
 			RF_clr    : out STD_LOGIC;
 			
-			acc_clr   : out std_LOGIC;
-			acc_ld    : out std_LOGIC;
+			acc_clr    : out std_LOGIC;
+			acc_ld     : out std_LOGIC;
+			acc_shift_l: out std_LOGIC;	--novo
+			acc_shift_r: out std_LOGIC;   --novo
 			
 			Alu_SW    : out std_logic_vector(2 downto 0);
 			SW_In_ACC : out std_logic_vector(1 downto 0);
          imm       : out std_logic_vector(3 downto 0);
+			
+			
 			
 			RF_zero   : in std_logic						   -- novo
 			-- you will need to add more ports here as design grows
@@ -54,6 +58,8 @@ architecture fsm of ctrl is
 	constant xnorr   : std_logic_vector(3 downto 0) := "1011"; -- novo
 	constant nandr   : std_logic_vector(3 downto 0) := "1100"; -- novo
 	constant jmpz    : std_logic_vector(3 downto 0) := "1101"; -- novo
+	constant SHFL    : std_LOGIC_vector(3 downto 0) := "1110"; -- novo
+   constant SHFR    : std_LOGIC_vector(3 downto 0) := "1111"; -- novo
 	
 	
 	-- Alu switches PLUS
@@ -70,17 +76,14 @@ architecture fsm of ctrl is
 
 	-- as you add more code for your algorithms make sure to increase the
 	-- array size. ie. 2 lines of code here, means array size of 0 to 1.
-	type PM_BLOCK is array (0 to 5) of std_logic_vector(7 downto 0);
+	type PM_BLOCK is array (0 to 2) of std_logic_vector(7 downto 0);
 	constant PM : PM_BLOCK := (	
 
    --"OPCOD | aaaa"
-	  load & "0000",    -- Acc = 0000
-	  movr & "1000",	  -- R[10] = Acc
-	  jmpz & "1001",    -- if R[10] = 0, pule pra l1
-	  load & "1111",    -- l0
-	  load & "0000",    -- l1
+	  load  & "0010",
+	  SHFL  & "0000",
 	 
-	 HALT & "1111"		-- halt
+	  HALT & "1111"		-- halt
     );
   	
 	signal tmp : integer;
@@ -257,6 +260,16 @@ begin
 					RF_R_addr <= Address(3 downto 2);
 					
 					state <= jmp_if_zero_jmp;
+				when SHFL =>
+					acc_ld      <= '1';
+					acc_shift_l <= '1';
+					
+					state <= fetch;
+				when SHFR =>
+					acc_ld      <= '1';
+					acc_shift_r <= '1';
+					
+					state <= fetch;	
             when others =>
               state <= fetch;  
           end case;

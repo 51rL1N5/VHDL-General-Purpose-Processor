@@ -183,7 +183,10 @@ entity dp is
 			
          imm     : in std_logic_vector(3 downto 0); 
          output_4: out STD_LOGIC_VECTOR (3 downto 0);
-			RF_zero : out std_LOGIC							 -- novo
+			RF_zero : out std_LOGIC;							 -- novo
+			
+			acc_left : in std_LOGIC;							-- novo
+			acc_right: in std_LOGIC								-- novo	
          --add ports as required
        );
 end dp;
@@ -229,14 +232,16 @@ component comparador_4bits port
 );
 end component;
 
-component reg4bits is   
+component reg4bit_shiftable is   
 	port
 	(
-		input  : in std_logic_vector (3 downto 0);
+	   input  : in std_logic_vector (3 downto 0);
 		clk    : in std_logic;
 		clear  : in std_logic;
 		set    : in std_logic;
 		ld     : in std_logic;
+		shft_r : in std_logic;
+		shft_l : in std_logic;
 		output : out std_logic_vector (3 downto 0)
 	);
 end component;
@@ -256,7 +261,7 @@ component mux4x1_4bits is
 signal alu_out   : std_LOGIC_VECTOR(3 downto 0);
 signal alu_B_in  : std_logic_vector(3 downto 0);
 
-signal R_data    : std_LOGIC_VECTOR(3 downto 0); 
+signal R_data    : std_LOGIC_VECTOR(3 downto 0);
 
 signal acc_out   : std_LOGIC_VECTOR(3 downto 0);
 signal acc_input : std_LOGIC_VECTOR(3 downto 0);
@@ -270,7 +275,7 @@ begin
 	
 	ACC_IN: mux4x1_4bits port map(SW => SW_I_ACC, A0 => Imm, A1 => R_data, A2 => alu_out, A3 => "0000",output => acc_input);
 	
-	accumulador: reg4bits port map(input => acc_input, clk => clk, clear => acc_clr, ld => acc_ld, set => '0', output => acc_out);
+	accumulador: reg4bit_shiftable port map(input => acc_input, clk => clk, clear => acc_clr, ld => acc_ld, set => '0', shft_r => acc_right, shft_l => acc_left ,output => acc_out);
 	
 	IFZERO: comparador_4bits port map(a => R_data, b => "0000", in_gt => '0', in_it => '0', in_eq => '1', out_eq => RF_zero);
 	

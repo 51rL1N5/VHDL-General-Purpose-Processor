@@ -89,5 +89,4 @@ begin
 	output(2) <= outputFF2;
 	output(3) <= outputFF3;
 	
-
 end hardware;

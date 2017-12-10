@@ -41,6 +41,8 @@ component ctrl
 			
 			acc_clr   : out std_LOGIC;
 			acc_ld    : out std_LOGIC;
+			acc_shift_l: out std_LOGIC;	--novo
+			acc_shift_r: out std_LOGIC;   --novo
 			
 			Alu_SW    : out std_logic_vector(2 downto 0);
 			SW_In_ACC : out std_logic_vector(1 downto 0);
@@ -71,7 +73,10 @@ component dp
          imm     : in std_logic_vector(3 downto 0); 
          output_4: out STD_LOGIC_VECTOR (3 downto 0);
 			
-			RF_zero : out std_LOGIC							 -- novo
+			RF_zero : out std_LOGIC;							 -- novo
+			
+			acc_left : in std_LOGIC;							-- novo
+			acc_right: in std_LOGIC								-- novo	
         );
 end component;
 
@@ -129,12 +134,14 @@ signal ones_tmp: std_LOGIC_VECTOR(3 downto 0);
 signal actual_instruction : std_LOGIC_VECTOR(3 downto 0);
 
 signal RF_zero : std_LOGIC;
+signal shift_l  : std_logic;
+signal shift_r  : std_logic;
 
 begin
 
-  controller: ctrl port map(start => start, clk => clk, now_inst=> actual_instruction, RF_wr => RF_wr, RF_rd => RF_rd, RF_clr => RF_clr, RF_W_addr => RF_W_addr, RF_R_addr => RF_R_addr, acc_clr => acc_clr, acc_ld => acc_ld, ALU_SW => SW_ALU, SW_in_ACC => SW_in_ACC,  imm => immediate, RF_zero => RF_zero);
+  controller: ctrl port map(start => start, clk => clk, now_inst=> actual_instruction, RF_wr => RF_wr, RF_rd => RF_rd, RF_clr => RF_clr, RF_W_addr => RF_W_addr, RF_R_addr => RF_R_addr, acc_clr => acc_clr, acc_ld => acc_ld, ALU_SW => SW_ALU, SW_in_ACC => SW_in_ACC,  imm => immediate, RF_zero => RF_zero, acc_shift_l => shift_l, acc_shift_r => shift_r);
   
-  datapath: dp port map(SW_I_ACC => SW_In_ACC, SW_ALU => SW_ALU, rst => RF_clr, clk => clk, acc_ld => acc_ld, acc_clr => acc_clr, RF_wr => RF_Wr, RF_rd => RF_rd, R_addr => RF_R_addr, W_addr => RF_W_addr, imm => immediate, output_4 => cpu_out, RF_zero => RF_zero);
+  datapath: dp port map(SW_I_ACC => SW_In_ACC, SW_ALU => SW_ALU, rst => RF_clr, clk => clk, acc_ld => acc_ld, acc_clr => acc_clr, RF_wr => RF_Wr, RF_rd => RF_rd, R_addr => RF_R_addr, W_addr => RF_W_addr, imm => immediate, output_4 => cpu_out, RF_zero => RF_zero, acc_left => shift_l, acc_right => shift_r);
   
   output <= cpu_out;
   
