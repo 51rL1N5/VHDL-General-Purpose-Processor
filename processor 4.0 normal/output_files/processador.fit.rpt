@@ -1,5 +1,5 @@
 Fitter report for processador
-Sun Dec 10 01:00:11 2017
+Sun Dec 10 16:56:16 2017
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -63,17 +63,17 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Fitter Summary                                                                  ;
 +------------------------------------+--------------------------------------------+
-; Fitter Status                      ; Successful - Sun Dec 10 01:00:11 2017      ;
+; Fitter Status                      ; Successful - Sun Dec 10 16:56:16 2017      ;
 ; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
 ; Revision Name                      ; processador                                ;
 ; Top-level Entity Name              ; cpu                                        ;
 ; Family                             ; Cyclone II                                 ;
 ; Device                             ; EP2C35F672C6                               ;
 ; Timing Models                      ; Final                                      ;
-; Total logic elements               ; 94 / 33,216 ( < 1 % )                      ;
-;     Total combinational functions  ; 78 / 33,216 ( < 1 % )                      ;
-;     Dedicated logic registers      ; 50 / 33,216 ( < 1 % )                      ;
-; Total registers                    ; 50                                         ;
+; Total logic elements               ; 145 / 33,216 ( < 1 % )                     ;
+;     Total combinational functions  ; 137 / 33,216 ( < 1 % )                     ;
+;     Dedicated logic registers      ; 75 / 33,216 ( < 1 % )                      ;
+; Total registers                    ; 75                                         ;
 ; Total pins                         ; 48 / 475 ( 10 % )                          ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0 / 483,840 ( 0 % )                        ;
@@ -150,8 +150,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Type                ; Value                  ;
 +---------------------+------------------------+
 ; Placement (by node) ;                        ;
-;     -- Requested    ; 0 / 180 ( 0.00 % )     ;
-;     -- Achieved     ; 0 / 180 ( 0.00 % )     ;
+;     -- Requested    ; 0 / 264 ( 0.00 % )     ;
+;     -- Achieved     ; 0 / 264 ( 0.00 % )     ;
 ;                     ;                        ;
 ; Routing (by net)    ;                        ;
 ;     -- Requested    ; 0 / 0 ( 0.00 % )       ;
@@ -174,7 +174,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 ; Partition Name                 ; # Nodes ; # Preserved Nodes ; Preservation Level Used ; Netlist Type Used ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
-; Top                            ; 177     ; 0                 ; N/A                     ; Source File       ;
+; Top                            ; 261     ; 0                 ; N/A                     ; Source File       ;
 ; hard_block:auto_generated_inst ; 3       ; 0                 ; N/A                     ; Source File       ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 
@@ -182,125 +182,125 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in /home/linksnow/workspace/pR0C3Ss0r/processor 3.75/output_files/processador.pin.
+The pin-out file can be found in /home/linksnow/workspace/pR0C3Ss0r/processor 4.0 normal/output_files/processador.pin.
 
 
-+---------------------------------------------------------------------+
-; Fitter Resource Usage Summary                                       ;
-+---------------------------------------------+-----------------------+
-; Resource                                    ; Usage                 ;
-+---------------------------------------------+-----------------------+
-; Total logic elements                        ; 94 / 33,216 ( < 1 % ) ;
-;     -- Combinational with no register       ; 44                    ;
-;     -- Register only                        ; 16                    ;
-;     -- Combinational with a register        ; 34                    ;
-;                                             ;                       ;
-; Logic element usage by number of LUT inputs ;                       ;
-;     -- 4 input functions                    ; 50                    ;
-;     -- 3 input functions                    ; 13                    ;
-;     -- <=2 input functions                  ; 15                    ;
-;     -- Register only                        ; 16                    ;
-;                                             ;                       ;
-; Logic elements by mode                      ;                       ;
-;     -- normal mode                          ; 78                    ;
-;     -- arithmetic mode                      ; 0                     ;
-;                                             ;                       ;
-; Total registers*                            ; 50 / 34,593 ( < 1 % ) ;
-;     -- Dedicated logic registers            ; 50 / 33,216 ( < 1 % ) ;
-;     -- I/O registers                        ; 0 / 1,377 ( 0 % )     ;
-;                                             ;                       ;
-; Total LABs:  partially or completely used   ; 12 / 2,076 ( < 1 % )  ;
-; Virtual pins                                ; 0                     ;
-; I/O pins                                    ; 48 / 475 ( 10 % )     ;
-;     -- Clock pins                           ; 1 / 8 ( 13 % )        ;
-;                                             ;                       ;
-; Global signals                              ; 0                     ;
-; M4Ks                                        ; 0 / 105 ( 0 % )       ;
-; Total block memory bits                     ; 0 / 483,840 ( 0 % )   ;
-; Total block memory implementation bits      ; 0 / 483,840 ( 0 % )   ;
-; Embedded Multiplier 9-bit elements          ; 0 / 70 ( 0 % )        ;
-; PLLs                                        ; 0 / 4 ( 0 % )         ;
-; Global clocks                               ; 0 / 16 ( 0 % )        ;
-; JTAGs                                       ; 0 / 1 ( 0 % )         ;
-; ASMI blocks                                 ; 0 / 1 ( 0 % )         ;
-; CRC blocks                                  ; 0 / 1 ( 0 % )         ;
-; Average interconnect usage (total/H/V)      ; 0% / 0% / 0%          ;
-; Peak interconnect usage (total/H/V)         ; 1% / 1% / 1%          ;
-; Maximum fan-out                             ; 50                    ;
-; Highest non-global fan-out                  ; 50                    ;
-; Total fan-out                               ; 456                   ;
-; Average fan-out                             ; 2.39                  ;
-+---------------------------------------------+-----------------------+
++----------------------------------------------------------------------+
+; Fitter Resource Usage Summary                                        ;
++---------------------------------------------+------------------------+
+; Resource                                    ; Usage                  ;
++---------------------------------------------+------------------------+
+; Total logic elements                        ; 145 / 33,216 ( < 1 % ) ;
+;     -- Combinational with no register       ; 70                     ;
+;     -- Register only                        ; 8                      ;
+;     -- Combinational with a register        ; 67                     ;
+;                                             ;                        ;
+; Logic element usage by number of LUT inputs ;                        ;
+;     -- 4 input functions                    ; 83                     ;
+;     -- 3 input functions                    ; 32                     ;
+;     -- <=2 input functions                  ; 22                     ;
+;     -- Register only                        ; 8                      ;
+;                                             ;                        ;
+; Logic elements by mode                      ;                        ;
+;     -- normal mode                          ; 137                    ;
+;     -- arithmetic mode                      ; 0                      ;
+;                                             ;                        ;
+; Total registers*                            ; 75 / 34,593 ( < 1 % )  ;
+;     -- Dedicated logic registers            ; 75 / 33,216 ( < 1 % )  ;
+;     -- I/O registers                        ; 0 / 1,377 ( 0 % )      ;
+;                                             ;                        ;
+; Total LABs:  partially or completely used   ; 12 / 2,076 ( < 1 % )   ;
+; Virtual pins                                ; 0                      ;
+; I/O pins                                    ; 48 / 475 ( 10 % )      ;
+;     -- Clock pins                           ; 1 / 8 ( 13 % )         ;
+;                                             ;                        ;
+; Global signals                              ; 0                      ;
+; M4Ks                                        ; 0 / 105 ( 0 % )        ;
+; Total block memory bits                     ; 0 / 483,840 ( 0 % )    ;
+; Total block memory implementation bits      ; 0 / 483,840 ( 0 % )    ;
+; Embedded Multiplier 9-bit elements          ; 0 / 70 ( 0 % )         ;
+; PLLs                                        ; 0 / 4 ( 0 % )          ;
+; Global clocks                               ; 0 / 16 ( 0 % )         ;
+; JTAGs                                       ; 0 / 1 ( 0 % )          ;
+; ASMI blocks                                 ; 0 / 1 ( 0 % )          ;
+; CRC blocks                                  ; 0 / 1 ( 0 % )          ;
+; Average interconnect usage (total/H/V)      ; 0% / 0% / 0%           ;
+; Peak interconnect usage (total/H/V)         ; 1% / 1% / 0%           ;
+; Maximum fan-out                             ; 75                     ;
+; Highest non-global fan-out                  ; 75                     ;
+; Total fan-out                               ; 697                    ;
+; Average fan-out                             ; 2.60                   ;
++---------------------------------------------+------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
 
 
-+-----------------------------------------------------------------------------------------------------+
-; Fitter Partition Statistics                                                                         ;
-+---------------------------------------------+----------------------+--------------------------------+
-; Statistic                                   ; Top                  ; hard_block:auto_generated_inst ;
-+---------------------------------------------+----------------------+--------------------------------+
-; Difficulty Clustering Region                ; Low                  ; Low                            ;
-;                                             ;                      ;                                ;
-; Total logic elements                        ; 94 / 33216 ( < 1 % ) ; 0 / 33216 ( 0 % )              ;
-;     -- Combinational with no register       ; 44                   ; 0                              ;
-;     -- Register only                        ; 16                   ; 0                              ;
-;     -- Combinational with a register        ; 34                   ; 0                              ;
-;                                             ;                      ;                                ;
-; Logic element usage by number of LUT inputs ;                      ;                                ;
-;     -- 4 input functions                    ; 50                   ; 0                              ;
-;     -- 3 input functions                    ; 13                   ; 0                              ;
-;     -- <=2 input functions                  ; 15                   ; 0                              ;
-;     -- Register only                        ; 16                   ; 0                              ;
-;                                             ;                      ;                                ;
-; Logic elements by mode                      ;                      ;                                ;
-;     -- normal mode                          ; 78                   ; 0                              ;
-;     -- arithmetic mode                      ; 0                    ; 0                              ;
-;                                             ;                      ;                                ;
-; Total registers                             ; 50                   ; 0                              ;
-;     -- Dedicated logic registers            ; 50 / 33216 ( < 1 % ) ; 0 / 33216 ( 0 % )              ;
-;                                             ;                      ;                                ;
-; Total LABs:  partially or completely used   ; 12 / 2076 ( < 1 % )  ; 0 / 2076 ( 0 % )               ;
-;                                             ;                      ;                                ;
-; Virtual pins                                ; 0                    ; 0                              ;
-; I/O pins                                    ; 48                   ; 0                              ;
-; Embedded Multiplier 9-bit elements          ; 0 / 70 ( 0 % )       ; 0 / 70 ( 0 % )                 ;
-; Total memory bits                           ; 0                    ; 0                              ;
-; Total RAM block bits                        ; 0                    ; 0                              ;
-;                                             ;                      ;                                ;
-; Connections                                 ;                      ;                                ;
-;     -- Input Connections                    ; 0                    ; 0                              ;
-;     -- Registered Input Connections         ; 0                    ; 0                              ;
-;     -- Output Connections                   ; 0                    ; 0                              ;
-;     -- Registered Output Connections        ; 0                    ; 0                              ;
-;                                             ;                      ;                                ;
-; Internal Connections                        ;                      ;                                ;
-;     -- Total Connections                    ; 456                  ; 0                              ;
-;     -- Registered Connections               ; 255                  ; 0                              ;
-;                                             ;                      ;                                ;
-; External Connections                        ;                      ;                                ;
-;     -- Top                                  ; 0                    ; 0                              ;
-;     -- hard_block:auto_generated_inst       ; 0                    ; 0                              ;
-;                                             ;                      ;                                ;
-; Partition Interface                         ;                      ;                                ;
-;     -- Input Ports                          ; 2                    ; 0                              ;
-;     -- Output Ports                         ; 46                   ; 0                              ;
-;     -- Bidir Ports                          ; 0                    ; 0                              ;
-;                                             ;                      ;                                ;
-; Registered Ports                            ;                      ;                                ;
-;     -- Registered Input Ports               ; 0                    ; 0                              ;
-;     -- Registered Output Ports              ; 0                    ; 0                              ;
-;                                             ;                      ;                                ;
-; Port Connectivity                           ;                      ;                                ;
-;     -- Input Ports driven by GND            ; 0                    ; 0                              ;
-;     -- Output Ports driven by GND           ; 0                    ; 0                              ;
-;     -- Input Ports driven by VCC            ; 0                    ; 0                              ;
-;     -- Output Ports driven by VCC           ; 0                    ; 0                              ;
-;     -- Input Ports with no Source           ; 0                    ; 0                              ;
-;     -- Output Ports with no Source          ; 0                    ; 0                              ;
-;     -- Input Ports with no Fanout           ; 0                    ; 0                              ;
-;     -- Output Ports with no Fanout          ; 0                    ; 0                              ;
-+---------------------------------------------+----------------------+--------------------------------+
++------------------------------------------------------------------------------------------------------+
+; Fitter Partition Statistics                                                                          ;
++---------------------------------------------+-----------------------+--------------------------------+
+; Statistic                                   ; Top                   ; hard_block:auto_generated_inst ;
++---------------------------------------------+-----------------------+--------------------------------+
+; Difficulty Clustering Region                ; Low                   ; Low                            ;
+;                                             ;                       ;                                ;
+; Total logic elements                        ; 145 / 33216 ( < 1 % ) ; 0 / 33216 ( 0 % )              ;
+;     -- Combinational with no register       ; 70                    ; 0                              ;
+;     -- Register only                        ; 8                     ; 0                              ;
+;     -- Combinational with a register        ; 67                    ; 0                              ;
+;                                             ;                       ;                                ;
+; Logic element usage by number of LUT inputs ;                       ;                                ;
+;     -- 4 input functions                    ; 83                    ; 0                              ;
+;     -- 3 input functions                    ; 32                    ; 0                              ;
+;     -- <=2 input functions                  ; 22                    ; 0                              ;
+;     -- Register only                        ; 8                     ; 0                              ;
+;                                             ;                       ;                                ;
+; Logic elements by mode                      ;                       ;                                ;
+;     -- normal mode                          ; 137                   ; 0                              ;
+;     -- arithmetic mode                      ; 0                     ; 0                              ;
+;                                             ;                       ;                                ;
+; Total registers                             ; 75                    ; 0                              ;
+;     -- Dedicated logic registers            ; 75 / 33216 ( < 1 % )  ; 0 / 33216 ( 0 % )              ;
+;                                             ;                       ;                                ;
+; Total LABs:  partially or completely used   ; 12 / 2076 ( < 1 % )   ; 0 / 2076 ( 0 % )               ;
+;                                             ;                       ;                                ;
+; Virtual pins                                ; 0                     ; 0                              ;
+; I/O pins                                    ; 48                    ; 0                              ;
+; Embedded Multiplier 9-bit elements          ; 0 / 70 ( 0 % )        ; 0 / 70 ( 0 % )                 ;
+; Total memory bits                           ; 0                     ; 0                              ;
+; Total RAM block bits                        ; 0                     ; 0                              ;
+;                                             ;                       ;                                ;
+; Connections                                 ;                       ;                                ;
+;     -- Input Connections                    ; 0                     ; 0                              ;
+;     -- Registered Input Connections         ; 0                     ; 0                              ;
+;     -- Output Connections                   ; 0                     ; 0                              ;
+;     -- Registered Output Connections        ; 0                     ; 0                              ;
+;                                             ;                       ;                                ;
+; Internal Connections                        ;                       ;                                ;
+;     -- Total Connections                    ; 697                   ; 0                              ;
+;     -- Registered Connections               ; 400                   ; 0                              ;
+;                                             ;                       ;                                ;
+; External Connections                        ;                       ;                                ;
+;     -- Top                                  ; 0                     ; 0                              ;
+;     -- hard_block:auto_generated_inst       ; 0                     ; 0                              ;
+;                                             ;                       ;                                ;
+; Partition Interface                         ;                       ;                                ;
+;     -- Input Ports                          ; 2                     ; 0                              ;
+;     -- Output Ports                         ; 46                    ; 0                              ;
+;     -- Bidir Ports                          ; 0                     ; 0                              ;
+;                                             ;                       ;                                ;
+; Registered Ports                            ;                       ;                                ;
+;     -- Registered Input Ports               ; 0                     ; 0                              ;
+;     -- Registered Output Ports              ; 0                     ; 0                              ;
+;                                             ;                       ;                                ;
+; Port Connectivity                           ;                       ;                                ;
+;     -- Input Ports driven by GND            ; 0                     ; 0                              ;
+;     -- Output Ports driven by GND           ; 0                     ; 0                              ;
+;     -- Input Ports driven by VCC            ; 0                     ; 0                              ;
+;     -- Output Ports driven by VCC           ; 0                     ; 0                              ;
+;     -- Input Ports with no Source           ; 0                     ; 0                              ;
+;     -- Output Ports with no Source          ; 0                     ; 0                              ;
+;     -- Input Ports with no Fanout           ; 0                     ; 0                              ;
+;     -- Output Ports with no Fanout          ; 0                     ; 0                              ;
++---------------------------------------------+-----------------------+--------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -308,7 +308,7 @@ The pin-out file can be found in /home/linksnow/workspace/pR0C3Ss0r/processor 3.
 +-------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
 ; Name  ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination ; Location assigned by ;
 +-------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
-; clk   ; G26   ; 5        ; 65           ; 27           ; 1           ; 50                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
+; clk   ; G26   ; 5        ; 65           ; 27           ; 1           ; 75                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
 ; start ; N25   ; 5        ; 65           ; 19           ; 0           ; 2                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; User                 ;
 +-------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
 
@@ -360,10 +360,10 @@ The pin-out file can be found in /home/linksnow/workspace/pR0C3Ss0r/processor 3.
 ; display1[4] ; R5    ; 1        ; 0            ; 16           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
 ; display1[5] ; R4    ; 1        ; 0            ; 16           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
 ; display1[6] ; R3    ; 1        ; 0            ; 17           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; User                 ; 0 pF ; -                    ; -                   ;
-; output[0]   ; J24   ; 5        ; 65           ; 26           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; output[1]   ; G25   ; 5        ; 65           ; 27           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; output[0]   ; H19   ; 5        ; 65           ; 26           ; 4           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; output[1]   ; J24   ; 5        ; 65           ; 26           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
 ; output[2]   ; H26   ; 5        ; 65           ; 26           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; output[3]   ; H24   ; 5        ; 65           ; 27           ; 3           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; output[3]   ; H25   ; 5        ; 65           ; 26           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
 +-------------+-------+----------+--------------+--------------+-------------+-----------------+------------------------+---------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+----------------------+------+----------------------+---------------------+
 
 
@@ -720,7 +720,7 @@ The pin-out file can be found in /home/linksnow/workspace/pR0C3Ss0r/processor 3.
 ; G22      ; 367        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; G23      ; 346        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; G24      ; 345        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; G25      ; 343        ; 5        ; output[1]                                ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; G25      ; 343        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; G26      ; 342        ; 5        ; clk                                      ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; H1       ; 37         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; H2       ; 36         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -740,13 +740,13 @@ The pin-out file can be found in /home/linksnow/workspace/pR0C3Ss0r/processor 3.
 ; H16      ; 413        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; H17      ; 400        ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; H18      ;            ; 4        ; VCCIO4                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
-; H19      ; 335        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; H19      ; 335        ; 5        ; output[0]                                ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; H20      ;            ;          ; VCCD_PLL2                                ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; H21      ; 366        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; H22      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; H23      ; 341        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; H24      ; 340        ; 5        ; output[3]                                ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
-; H25      ; 337        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; H24      ; 340        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; H25      ; 337        ; 5        ; output[3]                                ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; H26      ; 336        ; 5        ; output[2]                                ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; J1       ; 39         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; J2       ; 38         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -771,7 +771,7 @@ The pin-out file can be found in /home/linksnow/workspace/pR0C3Ss0r/processor 3.
 ; J21      ; 352        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; J22      ; 357        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
 ; J23      ; 339        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; J24      ; 338        ; 5        ; output[0]                                ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; J24      ; 338        ; 5        ; output[1]                                ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; J25      ; 327        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; J26      ; 326        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; K1       ; 42         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -1101,55 +1101,58 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 Note: User assignments will override these defaults. The user specified values are listed in the Output Pins and Bidir Pins tables.
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fitter Resource Utilization by Entity                                                                                                                                                                                                                                                                                             ;
-+-----------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+--------------------------------------------------------------------------------+--------------+
-; Compilation Hierarchy Node        ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M4Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                                            ; Library Name ;
-+-----------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+--------------------------------------------------------------------------------+--------------+
-; |cpu                              ; 94 (0)      ; 50 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 48   ; 0            ; 44 (0)       ; 16 (0)            ; 34 (0)           ; |cpu                                                                           ;              ;
-;    |bin2bcd_12bit:bin2bcd|        ; 1 (1)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; |cpu|bin2bcd_12bit:bin2bcd                                                     ;              ;
-;    |bin_to_disp:bin_decoder_ones| ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; |cpu|bin_to_disp:bin_decoder_ones                                              ;              ;
-;    |ctrl:controller|              ; 44 (44)     ; 30 (30)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 14 (14)      ; 7 (7)             ; 23 (23)          ; |cpu|ctrl:controller                                                           ;              ;
-;    |dp:datapath|                  ; 46 (0)      ; 20 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 22 (0)       ; 9 (0)             ; 15 (0)           ; |cpu|dp:datapath                                                               ;              ;
-;       |alu:alu1|                  ; 3 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 3 (0)        ; 0 (0)             ; 0 (0)            ; |cpu|dp:datapath|alu:alu1                                                      ;              ;
-;          |adder4bits:adder|       ; 1 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; |cpu|dp:datapath|alu:alu1|adder4bits:adder                                     ;              ;
-;             |FullAdder:FA1|       ; 1 (1)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; |cpu|dp:datapath|alu:alu1|adder4bits:adder|FullAdder:FA1                       ;              ;
-;          |mux8x1_4bits:OUPUT|     ; 1 (1)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; |cpu|dp:datapath|alu:alu1|mux8x1_4bits:OUPUT                                   ;              ;
-;          |subtractor4bits:subtrc| ; 1 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; |cpu|dp:datapath|alu:alu1|subtractor4bits:subtrc                               ;              ;
-;             |adder4bits:Add0|     ; 1 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; |cpu|dp:datapath|alu:alu1|subtractor4bits:subtrc|adder4bits:Add0               ;              ;
-;                |FullAdder:FA1|    ; 1 (1)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; |cpu|dp:datapath|alu:alu1|subtractor4bits:subtrc|adder4bits:Add0|FullAdder:FA1 ;              ;
-;       |comparador_4bits:IFZERO|   ; 1 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; |cpu|dp:datapath|comparador_4bits:IFZERO                                       ;              ;
-;          |comparador_full:comp_3| ; 1 (1)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; |cpu|dp:datapath|comparador_4bits:IFZERO|comparador_full:comp_3                ;              ;
-;       |mux4x1_4bits:ACC_IN|       ; 18 (18)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 12 (12)      ; 0 (0)             ; 6 (6)            ; |cpu|dp:datapath|mux4x1_4bits:ACC_IN                                           ;              ;
-;       |reg4bits:accumulador|      ; 5 (0)       ; 4 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 4 (0)            ; |cpu|dp:datapath|reg4bits:accumulador                                          ;              ;
-;          |FFJK:FF0|               ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; |cpu|dp:datapath|reg4bits:accumulador|FFJK:FF0                                 ;              ;
-;          |FFJK:FF1|               ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; |cpu|dp:datapath|reg4bits:accumulador|FFJK:FF1                                 ;              ;
-;          |FFJK:FF2|               ; 2 (2)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (1)            ; |cpu|dp:datapath|reg4bits:accumulador|FFJK:FF2                                 ;              ;
-;          |FFJK:FF3|               ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; |cpu|dp:datapath|reg4bits:accumulador|FFJK:FF3                                 ;              ;
-;       |rf:Register_File|          ; 23 (2)      ; 16 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 5 (1)        ; 9 (0)             ; 9 (8)            ; |cpu|dp:datapath|rf:Register_File                                              ;              ;
-;          |decoder2x4:RD_decoder|  ; 1 (1)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; |cpu|dp:datapath|rf:Register_File|decoder2x4:RD_decoder                        ;              ;
-;          |decoder2x4:WR_decoder|  ; 4 (4)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; |cpu|dp:datapath|rf:Register_File|decoder2x4:WR_decoder                        ;              ;
-;          |reg4bits:R0|            ; 4 (0)       ; 4 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (0)             ; 3 (0)            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R0                                  ;              ;
-;             |FFJK:FF0|            ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R0|FFJK:FF0                         ;              ;
-;             |FFJK:FF1|            ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R0|FFJK:FF1                         ;              ;
-;             |FFJK:FF2|            ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R0|FFJK:FF2                         ;              ;
-;             |FFJK:FF3|            ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R0|FFJK:FF3                         ;              ;
-;          |reg4bits:R1|            ; 4 (0)       ; 4 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 4 (0)             ; 0 (0)            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R1                                  ;              ;
-;             |FFJK:FF0|            ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R1|FFJK:FF0                         ;              ;
-;             |FFJK:FF1|            ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R1|FFJK:FF1                         ;              ;
-;             |FFJK:FF2|            ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R1|FFJK:FF2                         ;              ;
-;             |FFJK:FF3|            ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R1|FFJK:FF3                         ;              ;
-;          |reg4bits:R2|            ; 4 (0)       ; 4 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 3 (0)             ; 1 (0)            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R2                                  ;              ;
-;             |FFJK:FF0|            ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R2|FFJK:FF0                         ;              ;
-;             |FFJK:FF1|            ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R2|FFJK:FF1                         ;              ;
-;             |FFJK:FF2|            ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R2|FFJK:FF2                         ;              ;
-;             |FFJK:FF3|            ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R2|FFJK:FF3                         ;              ;
-;          |reg4bits:R3|            ; 4 (0)       ; 4 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (0)             ; 3 (0)            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R3                                  ;              ;
-;             |FFJK:FF0|            ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R3|FFJK:FF0                         ;              ;
-;             |FFJK:FF1|            ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R3|FFJK:FF1                         ;              ;
-;             |FFJK:FF2|            ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R3|FFJK:FF2                         ;              ;
-;             |FFJK:FF3|            ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R3|FFJK:FF3                         ;              ;
-+-----------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+--------------------------------------------------------------------------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Resource Utilization by Entity                                                                                                                                                                                                                                                                                                 ;
++---------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+--------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node            ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M4Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                                            ; Library Name ;
++---------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+--------------------------------------------------------------------------------+--------------+
+; |cpu                                  ; 145 (0)     ; 75 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 48   ; 0            ; 70 (0)       ; 8 (0)             ; 67 (0)           ; |cpu                                                                           ;              ;
+;    |bin2bcd_12bit:bin2bcd|            ; 1 (1)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; |cpu|bin2bcd_12bit:bin2bcd                                                     ;              ;
+;    |bin_to_disp:bin_decoder_ones|     ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 2 (2)            ; |cpu|bin_to_disp:bin_decoder_ones                                              ;              ;
+;    |ctrl:controller|                  ; 85 (85)     ; 55 (55)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 30 (30)      ; 2 (2)             ; 53 (53)          ; |cpu|ctrl:controller                                                           ;              ;
+;    |dp:datapath|                      ; 56 (0)      ; 20 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 34 (0)       ; 6 (0)             ; 16 (0)           ; |cpu|dp:datapath                                                               ;              ;
+;       |alu:alu1|                      ; 7 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (0)        ; 0 (0)             ; 0 (0)            ; |cpu|dp:datapath|alu:alu1                                                      ;              ;
+;          |adder4bits:adder|           ; 1 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; |cpu|dp:datapath|alu:alu1|adder4bits:adder                                     ;              ;
+;             |FullAdder:FA1|           ; 1 (1)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; |cpu|dp:datapath|alu:alu1|adder4bits:adder|FullAdder:FA1                       ;              ;
+;          |mux8x1_4bits:OUPUT|         ; 5 (5)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; |cpu|dp:datapath|alu:alu1|mux8x1_4bits:OUPUT                                   ;              ;
+;          |subtractor4bits:subtrc|     ; 1 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; |cpu|dp:datapath|alu:alu1|subtractor4bits:subtrc                               ;              ;
+;             |adder4bits:Add0|         ; 1 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; |cpu|dp:datapath|alu:alu1|subtractor4bits:subtrc|adder4bits:Add0               ;              ;
+;                |FullAdder:FA1|        ; 1 (1)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; |cpu|dp:datapath|alu:alu1|subtractor4bits:subtrc|adder4bits:Add0|FullAdder:FA1 ;              ;
+;       |comparador_4bits:IFZERO|       ; 1 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 0 (0)            ; |cpu|dp:datapath|comparador_4bits:IFZERO                                       ;              ;
+;          |comparador_full:comp_3|     ; 1 (1)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; |cpu|dp:datapath|comparador_4bits:IFZERO|comparador_full:comp_3                ;              ;
+;       |reg4bit_shiftable:accumulador| ; 26 (0)      ; 4 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 22 (0)       ; 0 (0)             ; 4 (0)            ; |cpu|dp:datapath|reg4bit_shiftable:accumulador                                 ;              ;
+;          |FFJK:FF0|                   ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; |cpu|dp:datapath|reg4bit_shiftable:accumulador|FFJK:FF0                        ;              ;
+;          |FFJK:FF1|                   ; 2 (2)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (1)            ; |cpu|dp:datapath|reg4bit_shiftable:accumulador|FFJK:FF1                        ;              ;
+;          |FFJK:FF2|                   ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; |cpu|dp:datapath|reg4bit_shiftable:accumulador|FFJK:FF2                        ;              ;
+;          |FFJK:FF3|                   ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; |cpu|dp:datapath|reg4bit_shiftable:accumulador|FFJK:FF3                        ;              ;
+;          |mux2x1_1bit:muxRFF0|        ; 5 (5)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 1 (1)            ; |cpu|dp:datapath|reg4bit_shiftable:accumulador|mux2x1_1bit:muxRFF0             ;              ;
+;          |mux2x1_1bit:muxRFF1|        ; 8 (8)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 1 (1)            ; |cpu|dp:datapath|reg4bit_shiftable:accumulador|mux2x1_1bit:muxRFF1             ;              ;
+;          |mux2x1_1bit:muxRFF2|        ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 6 (6)        ; 0 (0)             ; 1 (1)            ; |cpu|dp:datapath|reg4bit_shiftable:accumulador|mux2x1_1bit:muxRFF2             ;              ;
+;          |mux2x1_1bit:muxRFF3|        ; 5 (5)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 1 (1)            ; |cpu|dp:datapath|reg4bit_shiftable:accumulador|mux2x1_1bit:muxRFF3             ;              ;
+;       |rf:Register_File|              ; 22 (1)      ; 16 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 4 (0)        ; 6 (0)             ; 12 (9)           ; |cpu|dp:datapath|rf:Register_File                                              ;              ;
+;          |decoder2x4:RD_decoder|      ; 1 (1)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; |cpu|dp:datapath|rf:Register_File|decoder2x4:RD_decoder                        ;              ;
+;          |decoder2x4:WR_decoder|      ; 4 (4)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 4 (4)        ; 0 (0)             ; 0 (0)            ; |cpu|dp:datapath|rf:Register_File|decoder2x4:WR_decoder                        ;              ;
+;          |reg4bits:R0|                ; 4 (0)       ; 4 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 4 (0)            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R0                                  ;              ;
+;             |FFJK:FF0|                ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R0|FFJK:FF0                         ;              ;
+;             |FFJK:FF1|                ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R0|FFJK:FF1                         ;              ;
+;             |FFJK:FF2|                ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R0|FFJK:FF2                         ;              ;
+;             |FFJK:FF3|                ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R0|FFJK:FF3                         ;              ;
+;          |reg4bits:R1|                ; 4 (0)       ; 4 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 4 (0)             ; 0 (0)            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R1                                  ;              ;
+;             |FFJK:FF0|                ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R1|FFJK:FF0                         ;              ;
+;             |FFJK:FF1|                ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R1|FFJK:FF1                         ;              ;
+;             |FFJK:FF2|                ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R1|FFJK:FF2                         ;              ;
+;             |FFJK:FF3|                ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R1|FFJK:FF3                         ;              ;
+;          |reg4bits:R2|                ; 4 (0)       ; 4 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 2 (0)             ; 2 (0)            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R2                                  ;              ;
+;             |FFJK:FF0|                ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R2|FFJK:FF0                         ;              ;
+;             |FFJK:FF1|                ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R2|FFJK:FF1                         ;              ;
+;             |FFJK:FF2|                ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R2|FFJK:FF2                         ;              ;
+;             |FFJK:FF3|                ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R2|FFJK:FF3                         ;              ;
+;          |reg4bits:R3|                ; 4 (0)       ; 4 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 4 (0)            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R3                                  ;              ;
+;             |FFJK:FF0|                ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R3|FFJK:FF0                         ;              ;
+;             |FFJK:FF1|                ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R3|FFJK:FF1                         ;              ;
+;             |FFJK:FF2|                ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R3|FFJK:FF2                         ;              ;
+;             |FFJK:FF3|                ; 1 (1)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 1 (1)            ; |cpu|dp:datapath|rf:Register_File|reg4bits:R3|FFJK:FF3                         ;              ;
++---------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+--------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -1209,64 +1212,89 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------+----------+---------------+---------------+-----------------------+-----+
 
 
-+--------------------------------------------------------------------------------------------+
-; Pad To Core Delay Chain Fanout                                                             ;
-+--------------------------------------------------------------+-------------------+---------+
-; Source Pin / Fanout                                          ; Pad To Core Index ; Setting ;
-+--------------------------------------------------------------+-------------------+---------+
-; clk                                                          ;                   ;         ;
-;      - ctrl:controller|Alu_SW[0]                             ; 0                 ; 0       ;
-;      - ctrl:controller|Alu_SW[2]                             ; 0                 ; 0       ;
-;      - ctrl:controller|RF_R_addr[0]                          ; 0                 ; 0       ;
-;      - ctrl:controller|RF_R_addr[1]                          ; 0                 ; 0       ;
-;      - ctrl:controller|now_inst[0]                           ; 0                 ; 0       ;
-;      - ctrl:controller|now_inst[2]                           ; 0                 ; 0       ;
-;      - ctrl:controller|now_inst[3]                           ; 0                 ; 0       ;
-;      - ctrl:controller|SW_In_ACC[1]                          ; 0                 ; 0       ;
-;      - ctrl:controller|imm[0]                                ; 0                 ; 0       ;
-;      - dp:datapath|rf:Register_File|reg4bits:R0|FFJK:FF0|aux ; 1                 ; 0       ;
-;      - dp:datapath|rf:Register_File|reg4bits:R1|FFJK:FF0|aux ; 0                 ; 0       ;
-;      - dp:datapath|rf:Register_File|reg4bits:R2|FFJK:FF0|aux ; 0                 ; 0       ;
-;      - dp:datapath|rf:Register_File|reg4bits:R3|FFJK:FF0|aux ; 0                 ; 0       ;
-;      - dp:datapath|reg4bits:accumulador|FFJK:FF0|aux         ; 0                 ; 0       ;
-;      - dp:datapath|reg4bits:accumulador|FFJK:FF1|aux         ; 0                 ; 0       ;
-;      - dp:datapath|reg4bits:accumulador|FFJK:FF2|aux         ; 0                 ; 0       ;
-;      - dp:datapath|reg4bits:accumulador|FFJK:FF3|aux         ; 1                 ; 0       ;
-;      - ctrl:controller|RF_rd                                 ; 0                 ; 0       ;
-;      - ctrl:controller|acc_ld                                ; 0                 ; 0       ;
-;      - dp:datapath|rf:Register_File|reg4bits:R2|FFJK:FF1|aux ; 0                 ; 0       ;
-;      - dp:datapath|rf:Register_File|reg4bits:R1|FFJK:FF1|aux ; 0                 ; 0       ;
-;      - dp:datapath|rf:Register_File|reg4bits:R3|FFJK:FF1|aux ; 0                 ; 0       ;
-;      - dp:datapath|rf:Register_File|reg4bits:R0|FFJK:FF1|aux ; 1                 ; 0       ;
-;      - ctrl:controller|imm[1]                                ; 0                 ; 0       ;
-;      - dp:datapath|rf:Register_File|reg4bits:R1|FFJK:FF2|aux ; 0                 ; 0       ;
-;      - dp:datapath|rf:Register_File|reg4bits:R2|FFJK:FF2|aux ; 0                 ; 0       ;
-;      - dp:datapath|rf:Register_File|reg4bits:R3|FFJK:FF2|aux ; 0                 ; 0       ;
-;      - dp:datapath|rf:Register_File|reg4bits:R0|FFJK:FF2|aux ; 0                 ; 0       ;
-;      - dp:datapath|rf:Register_File|reg4bits:R2|FFJK:FF3|aux ; 0                 ; 0       ;
-;      - dp:datapath|rf:Register_File|reg4bits:R1|FFJK:FF3|aux ; 0                 ; 0       ;
-;      - dp:datapath|rf:Register_File|reg4bits:R3|FFJK:FF3|aux ; 0                 ; 0       ;
-;      - dp:datapath|rf:Register_File|reg4bits:R0|FFJK:FF3|aux ; 1                 ; 0       ;
-;      - ctrl:controller|imm[3]                                ; 0                 ; 0       ;
-;      - ctrl:controller|OPCODE[0]                             ; 0                 ; 0       ;
-;      - ctrl:controller|state.Decod                           ; 0                 ; 0       ;
-;      - ctrl:controller|OPCODE[2]                             ; 1                 ; 0       ;
-;      - ctrl:controller|OPCODE[3]                             ; 0                 ; 0       ;
-;      - ctrl:controller|RF_W_addr[0]                          ; 1                 ; 0       ;
-;      - ctrl:controller|RF_wr                                 ; 0                 ; 0       ;
-;      - ctrl:controller|RF_W_addr[1]                          ; 1                 ; 0       ;
-;      - ctrl:controller|state.fetch                           ; 0                 ; 0       ;
-;      - ctrl:controller|ADDRESS[3]                            ; 1                 ; 0       ;
-;      - ctrl:controller|ADDRESS[1]                            ; 1                 ; 0       ;
-;      - ctrl:controller|ADDRESS[0]                            ; 1                 ; 0       ;
-;      - ctrl:controller|PC[0]                                 ; 0                 ; 0       ;
-;      - ctrl:controller|PC[1]                                 ; 0                 ; 0       ;
-;      - ctrl:controller|PC[2]                                 ; 0                 ; 0       ;
-;      - ctrl:controller|state.init                            ; 0                 ; 0       ;
-;      - ctrl:controller|state.jmp_if_zero_jmp                 ; 0                 ; 0       ;
-;      - ctrl:controller|state.done                            ; 0                 ; 0       ;
-; start                                                        ;                   ;         ;
-+--------------------------------------------------------------+-------------------+---------+
++---------------------------------------------------------------------------------------------+
+; Pad To Core Delay Chain Fanout                                                              ;
++---------------------------------------------------------------+-------------------+---------+
+; Source Pin / Fanout                                           ; Pad To Core Index ; Setting ;
++---------------------------------------------------------------+-------------------+---------+
+; clk                                                           ;                   ;         ;
+;      - ctrl:controller|Alu_SW[0]                              ; 1                 ; 0       ;
+;      - ctrl:controller|Alu_SW[1]                              ; 1                 ; 0       ;
+;      - ctrl:controller|Alu_SW[2]                              ; 0                 ; 0       ;
+;      - ctrl:controller|RF_R_addr[0]                           ; 0                 ; 0       ;
+;      - ctrl:controller|RF_R_addr[1]                           ; 0                 ; 0       ;
+;      - ctrl:controller|now_inst[0]                            ; 1                 ; 0       ;
+;      - ctrl:controller|now_inst[1]                            ; 0                 ; 0       ;
+;      - ctrl:controller|now_inst[2]                            ; 0                 ; 0       ;
+;      - ctrl:controller|now_inst[3]                            ; 0                 ; 0       ;
+;      - ctrl:controller|SW_In_ACC[0]                           ; 0                 ; 0       ;
+;      - ctrl:controller|SW_In_ACC[1]                           ; 0                 ; 0       ;
+;      - ctrl:controller|imm[0]                                 ; 1                 ; 0       ;
+;      - ctrl:controller|acc_shift_r                            ; 1                 ; 0       ;
+;      - ctrl:controller|acc_shift_l                            ; 1                 ; 0       ;
+;      - ctrl:controller|RF_rd                                  ; 0                 ; 0       ;
+;      - dp:datapath|rf:Register_File|reg4bits:R0|FFJK:FF0|aux  ; 0                 ; 0       ;
+;      - dp:datapath|rf:Register_File|reg4bits:R1|FFJK:FF0|aux  ; 1                 ; 0       ;
+;      - dp:datapath|rf:Register_File|reg4bits:R2|FFJK:FF0|aux  ; 0                 ; 0       ;
+;      - dp:datapath|rf:Register_File|reg4bits:R3|FFJK:FF0|aux  ; 0                 ; 0       ;
+;      - dp:datapath|reg4bit_shiftable:accumulador|FFJK:FF0|aux ; 0                 ; 0       ;
+;      - dp:datapath|reg4bit_shiftable:accumulador|FFJK:FF1|aux ; 0                 ; 0       ;
+;      - dp:datapath|reg4bit_shiftable:accumulador|FFJK:FF2|aux ; 0                 ; 0       ;
+;      - dp:datapath|reg4bit_shiftable:accumulador|FFJK:FF3|aux ; 0                 ; 0       ;
+;      - ctrl:controller|acc_ld                                 ; 1                 ; 0       ;
+;      - dp:datapath|rf:Register_File|reg4bits:R2|FFJK:FF1|aux  ; 0                 ; 0       ;
+;      - dp:datapath|rf:Register_File|reg4bits:R1|FFJK:FF1|aux  ; 1                 ; 0       ;
+;      - dp:datapath|rf:Register_File|reg4bits:R3|FFJK:FF1|aux  ; 0                 ; 0       ;
+;      - dp:datapath|rf:Register_File|reg4bits:R0|FFJK:FF1|aux  ; 0                 ; 0       ;
+;      - ctrl:controller|imm[1]                                 ; 1                 ; 0       ;
+;      - dp:datapath|rf:Register_File|reg4bits:R1|FFJK:FF2|aux  ; 1                 ; 0       ;
+;      - dp:datapath|rf:Register_File|reg4bits:R2|FFJK:FF2|aux  ; 0                 ; 0       ;
+;      - dp:datapath|rf:Register_File|reg4bits:R3|FFJK:FF2|aux  ; 0                 ; 0       ;
+;      - dp:datapath|rf:Register_File|reg4bits:R0|FFJK:FF2|aux  ; 0                 ; 0       ;
+;      - ctrl:controller|imm[2]                                 ; 0                 ; 0       ;
+;      - dp:datapath|rf:Register_File|reg4bits:R2|FFJK:FF3|aux  ; 1                 ; 0       ;
+;      - dp:datapath|rf:Register_File|reg4bits:R1|FFJK:FF3|aux  ; 1                 ; 0       ;
+;      - dp:datapath|rf:Register_File|reg4bits:R3|FFJK:FF3|aux  ; 1                 ; 0       ;
+;      - dp:datapath|rf:Register_File|reg4bits:R0|FFJK:FF3|aux  ; 1                 ; 0       ;
+;      - ctrl:controller|imm[3]                                 ; 1                 ; 0       ;
+;      - ctrl:controller|state.fetch                            ; 1                 ; 0       ;
+;      - ctrl:controller|state.jmp_if_zero_jmp                  ; 1                 ; 0       ;
+;      - ctrl:controller|state.shfl_state                       ; 1                 ; 0       ;
+;      - ctrl:controller|state.shfr_state                       ; 1                 ; 0       ;
+;      - ctrl:controller|state.init                             ; 1                 ; 0       ;
+;      - ctrl:controller|state.Decod                            ; 1                 ; 0       ;
+;      - ctrl:controller|state.jmpz_state                       ; 1                 ; 0       ;
+;      - ctrl:controller|state.done                             ; 1                 ; 0       ;
+;      - ctrl:controller|state.xorr_state                       ; 1                 ; 0       ;
+;      - ctrl:controller|state.add_state                        ; 0                 ; 0       ;
+;      - ctrl:controller|state.andr_state                       ; 1                 ; 0       ;
+;      - ctrl:controller|state.xnorr_state                      ; 0                 ; 0       ;
+;      - ctrl:controller|state.movr_state                       ; 1                 ; 0       ;
+;      - ctrl:controller|state.jmp_state                        ; 0                 ; 0       ;
+;      - ctrl:controller|state.halt_state                       ; 0                 ; 0       ;
+;      - ctrl:controller|state.orr_state                        ; 0                 ; 0       ;
+;      - ctrl:controller|state.load_state                       ; 0                 ; 0       ;
+;      - ctrl:controller|state.sub_state                        ; 0                 ; 0       ;
+;      - ctrl:controller|state.nandr_state                      ; 0                 ; 0       ;
+;      - ctrl:controller|state.inv_state                        ; 0                 ; 0       ;
+;      - ctrl:controller|ADDRESS[0]                             ; 1                 ; 0       ;
+;      - ctrl:controller|state.mova_state                       ; 0                 ; 0       ;
+;      - ctrl:controller|RF_W_addr[0]                           ; 1                 ; 0       ;
+;      - ctrl:controller|RF_wr                                  ; 1                 ; 0       ;
+;      - ctrl:controller|RF_W_addr[1]                           ; 1                 ; 0       ;
+;      - ctrl:controller|ADDRESS[3]                             ; 1                 ; 0       ;
+;      - ctrl:controller|ADDRESS[2]                             ; 1                 ; 0       ;
+;      - ctrl:controller|ADDRESS[1]                             ; 1                 ; 0       ;
+;      - ctrl:controller|OPCODE[3]                              ; 1                 ; 0       ;
+;      - ctrl:controller|OPCODE[2]                              ; 1                 ; 0       ;
+;      - ctrl:controller|OPCODE[1]                              ; 1                 ; 0       ;
+;      - ctrl:controller|OPCODE[0]                              ; 1                 ; 0       ;
+;      - ctrl:controller|PC[0]                                  ; 0                 ; 0       ;
+;      - ctrl:controller|PC[1]                                  ; 0                 ; 0       ;
+;      - ctrl:controller|PC[2]                                  ; 0                 ; 0       ;
+;      - ctrl:controller|PC[3]                                  ; 0                 ; 0       ;
+; start                                                         ;                   ;         ;
++---------------------------------------------------------------+-------------------+---------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1274,21 +1302,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 ; Name                                                         ; Location           ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +--------------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; clk                                                          ; PIN_G26            ; 50      ; Clock        ; no     ; --                   ; --               ; --                        ;
-; ctrl:controller|Alu_SW[2]~0                                  ; LCCOMB_X64_Y25_N14 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; ctrl:controller|PC[3]~0                                      ; LCCOMB_X62_Y25_N6  ; 3       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; ctrl:controller|RF_R_addr[1]~0                               ; LCCOMB_X62_Y27_N2  ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; ctrl:controller|RF_W_addr[1]~0                               ; LCCOMB_X64_Y25_N26 ; 3       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; ctrl:controller|Selector8~0                                  ; LCCOMB_X62_Y27_N12 ; 2       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; ctrl:controller|acc_ld                                       ; LCFF_X61_Y27_N3    ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; ctrl:controller|imm[0]~0                                     ; LCCOMB_X64_Y25_N8  ; 3       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; ctrl:controller|now_inst[0]~0                                ; LCCOMB_X64_Y25_N12 ; 3       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; ctrl:controller|state.Decod                                  ; LCFF_X64_Y27_N5    ; 16      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
-; ctrl:controller|state.fetch                                  ; LCFF_X64_Y27_N7    ; 10      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; dp:datapath|rf:Register_File|decoder2x4:WR_decoder|output[0] ; LCCOMB_X61_Y26_N26 ; 4       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; dp:datapath|rf:Register_File|decoder2x4:WR_decoder|output~0  ; LCCOMB_X61_Y26_N20 ; 4       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; dp:datapath|rf:Register_File|decoder2x4:WR_decoder|output~1  ; LCCOMB_X61_Y26_N10 ; 4       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; dp:datapath|rf:Register_File|decoder2x4:WR_decoder|output~2  ; LCCOMB_X61_Y26_N0  ; 4       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; clk                                                          ; PIN_G26            ; 75      ; Clock        ; no     ; --                   ; --               ; --                        ;
+; ctrl:controller|PC[3]~0                                      ; LCCOMB_X60_Y27_N6  ; 4       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; ctrl:controller|WideOr9                                      ; LCCOMB_X62_Y27_N16 ; 3       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; ctrl:controller|acc_ld                                       ; LCFF_X62_Y27_N9    ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; ctrl:controller|state.fetch                                  ; LCFF_X62_Y27_N29   ; 16      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; ctrl:controller|state.load_state                             ; LCFF_X64_Y27_N3    ; 7       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; ctrl:controller|state.movr_state                             ; LCFF_X62_Y27_N19   ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; dp:datapath|rf:Register_File|decoder2x4:WR_decoder|output[0] ; LCCOMB_X63_Y26_N6  ; 4       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; dp:datapath|rf:Register_File|decoder2x4:WR_decoder|output~0  ; LCCOMB_X63_Y26_N0  ; 4       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; dp:datapath|rf:Register_File|decoder2x4:WR_decoder|output~1  ; LCCOMB_X63_Y26_N14 ; 4       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; dp:datapath|rf:Register_File|decoder2x4:WR_decoder|output~2  ; LCCOMB_X63_Y26_N16 ; 4       ; Clock enable ; no     ; --                   ; --               ; --                        ;
 +--------------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 
 
@@ -1297,122 +1321,205 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------------------------------------------------+---------+
 ; Name                                                                              ; Fan-Out ;
 +-----------------------------------------------------------------------------------+---------+
-; clk                                                                               ; 50      ;
-; dp:datapath|reg4bits:accumulador|FFJK:FF1|aux                                     ; 17      ;
-; ctrl:controller|state.Decod                                                       ; 16      ;
-; dp:datapath|reg4bits:accumulador|FFJK:FF2|aux                                     ; 16      ;
-; dp:datapath|reg4bits:accumulador|FFJK:FF0|aux                                     ; 16      ;
-; ctrl:controller|OPCODE[3]                                                         ; 15      ;
-; dp:datapath|reg4bits:accumulador|FFJK:FF3|aux                                     ; 15      ;
-; ctrl:controller|OPCODE[2]                                                         ; 12      ;
-; ctrl:controller|OPCODE[0]                                                         ; 11      ;
-; ctrl:controller|PC[0]                                                             ; 10      ;
-; ctrl:controller|state.fetch                                                       ; 10      ;
+; clk                                                                               ; 75      ;
+; dp:datapath|reg4bit_shiftable:accumulador|FFJK:FF2|aux                            ; 19      ;
+; dp:datapath|reg4bit_shiftable:accumulador|FFJK:FF1|aux                            ; 19      ;
+; dp:datapath|reg4bit_shiftable:accumulador|FFJK:FF0|aux                            ; 18      ;
+; ctrl:controller|OPCODE[0]                                                         ; 16      ;
+; ctrl:controller|state.fetch                                                       ; 16      ;
+; dp:datapath|reg4bit_shiftable:accumulador|FFJK:FF3|aux                            ; 16      ;
+; ctrl:controller|PC[0]                                                             ; 15      ;
+; ctrl:controller|state.Decod                                                       ; 13      ;
+; ctrl:controller|Alu_SW[1]                                                         ; 12      ;
+; ctrl:controller|PC[1]                                                             ; 11      ;
+; ctrl:controller|PC[2]                                                             ; 10      ;
+; ctrl:controller|state.jmp_if_zero_jmp                                             ; 10      ;
+; ctrl:controller|state.jmp_state                                                   ; 9       ;
 ; ctrl:controller|Alu_SW[0]                                                         ; 9       ;
-; ctrl:controller|Alu_SW[2]                                                         ; 9       ;
-; ctrl:controller|PC[1]                                                             ; 8       ;
-; ctrl:controller|now_inst[0]                                                       ; 8       ;
-; ctrl:controller|state.jmp_if_zero_jmp                                             ; 7       ;
-; ctrl:controller|SW_In_ACC[1]                                                      ; 6       ;
+; ctrl:controller|PC[3]                                                             ; 8       ;
+; ctrl:controller|OPCODE[1]                                                         ; 8       ;
+; ctrl:controller|OPCODE[2]                                                         ; 8       ;
+; ctrl:controller|OPCODE[3]                                                         ; 8       ;
+; ctrl:controller|SW_In_ACC[1]                                                      ; 8       ;
+; ctrl:controller|ADDRESS[0]                                                        ; 7       ;
+; ctrl:controller|state.load_state                                                  ; 7       ;
+; ctrl:controller|acc_shift_l                                                       ; 7       ;
+; ctrl:controller|SW_In_ACC[0]                                                      ; 7       ;
+; ctrl:controller|acc_shift_r                                                       ; 7       ;
+; dp:datapath|rf:Register_File|output[2]~6                                          ; 6       ;
+; dp:datapath|rf:Register_File|output[1]~4                                          ; 6       ;
 ; dp:datapath|rf:Register_File|output[0]~0                                          ; 6       ;
 ; dp:datapath|rf:Register_File|decoder2x4:RD_decoder|output~0                       ; 6       ;
-; ctrl:controller|ADDRESS[1]                                                        ; 5       ;
 ; ctrl:controller|RF_wr                                                             ; 5       ;
-; dp:datapath|rf:Register_File|output[1]~4                                          ; 5       ;
-; dp:datapath|rf:Register_File|output[0]~2                                          ; 5       ;
+; ctrl:controller|state.orr_state                                                   ; 5       ;
+; ctrl:controller|state.halt_state                                                  ; 5       ;
+; ctrl:controller|state.movr_state                                                  ; 5       ;
 ; ctrl:controller|acc_ld                                                            ; 5       ;
-; ctrl:controller|PC[2]                                                             ; 4       ;
-; ctrl:controller|ADDRESS[0]                                                        ; 4       ;
+; ctrl:controller|Alu_SW[2]                                                         ; 5       ;
+; dp:datapath|rf:Register_File|output[0]~2                                          ; 5       ;
+; ctrl:controller|now_inst[3]                                                       ; 5       ;
+; ctrl:controller|now_inst[2]                                                       ; 5       ;
+; ctrl:controller|now_inst[1]                                                       ; 5       ;
+; ctrl:controller|now_inst[0]                                                       ; 5       ;
+; ctrl:controller|PC[3]~0                                                           ; 4       ;
 ; dp:datapath|rf:Register_File|decoder2x4:WR_decoder|output[0]                      ; 4       ;
 ; dp:datapath|rf:Register_File|decoder2x4:WR_decoder|output~2                       ; 4       ;
+; ctrl:controller|ADDRESS[2]                                                        ; 4       ;
 ; dp:datapath|rf:Register_File|decoder2x4:WR_decoder|output~1                       ; 4       ;
+; ctrl:controller|ADDRESS[3]                                                        ; 4       ;
 ; dp:datapath|rf:Register_File|decoder2x4:WR_decoder|output~0                       ; 4       ;
 ; ctrl:controller|RF_W_addr[1]                                                      ; 4       ;
 ; ctrl:controller|RF_W_addr[0]                                                      ; 4       ;
-; dp:datapath|rf:Register_File|output[2]~6                                          ; 4       ;
+; ctrl:controller|WideOr15~0                                                        ; 4       ;
+; ctrl:controller|state.nandr_state                                                 ; 4       ;
+; ctrl:controller|state.xnorr_state                                                 ; 4       ;
+; ctrl:controller|state.andr_state                                                  ; 4       ;
+; ctrl:controller|WideOr18                                                          ; 4       ;
+; dp:datapath|rf:Register_File|output[3]~8                                          ; 4       ;
+; dp:datapath|reg4bit_shiftable:accumulador|FFJK:FF1|aux~0                          ; 4       ;
 ; bin2bcd_12bit:bin2bcd|LessThan15~0                                                ; 4       ;
-; ctrl:controller|now_inst[3]                                                       ; 4       ;
-; ctrl:controller|now_inst[2]                                                       ; 4       ;
-; ctrl:controller|PC[3]~0                                                           ; 3       ;
-; ctrl:controller|RF_W_addr[1]~0                                                    ; 3       ;
-; ctrl:controller|imm[0]~0                                                          ; 3       ;
-; ctrl:controller|ADDRESS[3]                                                        ; 3       ;
-; ctrl:controller|now_inst[0]~0                                                     ; 3       ;
-; dp:datapath|rf:Register_File|output[3]~8                                          ; 3       ;
-; dp:datapath|mux4x1_4bits:ACC_IN|Mux2~2                                            ; 3       ;
-; dp:datapath|reg4bits:accumulador|FFJK:FF2|aux~0                                   ; 3       ;
+; ctrl:controller|ADDRESS[1]                                                        ; 3       ;
+; ctrl:controller|WideOr9                                                           ; 3       ;
+; ctrl:controller|state.mova_state                                                  ; 3       ;
+; ctrl:controller|state.inv_state                                                   ; 3       ;
+; ctrl:controller|state.sub_state                                                   ; 3       ;
+; ctrl:controller|Selector35~0                                                      ; 3       ;
+; ctrl:controller|state.add_state                                                   ; 3       ;
+; ctrl:controller|WideOr12~0                                                        ; 3       ;
+; ctrl:controller|state.jmpz_state                                                  ; 3       ;
+; ctrl:controller|state.init                                                        ; 3       ;
 ; ctrl:controller|RF_rd                                                             ; 3       ;
 ; start                                                                             ; 2       ;
-; ctrl:controller|state.done                                                        ; 2       ;
+; ctrl:controller|Add0~1                                                            ; 2       ;
+; ctrl:controller|PC~1                                                              ; 2       ;
+; ctrl:controller|Add1~0                                                            ; 2       ;
 ; dp:datapath|comparador_4bits:IFZERO|comparador_full:comp_3|out_eq~0               ; 2       ;
-; ctrl:controller|Selector4~1                                                       ; 2       ;
-; ctrl:controller|state.init                                                        ; 2       ;
-; ctrl:controller|Mux3~0                                                            ; 2       ;
-; ctrl:controller|RF_R_addr[1]~0                                                    ; 2       ;
-; ctrl:controller|Selector8~0                                                       ; 2       ;
-; ctrl:controller|Alu_SW[2]~0                                                       ; 2       ;
+; ctrl:controller|Mux7~15                                                           ; 2       ;
+; ctrl:controller|Mux7~13                                                           ; 2       ;
+; ctrl:controller|Mux7~11                                                           ; 2       ;
+; ctrl:controller|Mux7~8                                                            ; 2       ;
+; ctrl:controller|Mux7~6                                                            ; 2       ;
+; ctrl:controller|Mux7~5                                                            ; 2       ;
+; ctrl:controller|Mux7~3                                                            ; 2       ;
+; ctrl:controller|Mux7~0                                                            ; 2       ;
+; ctrl:controller|Selector38~0                                                      ; 2       ;
+; ctrl:controller|Selector36~0                                                      ; 2       ;
+; ctrl:controller|state.xorr_state                                                  ; 2       ;
+; ctrl:controller|state.done                                                        ; 2       ;
+; ctrl:controller|WideOr0~0                                                         ; 2       ;
+; ctrl:controller|state.shfr_state                                                  ; 2       ;
+; ctrl:controller|state.shfl_state                                                  ; 2       ;
 ; dp:datapath|alu:alu1|subtractor4bits:subtrc|adder4bits:Add0|FullAdder:FA1|carry~0 ; 2       ;
 ; dp:datapath|alu:alu1|adder4bits:adder|FullAdder:FA1|carry~0                       ; 2       ;
-; dp:datapath|mux4x1_4bits:ACC_IN|Mux2~1                                            ; 2       ;
-; dp:datapath|mux4x1_4bits:ACC_IN|Mux2~5                                            ; 1       ;
-; dp:datapath|mux4x1_4bits:ACC_IN|Mux2~4                                            ; 1       ;
-; dp:datapath|mux4x1_4bits:ACC_IN|Mux1~3                                            ; 1       ;
-; dp:datapath|mux4x1_4bits:ACC_IN|Mux1~2                                            ; 1       ;
-; ctrl:controller|state.done~0                                                      ; 1       ;
-; ctrl:controller|state~8                                                           ; 1       ;
-; ctrl:controller|state.init~0                                                      ; 1       ;
-; ctrl:controller|Selector1~2                                                       ; 1       ;
+; dp:datapath|reg4bit_shiftable:accumulador|mux2x1_1bit:muxRFF1|output~4            ; 2       ;
+; dp:datapath|reg4bit_shiftable:accumulador|mux2x1_1bit:muxRFF1|output~7            ; 1       ;
+; dp:datapath|reg4bit_shiftable:accumulador|mux2x1_1bit:muxRFF1|output~6            ; 1       ;
+; dp:datapath|alu:alu1|mux8x1_4bits:OUPUT|Mux0~4                                    ; 1       ;
+; dp:datapath|alu:alu1|mux8x1_4bits:OUPUT|Mux0~3                                    ; 1       ;
+; ctrl:controller|Selector0~2                                                       ; 1       ;
+; ctrl:controller|Selector0~1                                                       ; 1       ;
+; ctrl:controller|Selector0~0                                                       ; 1       ;
+; ctrl:controller|PC~2                                                              ; 1       ;
 ; ctrl:controller|Selector1~1                                                       ; 1       ;
 ; ctrl:controller|Selector1~0                                                       ; 1       ;
+; ctrl:controller|Add0~0                                                            ; 1       ;
+; ctrl:controller|Selector2~2                                                       ; 1       ;
+; ctrl:controller|Selector2~1                                                       ; 1       ;
 ; ctrl:controller|Selector2~0                                                       ; 1       ;
-; ctrl:controller|Add1~0                                                            ; 1       ;
+; ctrl:controller|Selector3~2                                                       ; 1       ;
 ; ctrl:controller|Selector3~1                                                       ; 1       ;
 ; ctrl:controller|Selector3~0                                                       ; 1       ;
-; ctrl:controller|Mux6~0                                                            ; 1       ;
+; ctrl:controller|Mux3~0                                                            ; 1       ;
+; ctrl:controller|Mux2~0                                                            ; 1       ;
+; ctrl:controller|Mux1~0                                                            ; 1       ;
+; ctrl:controller|Mux0~0                                                            ; 1       ;
 ; ctrl:controller|Mux5~0                                                            ; 1       ;
 ; ctrl:controller|Mux4~0                                                            ; 1       ;
-; ctrl:controller|Selector4~2                                                       ; 1       ;
-; ctrl:controller|Selector4~0                                                       ; 1       ;
-; ctrl:controller|Selector7~0                                                       ; 1       ;
-; ctrl:controller|Mux0~0                                                            ; 1       ;
-; ctrl:controller|Mux1~0                                                            ; 1       ;
-; ctrl:controller|Mux13~0                                                           ; 1       ;
-; ctrl:controller|SW_In_ACC[1]~1                                                    ; 1       ;
-; ctrl:controller|SW_In_ACC[1]~0                                                    ; 1       ;
-; ctrl:controller|Mux29~0                                                           ; 1       ;
-; ctrl:controller|Mux23~0                                                           ; 1       ;
-; ctrl:controller|Mux15~0                                                           ; 1       ;
-; dp:datapath|mux4x1_4bits:ACC_IN|Mux0~6                                            ; 1       ;
-; dp:datapath|mux4x1_4bits:ACC_IN|Mux0~5                                            ; 1       ;
-; dp:datapath|mux4x1_4bits:ACC_IN|Mux0~4                                            ; 1       ;
-; dp:datapath|mux4x1_4bits:ACC_IN|Mux0~3                                            ; 1       ;
-; dp:datapath|mux4x1_4bits:ACC_IN|Mux0~2                                            ; 1       ;
-; dp:datapath|mux4x1_4bits:ACC_IN|Mux0~1                                            ; 1       ;
+; ctrl:controller|Selector26~0                                                      ; 1       ;
+; ctrl:controller|Mux7~22                                                           ; 1       ;
+; ctrl:controller|Mux6~0                                                            ; 1       ;
+; ctrl:controller|Mux7~21                                                           ; 1       ;
+; ctrl:controller|Mux7~20                                                           ; 1       ;
+; ctrl:controller|Mux7~19                                                           ; 1       ;
+; ctrl:controller|Mux7~18                                                           ; 1       ;
+; ctrl:controller|Mux7~17                                                           ; 1       ;
+; ctrl:controller|Mux7~16                                                           ; 1       ;
+; ctrl:controller|Mux7~14                                                           ; 1       ;
+; ctrl:controller|Mux7~12                                                           ; 1       ;
+; ctrl:controller|Mux7~10                                                           ; 1       ;
+; ctrl:controller|Mux7~9                                                            ; 1       ;
+; ctrl:controller|Mux7~7                                                            ; 1       ;
+; ctrl:controller|state.xorr_state~0                                                ; 1       ;
+; ctrl:controller|state.done~0                                                      ; 1       ;
+; ctrl:controller|Mux7~4                                                            ; 1       ;
+; ctrl:controller|state.init~0                                                      ; 1       ;
+; ctrl:controller|Mux7~2                                                            ; 1       ;
+; ctrl:controller|Mux7~1                                                            ; 1       ;
+; ctrl:controller|Selector5~1                                                       ; 1       ;
+; ctrl:controller|Selector5~0                                                       ; 1       ;
+; ctrl:controller|Selector27~0                                                      ; 1       ;
+; ctrl:controller|WideOr12~1                                                        ; 1       ;
+; ctrl:controller|Selector28~0                                                      ; 1       ;
+; ctrl:controller|Selector36~1                                                      ; 1       ;
+; ctrl:controller|Selector38~1                                                      ; 1       ;
+; ctrl:controller|Selector37~1                                                      ; 1       ;
+; ctrl:controller|Selector37~0                                                      ; 1       ;
+; ctrl:controller|Selector25~0                                                      ; 1       ;
+; ctrl:controller|WideOr9~0                                                         ; 1       ;
+; ctrl:controller|Selector31~0                                                      ; 1       ;
+; ctrl:controller|Selector30~0                                                      ; 1       ;
+; ctrl:controller|Selector29~0                                                      ; 1       ;
+; ctrl:controller|Selector32~0                                                      ; 1       ;
+; ctrl:controller|Selector33~1                                                      ; 1       ;
+; ctrl:controller|Selector33~0                                                      ; 1       ;
+; ctrl:controller|Selector34~1                                                      ; 1       ;
+; ctrl:controller|Selector34~0                                                      ; 1       ;
+; ctrl:controller|Selector35~2                                                      ; 1       ;
+; ctrl:controller|Selector35~1                                                      ; 1       ;
+; ctrl:controller|WideOr18~0                                                        ; 1       ;
+; dp:datapath|reg4bit_shiftable:accumulador|mux2x1_1bit:muxRFF3|output~4            ; 1       ;
+; dp:datapath|reg4bit_shiftable:accumulador|mux2x1_1bit:muxRFF3|output~3            ; 1       ;
+; dp:datapath|reg4bit_shiftable:accumulador|mux2x1_1bit:muxRFF3|output~2            ; 1       ;
 ; ctrl:controller|imm[3]                                                            ; 1       ;
-; dp:datapath|mux4x1_4bits:ACC_IN|Mux0~0                                            ; 1       ;
+; dp:datapath|reg4bit_shiftable:accumulador|mux2x1_1bit:muxRFF3|output~1            ; 1       ;
+; dp:datapath|alu:alu1|mux8x1_4bits:OUPUT|Mux0~2                                    ; 1       ;
+; dp:datapath|alu:alu1|mux8x1_4bits:OUPUT|Mux0~1                                    ; 1       ;
+; dp:datapath|alu:alu1|mux8x1_4bits:OUPUT|Mux0~0                                    ; 1       ;
 ; dp:datapath|rf:Register_File|reg4bits:R0|FFJK:FF3|aux                             ; 1       ;
 ; dp:datapath|rf:Register_File|output[3]~7                                          ; 1       ;
 ; dp:datapath|rf:Register_File|reg4bits:R3|FFJK:FF3|aux                             ; 1       ;
 ; dp:datapath|rf:Register_File|reg4bits:R1|FFJK:FF3|aux                             ; 1       ;
 ; dp:datapath|rf:Register_File|reg4bits:R2|FFJK:FF3|aux                             ; 1       ;
-; dp:datapath|mux4x1_4bits:ACC_IN|Mux1~1                                            ; 1       ;
-; dp:datapath|mux4x1_4bits:ACC_IN|Mux1~0                                            ; 1       ;
+; dp:datapath|reg4bit_shiftable:accumulador|mux2x1_1bit:muxRFF3|output~0            ; 1       ;
+; dp:datapath|reg4bit_shiftable:accumulador|mux2x1_1bit:muxRFF2|output~6            ; 1       ;
+; dp:datapath|reg4bit_shiftable:accumulador|mux2x1_1bit:muxRFF2|output~5            ; 1       ;
+; dp:datapath|reg4bit_shiftable:accumulador|mux2x1_1bit:muxRFF2|output~4            ; 1       ;
+; dp:datapath|reg4bit_shiftable:accumulador|mux2x1_1bit:muxRFF2|output~3            ; 1       ;
+; ctrl:controller|imm[2]                                                            ; 1       ;
+; dp:datapath|reg4bit_shiftable:accumulador|mux2x1_1bit:muxRFF2|output~2            ; 1       ;
+; dp:datapath|reg4bit_shiftable:accumulador|mux2x1_1bit:muxRFF2|output~1            ; 1       ;
 ; dp:datapath|rf:Register_File|reg4bits:R0|FFJK:FF2|aux                             ; 1       ;
 ; dp:datapath|rf:Register_File|output[2]~5                                          ; 1       ;
 ; dp:datapath|rf:Register_File|reg4bits:R3|FFJK:FF2|aux                             ; 1       ;
 ; dp:datapath|rf:Register_File|reg4bits:R2|FFJK:FF2|aux                             ; 1       ;
 ; dp:datapath|rf:Register_File|reg4bits:R1|FFJK:FF2|aux                             ; 1       ;
-; dp:datapath|mux4x1_4bits:ACC_IN|Mux2~3                                            ; 1       ;
+; dp:datapath|reg4bit_shiftable:accumulador|mux2x1_1bit:muxRFF2|output~0            ; 1       ;
+; dp:datapath|reg4bit_shiftable:accumulador|mux2x1_1bit:muxRFF1|output~5            ; 1       ;
+; dp:datapath|reg4bit_shiftable:accumulador|mux2x1_1bit:muxRFF1|output~3            ; 1       ;
+; dp:datapath|reg4bit_shiftable:accumulador|mux2x1_1bit:muxRFF1|output~2            ; 1       ;
+; dp:datapath|reg4bit_shiftable:accumulador|mux2x1_1bit:muxRFF1|output~1            ; 1       ;
 ; ctrl:controller|imm[1]                                                            ; 1       ;
-; dp:datapath|mux4x1_4bits:ACC_IN|Mux2~0                                            ; 1       ;
 ; dp:datapath|rf:Register_File|reg4bits:R0|FFJK:FF1|aux                             ; 1       ;
 ; dp:datapath|rf:Register_File|output[1]~3                                          ; 1       ;
 ; dp:datapath|rf:Register_File|reg4bits:R3|FFJK:FF1|aux                             ; 1       ;
 ; dp:datapath|rf:Register_File|reg4bits:R1|FFJK:FF1|aux                             ; 1       ;
 ; dp:datapath|rf:Register_File|reg4bits:R2|FFJK:FF1|aux                             ; 1       ;
-; dp:datapath|mux4x1_4bits:ACC_IN|Mux3~0                                            ; 1       ;
-; ctrl:controller|imm[0]                                                            ; 1       ;
-; dp:datapath|alu:alu1|mux8x1_4bits:OUPUT|Mux3~0                                    ; 1       ;
+; dp:datapath|reg4bit_shiftable:accumulador|mux2x1_1bit:muxRFF1|output~0            ; 1       ;
+; dp:datapath|reg4bit_shiftable:accumulador|mux2x1_1bit:muxRFF0|output~4            ; 1       ;
+; dp:datapath|reg4bit_shiftable:accumulador|mux2x1_1bit:muxRFF0|output~3            ; 1       ;
+; dp:datapath|reg4bit_shiftable:accumulador|mux2x1_1bit:muxRFF0|output~2            ; 1       ;
+; dp:datapath|reg4bit_shiftable:accumulador|mux2x1_1bit:muxRFF0|output~1            ; 1       ;
+; dp:datapath|reg4bit_shiftable:accumulador|mux2x1_1bit:muxRFF0|output~0            ; 1       ;
 ; dp:datapath|rf:Register_File|reg4bits:R0|FFJK:FF0|aux                             ; 1       ;
 ; dp:datapath|rf:Register_File|output[0]~1                                          ; 1       ;
 ; dp:datapath|rf:Register_File|reg4bits:R3|FFJK:FF0|aux                             ; 1       ;
@@ -1420,6 +1527,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; dp:datapath|rf:Register_File|reg4bits:R2|FFJK:FF0|aux                             ; 1       ;
 ; ctrl:controller|RF_R_addr[1]                                                      ; 1       ;
 ; dp:datapath|rf:Register_File|reg4bits:R1|FFJK:FF0|aux                             ; 1       ;
+; ctrl:controller|imm[0]                                                            ; 1       ;
 ; bin_to_disp:bin_decoder_ones|Mux0~0                                               ; 1       ;
 ; bin_to_disp:bin_decoder_ones|Mux1~0                                               ; 1       ;
 ; bin_to_disp:bin_decoder_ones|Mux2~0                                               ; 1       ;
@@ -1435,137 +1543,150 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------+------------------------+
 ; Other Routing Resource Type ; Usage                  ;
 +-----------------------------+------------------------+
-; Block interconnects         ; 155 / 94,460 ( < 1 % ) ;
-; C16 interconnects           ; 13 / 3,315 ( < 1 % )   ;
-; C4 interconnects            ; 86 / 60,840 ( < 1 % )  ;
-; Direct links                ; 33 / 94,460 ( < 1 % )  ;
+; Block interconnects         ; 211 / 94,460 ( < 1 % ) ;
+; C16 interconnects           ; 7 / 3,315 ( < 1 % )    ;
+; C4 interconnects            ; 70 / 60,840 ( < 1 % )  ;
+; Direct links                ; 76 / 94,460 ( < 1 % )  ;
 ; Global clocks               ; 0 / 16 ( 0 % )         ;
-; Local interconnects         ; 38 / 33,216 ( < 1 % )  ;
-; R24 interconnects           ; 28 / 3,091 ( < 1 % )   ;
-; R4 interconnects            ; 94 / 81,294 ( < 1 % )  ;
+; Local interconnects         ; 73 / 33,216 ( < 1 % )  ;
+; R24 interconnects           ; 19 / 3,091 ( < 1 % )   ;
+; R4 interconnects            ; 121 / 81,294 ( < 1 % ) ;
 +-----------------------------+------------------------+
 
 
-+---------------------------------------------------------------------------+
-; LAB Logic Elements                                                        ;
-+--------------------------------------------+------------------------------+
-; Number of Logic Elements  (Average = 7.83) ; Number of LABs  (Total = 12) ;
-+--------------------------------------------+------------------------------+
-; 1                                          ; 0                            ;
-; 2                                          ; 1                            ;
-; 3                                          ; 1                            ;
-; 4                                          ; 2                            ;
-; 5                                          ; 1                            ;
-; 6                                          ; 2                            ;
-; 7                                          ; 0                            ;
-; 8                                          ; 0                            ;
-; 9                                          ; 1                            ;
-; 10                                         ; 1                            ;
-; 11                                         ; 0                            ;
-; 12                                         ; 0                            ;
-; 13                                         ; 0                            ;
-; 14                                         ; 1                            ;
-; 15                                         ; 1                            ;
-; 16                                         ; 1                            ;
-+--------------------------------------------+------------------------------+
-
-
-+-------------------------------------------------------------------+
-; LAB-wide Signals                                                  ;
-+------------------------------------+------------------------------+
-; LAB-wide Signals  (Average = 1.75) ; Number of LABs  (Total = 12) ;
-+------------------------------------+------------------------------+
-; 1 Clock                            ; 11                           ;
-; 1 Clock enable                     ; 3                            ;
-; 1 Sync. clear                      ; 1                            ;
-; 2 Clock enables                    ; 6                            ;
-+------------------------------------+------------------------------+
-
-
-+-----------------------------------------------------------------------------+
-; LAB Signals Sourced                                                         ;
-+----------------------------------------------+------------------------------+
-; Number of Signals Sourced  (Average = 11.67) ; Number of LABs  (Total = 12) ;
-+----------------------------------------------+------------------------------+
-; 0                                            ; 0                            ;
-; 1                                            ; 0                            ;
-; 2                                            ; 0                            ;
-; 3                                            ; 0                            ;
-; 4                                            ; 3                            ;
-; 5                                            ; 0                            ;
-; 6                                            ; 0                            ;
-; 7                                            ; 1                            ;
-; 8                                            ; 1                            ;
-; 9                                            ; 0                            ;
-; 10                                           ; 1                            ;
-; 11                                           ; 0                            ;
-; 12                                           ; 2                            ;
-; 13                                           ; 0                            ;
-; 14                                           ; 0                            ;
-; 15                                           ; 1                            ;
-; 16                                           ; 0                            ;
-; 17                                           ; 0                            ;
-; 18                                           ; 0                            ;
-; 19                                           ; 2                            ;
-; 20                                           ; 0                            ;
-; 21                                           ; 0                            ;
-; 22                                           ; 0                            ;
-; 23                                           ; 0                            ;
-; 24                                           ; 0                            ;
-; 25                                           ; 0                            ;
-; 26                                           ; 1                            ;
-+----------------------------------------------+------------------------------+
-
-
-+--------------------------------------------------------------------------------+
-; LAB Signals Sourced Out                                                        ;
-+-------------------------------------------------+------------------------------+
-; Number of Signals Sourced Out  (Average = 5.83) ; Number of LABs  (Total = 12) ;
-+-------------------------------------------------+------------------------------+
-; 0                                               ; 0                            ;
-; 1                                               ; 1                            ;
-; 2                                               ; 1                            ;
-; 3                                               ; 0                            ;
-; 4                                               ; 3                            ;
-; 5                                               ; 1                            ;
-; 6                                               ; 3                            ;
-; 7                                               ; 0                            ;
-; 8                                               ; 1                            ;
-; 9                                               ; 0                            ;
-; 10                                              ; 0                            ;
-; 11                                              ; 1                            ;
-; 12                                              ; 0                            ;
-; 13                                              ; 1                            ;
-+-------------------------------------------------+------------------------------+
-
-
 +----------------------------------------------------------------------------+
-; LAB Distinct Inputs                                                        ;
+; LAB Logic Elements                                                         ;
 +---------------------------------------------+------------------------------+
-; Number of Distinct Inputs  (Average = 9.50) ; Number of LABs  (Total = 12) ;
+; Number of Logic Elements  (Average = 12.08) ; Number of LABs  (Total = 12) ;
 +---------------------------------------------+------------------------------+
-; 0                                           ; 0                            ;
 ; 1                                           ; 0                            ;
 ; 2                                           ; 0                            ;
-; 3                                           ; 1                            ;
+; 3                                           ; 2                            ;
 ; 4                                           ; 0                            ;
-; 5                                           ; 0                            ;
-; 6                                           ; 3                            ;
-; 7                                           ; 2                            ;
-; 8                                           ; 2                            ;
-; 9                                           ; 1                            ;
+; 5                                           ; 1                            ;
+; 6                                           ; 1                            ;
+; 7                                           ; 0                            ;
+; 8                                           ; 0                            ;
+; 9                                           ; 0                            ;
 ; 10                                          ; 0                            ;
 ; 11                                          ; 0                            ;
 ; 12                                          ; 0                            ;
 ; 13                                          ; 0                            ;
 ; 14                                          ; 0                            ;
 ; 15                                          ; 0                            ;
-; 16                                          ; 0                            ;
-; 17                                          ; 2                            ;
-; 18                                          ; 0                            ;
-; 19                                          ; 0                            ;
-; 20                                          ; 1                            ;
+; 16                                          ; 8                            ;
 +---------------------------------------------+------------------------------+
+
+
++-------------------------------------------------------------------+
+; LAB-wide Signals                                                  ;
++------------------------------------+------------------------------+
+; LAB-wide Signals  (Average = 1.67) ; Number of LABs  (Total = 12) ;
++------------------------------------+------------------------------+
+; 1 Clock                            ; 12                           ;
+; 1 Clock enable                     ; 5                            ;
+; 2 Clock enables                    ; 3                            ;
++------------------------------------+------------------------------+
+
+
++-----------------------------------------------------------------------------+
+; LAB Signals Sourced                                                         ;
++----------------------------------------------+------------------------------+
+; Number of Signals Sourced  (Average = 18.08) ; Number of LABs  (Total = 12) ;
++----------------------------------------------+------------------------------+
+; 0                                            ; 0                            ;
+; 1                                            ; 0                            ;
+; 2                                            ; 0                            ;
+; 3                                            ; 1                            ;
+; 4                                            ; 0                            ;
+; 5                                            ; 0                            ;
+; 6                                            ; 1                            ;
+; 7                                            ; 0                            ;
+; 8                                            ; 1                            ;
+; 9                                            ; 0                            ;
+; 10                                           ; 1                            ;
+; 11                                           ; 0                            ;
+; 12                                           ; 0                            ;
+; 13                                           ; 0                            ;
+; 14                                           ; 0                            ;
+; 15                                           ; 0                            ;
+; 16                                           ; 0                            ;
+; 17                                           ; 0                            ;
+; 18                                           ; 0                            ;
+; 19                                           ; 1                            ;
+; 20                                           ; 2                            ;
+; 21                                           ; 2                            ;
+; 22                                           ; 0                            ;
+; 23                                           ; 0                            ;
+; 24                                           ; 0                            ;
+; 25                                           ; 0                            ;
+; 26                                           ; 0                            ;
+; 27                                           ; 1                            ;
+; 28                                           ; 0                            ;
+; 29                                           ; 0                            ;
+; 30                                           ; 1                            ;
+; 31                                           ; 0                            ;
+; 32                                           ; 1                            ;
++----------------------------------------------+------------------------------+
+
+
++--------------------------------------------------------------------------------+
+; LAB Signals Sourced Out                                                        ;
++-------------------------------------------------+------------------------------+
+; Number of Signals Sourced Out  (Average = 9.25) ; Number of LABs  (Total = 12) ;
++-------------------------------------------------+------------------------------+
+; 0                                               ; 0                            ;
+; 1                                               ; 0                            ;
+; 2                                               ; 1                            ;
+; 3                                               ; 1                            ;
+; 4                                               ; 0                            ;
+; 5                                               ; 3                            ;
+; 6                                               ; 0                            ;
+; 7                                               ; 1                            ;
+; 8                                               ; 1                            ;
+; 9                                               ; 0                            ;
+; 10                                              ; 0                            ;
+; 11                                              ; 0                            ;
+; 12                                              ; 1                            ;
+; 13                                              ; 0                            ;
+; 14                                              ; 0                            ;
+; 15                                              ; 1                            ;
+; 16                                              ; 2                            ;
+; 17                                              ; 1                            ;
++-------------------------------------------------+------------------------------+
+
+
++-----------------------------------------------------------------------------+
+; LAB Distinct Inputs                                                         ;
++----------------------------------------------+------------------------------+
+; Number of Distinct Inputs  (Average = 13.08) ; Number of LABs  (Total = 12) ;
++----------------------------------------------+------------------------------+
+; 0                                            ; 0                            ;
+; 1                                            ; 0                            ;
+; 2                                            ; 0                            ;
+; 3                                            ; 0                            ;
+; 4                                            ; 0                            ;
+; 5                                            ; 1                            ;
+; 6                                            ; 0                            ;
+; 7                                            ; 2                            ;
+; 8                                            ; 1                            ;
+; 9                                            ; 1                            ;
+; 10                                           ; 0                            ;
+; 11                                           ; 0                            ;
+; 12                                           ; 1                            ;
+; 13                                           ; 0                            ;
+; 14                                           ; 0                            ;
+; 15                                           ; 1                            ;
+; 16                                           ; 2                            ;
+; 17                                           ; 0                            ;
+; 18                                           ; 1                            ;
+; 19                                           ; 0                            ;
+; 20                                           ; 1                            ;
+; 21                                           ; 0                            ;
+; 22                                           ; 0                            ;
+; 23                                           ; 0                            ;
+; 24                                           ; 1                            ;
++----------------------------------------------+------------------------------+
 
 
 +-------------------------------------------------------------------------+
@@ -1602,19 +1723,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------+----------------------+-------------------+
 ; Source Clock(s) ; Destination Clock(s) ; Delay Added in ns ;
 +-----------------+----------------------+-------------------+
-; I/O             ; clk                  ; 1.7               ;
-+-----------------+----------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
 This will disable optimization of problematic paths and expose them for further analysis using either the TimeQuest Timing Analyzer or the Classic Timing Analyzer.
 
 
-+-------------------------------------------------------------------------------------+
-; Estimated Delay Added for Hold Timing Details                                       ;
-+-----------------+-----------------------------------------------+-------------------+
-; Source Register ; Destination Register                          ; Delay Added in ns ;
-+-----------------+-----------------------------------------------+-------------------+
-; clk             ; dp:datapath|reg4bits:accumulador|FFJK:FF0|aux ; 0.530             ;
-+-----------------+-----------------------------------------------+-------------------+
++-------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Details                     ;
++-----------------+-----------------------------+-------------------+
+; Source Register ; Destination Register        ; Delay Added in ns ;
++-----------------+-----------------------------+-------------------+
+; clk             ; ctrl:controller|now_inst[3] ; 0.186             ;
++-----------------+-----------------------------+-------------------+
 Note: This table only shows the top 1 path(s) that have the largest delay added for hold.
 
 
@@ -1658,7 +1777,7 @@ Info (176215): I/O bank details before I/O pin placement
         Info (176213): I/O bank number 6 does not use VREF pins and has 3.3V VCCIO pins. 22 total pin(s) used --  37 pins available
         Info (176213): I/O bank number 7 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  58 pins available
         Info (176213): I/O bank number 8 does not use VREF pins and has 3.3V VCCIO pins. 7 total pin(s) used --  49 pins available
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:00
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info (170191): Fitter placement operations beginning
@@ -1670,7 +1789,7 @@ Info (170195): Router estimated average interconnect usage is 0% of the availabl
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 0.35 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.30 seconds.
 Info (306004): Started post-fitting delay annotation
 Warning (306006): Found 46 output pins without output pin load capacitance assignment
     Info (306007): Pin "output[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
@@ -1724,17 +1843,17 @@ Info (306004): Started post-fitting delay annotation
 Info (306005): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Warning (169174): The Reserve All Unused Pins setting has not been specified, and will default to 'As output driving ground'.
-Info (144001): Generated suppressed messages file /home/linksnow/workspace/pR0C3Ss0r/processor 3.75/output_files/processador.fit.smsg
+Info (144001): Generated suppressed messages file /home/linksnow/workspace/pR0C3Ss0r/processor 4.0 normal/output_files/processador.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 720 megabytes
-    Info: Processing ended: Sun Dec 10 01:00:11 2017
-    Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:05
+    Info: Peak virtual memory: 724 megabytes
+    Info: Processing ended: Sun Dec 10 16:56:16 2017
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:06
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in /home/linksnow/workspace/pR0C3Ss0r/processor 3.75/output_files/processador.fit.smsg.
+The suppressed messages can be found in /home/linksnow/workspace/pR0C3Ss0r/processor 4.0 normal/output_files/processador.fit.smsg.
 
 
