@@ -23,3 +23,8 @@ This project is a implementation of a general purpose processor using VHDL. The 
 |XNOR       |1011'dd00| ACC = ACC XNOR Register[dd]|
 |NAND       |1100'dd00| ACC = ACC NAND Register[dd]|
 |JMPZ       |1101'ddoo| if(Register[dd] = 0) PC = PC + oo|
+|SHFL       |1110'0000| Accumulator = Accumulator << 1   |
+|SHFR       |1111'0000| Accumulator = Accumulator >> 1   |
+
+
+The turbo version implements a processor which does the operations above in less cycles, but the Finite State Machine is simple. In the other hand, the normal version is slower but is more didatic.
