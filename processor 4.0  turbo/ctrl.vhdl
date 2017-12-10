@@ -73,13 +73,19 @@ architecture fsm of ctrl is
 
 	-- as you add more code for your algorithms make sure to increase the
 	-- array size. ie. 2 lines of code here, means array size of 0 to 1.
-	type PM_BLOCK is array (0 to 2) of std_logic_vector(7 downto 0);
+	type PM_BLOCK is array (0 to 8) of std_logic_vector(7 downto 0);
 	constant PM : PM_BLOCK := (	
 
    --"OPCOD | aaaa"
-	  load  & "0010",
-	  SHFR  & "0000",
-	 
+	  load & "0001",
+	  movr & "0000",
+	  load & "0100",
+	  sub  & "0000",
+	  movr & "0100",
+	  jmpz & "0110",
+	  mova & "0100",
+	  jmp  & "0011",
+	  
 	  HALT & "1111"		-- halt
     );
   	
@@ -110,7 +116,7 @@ begin
         when init =>    -- steady state
           PC := 0;
 			 acc_clr <= '0';
-			 RF_clr <= '0';
+			 RF_clr <= '1';
           if start = '1' then
             state <= fetch;
           else 
@@ -125,6 +131,7 @@ begin
 			 
 			 RF_rd   <= '0';
 			 RF_wr   <= '0';
+			 RF_clr  <= '0';
 			 acc_ld  <= '0';
 			 acc_clr <= '0';
           
@@ -272,7 +279,7 @@ begin
           end case;
 		  when jmp_if_zero_jmp =>
 				
-				if(RF_zero = '0') then
+				if(RF_zero = '1') then
 					if(address(0) = '1') then
 							PC := PC + 1;
 					end if;

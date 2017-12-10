@@ -1,5 +1,5 @@
 Analysis & Synthesis report for processador
-Sun Dec 10 01:34:04 2017
+Sun Dec 10 16:41:11 2017
 Quartus II 64-Bit Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
 
 
@@ -69,15 +69,15 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                    ;
 +------------------------------------+--------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Dec 10 01:34:04 2017      ;
+; Analysis & Synthesis Status        ; Successful - Sun Dec 10 16:41:11 2017      ;
 ; Quartus II 64-Bit Version          ; 13.0.0 Build 156 04/24/2013 SJ Web Edition ;
 ; Revision Name                      ; processador                                ;
 ; Top-level Entity Name              ; cpu                                        ;
 ; Family                             ; Cyclone II                                 ;
-; Total logic elements               ; 17                                         ;
-;     Total combinational functions  ; 14                                         ;
-;     Dedicated logic registers      ; 13                                         ;
-; Total registers                    ; 13                                         ;
+; Total logic elements               ; 40                                         ;
+;     Total combinational functions  ; 36                                         ;
+;     Dedicated logic registers      ; 21                                         ;
+; Total registers                    ; 21                                         ;
 ; Total pins                         ; 48                                         ;
 ; Total virtual pins                 ; 0                                          ;
 ; Total memory bits                  ; 0                                          ;
@@ -182,30 +182,30 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                         ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                  ; Library ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------+---------+
-; components/comparador_full.vhd   ; yes             ; User VHDL File  ; D:/Documents/GitHub/pR0C3Ss0r/processor 3.75/components/comparador_full.vhd   ;         ;
-; components/comparador_4bits.vhd  ; yes             ; User VHDL File  ; D:/Documents/GitHub/pR0C3Ss0r/processor 3.75/components/comparador_4bits.vhd  ;         ;
-; components/bin_to_disp.vhd       ; yes             ; User VHDL File  ; D:/Documents/GitHub/pR0C3Ss0r/processor 3.75/components/bin_to_disp.vhd       ;         ;
-; components/bin2bcd_12bit.vhd     ; yes             ; User VHDL File  ; D:/Documents/GitHub/pR0C3Ss0r/processor 3.75/components/bin2bcd_12bit.vhd     ;         ;
-; dp.vhdl                          ; yes             ; User VHDL File  ; D:/Documents/GitHub/pR0C3Ss0r/processor 3.75/dp.vhdl                          ;         ;
-; ctrl.vhdl                        ; yes             ; User VHDL File  ; D:/Documents/GitHub/pR0C3Ss0r/processor 3.75/ctrl.vhdl                        ;         ;
-; cpu.vhdl                         ; yes             ; User VHDL File  ; D:/Documents/GitHub/pR0C3Ss0r/processor 3.75/cpu.vhdl                         ;         ;
-; components/FFJK.vhd              ; yes             ; User VHDL File  ; D:/Documents/GitHub/pR0C3Ss0r/processor 3.75/components/FFJK.vhd              ;         ;
-; components/reg4bits.vhd          ; yes             ; User VHDL File  ; D:/Documents/GitHub/pR0C3Ss0r/processor 3.75/components/reg4bits.vhd          ;         ;
-; components/mux8x1_4bits.vhd      ; yes             ; User VHDL File  ; D:/Documents/GitHub/pR0C3Ss0r/processor 3.75/components/mux8x1_4bits.vhd      ;         ;
-; components/FullAdder.vhd         ; yes             ; User VHDL File  ; D:/Documents/GitHub/pR0C3Ss0r/processor 3.75/components/FullAdder.vhd         ;         ;
-; components/adder4bits.vhd        ; yes             ; User VHDL File  ; D:/Documents/GitHub/pR0C3Ss0r/processor 3.75/components/adder4bits.vhd        ;         ;
-; components/subtractor4bits.vhd   ; yes             ; User VHDL File  ; D:/Documents/GitHub/pR0C3Ss0r/processor 3.75/components/subtractor4bits.vhd   ;         ;
-; components/mux4x1_4bits.vhd      ; yes             ; User VHDL File  ; D:/Documents/GitHub/pR0C3Ss0r/processor 3.75/components/mux4x1_4bits.vhd      ;         ;
-; components/decoder2x4.vhd        ; yes             ; User VHDL File  ; D:/Documents/GitHub/pR0C3Ss0r/processor 3.75/components/decoder2x4.vhd        ;         ;
-; components/opcode_decoder.vhd    ; yes             ; User VHDL File  ; D:/Documents/GitHub/pR0C3Ss0r/processor 3.75/components/opcode_decoder.vhd    ;         ;
-; components/reg4bit_shiftable.vhd ; yes             ; User VHDL File  ; D:/Documents/GitHub/pR0C3Ss0r/processor 3.75/components/reg4bit_shiftable.vhd ;         ;
-; components/mux2x1_1bit.vhd       ; yes             ; User VHDL File  ; D:/Documents/GitHub/pR0C3Ss0r/processor 3.75/components/mux2x1_1bit.vhd       ;         ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                               ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                        ; Library ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------+---------+
+; components/comparador_full.vhd   ; yes             ; User VHDL File  ; D:/Documents/GitHub/pR0C3Ss0r/processor 4.0  turbo/components/comparador_full.vhd   ;         ;
+; components/comparador_4bits.vhd  ; yes             ; User VHDL File  ; D:/Documents/GitHub/pR0C3Ss0r/processor 4.0  turbo/components/comparador_4bits.vhd  ;         ;
+; components/bin_to_disp.vhd       ; yes             ; User VHDL File  ; D:/Documents/GitHub/pR0C3Ss0r/processor 4.0  turbo/components/bin_to_disp.vhd       ;         ;
+; components/bin2bcd_12bit.vhd     ; yes             ; User VHDL File  ; D:/Documents/GitHub/pR0C3Ss0r/processor 4.0  turbo/components/bin2bcd_12bit.vhd     ;         ;
+; dp.vhdl                          ; yes             ; User VHDL File  ; D:/Documents/GitHub/pR0C3Ss0r/processor 4.0  turbo/dp.vhdl                          ;         ;
+; ctrl.vhdl                        ; yes             ; User VHDL File  ; D:/Documents/GitHub/pR0C3Ss0r/processor 4.0  turbo/ctrl.vhdl                        ;         ;
+; cpu.vhdl                         ; yes             ; User VHDL File  ; D:/Documents/GitHub/pR0C3Ss0r/processor 4.0  turbo/cpu.vhdl                         ;         ;
+; components/FFJK.vhd              ; yes             ; User VHDL File  ; D:/Documents/GitHub/pR0C3Ss0r/processor 4.0  turbo/components/FFJK.vhd              ;         ;
+; components/reg4bits.vhd          ; yes             ; User VHDL File  ; D:/Documents/GitHub/pR0C3Ss0r/processor 4.0  turbo/components/reg4bits.vhd          ;         ;
+; components/mux8x1_4bits.vhd      ; yes             ; User VHDL File  ; D:/Documents/GitHub/pR0C3Ss0r/processor 4.0  turbo/components/mux8x1_4bits.vhd      ;         ;
+; components/FullAdder.vhd         ; yes             ; User VHDL File  ; D:/Documents/GitHub/pR0C3Ss0r/processor 4.0  turbo/components/FullAdder.vhd         ;         ;
+; components/adder4bits.vhd        ; yes             ; User VHDL File  ; D:/Documents/GitHub/pR0C3Ss0r/processor 4.0  turbo/components/adder4bits.vhd        ;         ;
+; components/subtractor4bits.vhd   ; yes             ; User VHDL File  ; D:/Documents/GitHub/pR0C3Ss0r/processor 4.0  turbo/components/subtractor4bits.vhd   ;         ;
+; components/mux4x1_4bits.vhd      ; yes             ; User VHDL File  ; D:/Documents/GitHub/pR0C3Ss0r/processor 4.0  turbo/components/mux4x1_4bits.vhd      ;         ;
+; components/decoder2x4.vhd        ; yes             ; User VHDL File  ; D:/Documents/GitHub/pR0C3Ss0r/processor 4.0  turbo/components/decoder2x4.vhd        ;         ;
+; components/opcode_decoder.vhd    ; yes             ; User VHDL File  ; D:/Documents/GitHub/pR0C3Ss0r/processor 4.0  turbo/components/opcode_decoder.vhd    ;         ;
+; components/reg4bit_shiftable.vhd ; yes             ; User VHDL File  ; D:/Documents/GitHub/pR0C3Ss0r/processor 4.0  turbo/components/reg4bit_shiftable.vhd ;         ;
+; components/mux2x1_1bit.vhd       ; yes             ; User VHDL File  ; D:/Documents/GitHub/pR0C3Ss0r/processor 4.0  turbo/components/mux2x1_1bit.vhd       ;         ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------+
@@ -213,28 +213,28 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 17    ;
+; Estimated Total logic elements              ; 40    ;
 ;                                             ;       ;
-; Total combinational functions               ; 14    ;
+; Total combinational functions               ; 36    ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 3     ;
-;     -- 3 input functions                    ; 5     ;
-;     -- <=2 input functions                  ; 6     ;
+;     -- 4 input functions                    ; 22    ;
+;     -- 3 input functions                    ; 9     ;
+;     -- <=2 input functions                  ; 5     ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 14    ;
+;     -- normal mode                          ; 36    ;
 ;     -- arithmetic mode                      ; 0     ;
 ;                                             ;       ;
-; Total registers                             ; 13    ;
-;     -- Dedicated logic registers            ; 13    ;
+; Total registers                             ; 21    ;
+;     -- Dedicated logic registers            ; 21    ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
 ; I/O pins                                    ; 48    ;
 ; Embedded Multiplier 9-bit elements          ; 0     ;
 ; Maximum fan-out node                        ; clk   ;
-; Maximum fan-out                             ; 13    ;
-; Total fan-out                               ; 87    ;
-; Average fan-out                             ; 1.16  ;
+; Maximum fan-out                             ; 21    ;
+; Total fan-out                               ; 198   ;
+; Average fan-out                             ; 1.89  ;
 +---------------------------------------------+-------+
 
 
@@ -243,8 +243,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name  ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------+--------------+
-; |cpu                       ; 14 (0)            ; 13 (0)       ; 0           ; 0            ; 0       ; 0         ; 48   ; 0            ; |cpu                 ;              ;
-;    |ctrl:controller|       ; 14 (14)           ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|ctrl:controller ;              ;
+; |cpu                       ; 36 (0)            ; 21 (0)       ; 0           ; 0            ; 0       ; 0         ; 48   ; 0            ; |cpu                 ;              ;
+;    |ctrl:controller|       ; 36 (36)           ; 21 (21)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cpu|ctrl:controller ;              ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -263,51 +263,45 @@ Encoding Type:  One-Hot
 +-----------------------+-----------------------+------------+-------------+-------------+------------+
 
 
-+------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                   ;
-+--------------------------------------------------------+---------------------------------------------+
-; Register name                                          ; Reason for Removal                          ;
-+--------------------------------------------------------+---------------------------------------------+
-; ctrl:controller|acc_clr                                ; Stuck at GND due to stuck port data_in      ;
-; ctrl:controller|ADDRESS[2,3]                           ; Merged with ctrl:controller|ADDRESS[0]      ;
-; ctrl:controller|OPCODE[1]                              ; Merged with ctrl:controller|ADDRESS[0]      ;
-; ctrl:controller|OPCODE[2]                              ; Merged with ctrl:controller|ADDRESS[1]      ;
-; ctrl:controller|OPCODE[3]                              ; Merged with ctrl:controller|OPCODE[0]       ;
-; ctrl:controller|RF_R_addr[1]                           ; Merged with ctrl:controller|RF_R_addr[0]    ;
-; ctrl:controller|RF_W_addr[1]                           ; Merged with ctrl:controller|RF_W_addr[0]    ;
-; ctrl:controller|imm[2,3]                               ; Merged with ctrl:controller|imm[0]          ;
-; dp:datapath|rf:Register_File|reg4bits:R2|FFJK:FF3|aux  ; Lost fanout                                 ;
-; dp:datapath|rf:Register_File|reg4bits:R2|FFJK:FF2|aux  ; Lost fanout                                 ;
-; dp:datapath|rf:Register_File|reg4bits:R2|FFJK:FF1|aux  ; Lost fanout                                 ;
-; dp:datapath|rf:Register_File|reg4bits:R2|FFJK:FF0|aux  ; Lost fanout                                 ;
-; dp:datapath|rf:Register_File|reg4bits:R1|FFJK:FF3|aux  ; Lost fanout                                 ;
-; dp:datapath|rf:Register_File|reg4bits:R1|FFJK:FF2|aux  ; Lost fanout                                 ;
-; dp:datapath|rf:Register_File|reg4bits:R1|FFJK:FF1|aux  ; Lost fanout                                 ;
-; dp:datapath|rf:Register_File|reg4bits:R1|FFJK:FF0|aux  ; Lost fanout                                 ;
-; ctrl:controller|acc_shift_l                            ; Stuck at GND due to stuck port data_in      ;
-; ctrl:controller|RF_wr                                  ; Stuck at GND due to stuck port data_in      ;
-; dp:datapath|rf:Register_File|reg4bits:R3|FFJK:FF3|aux  ; Stuck at GND due to stuck port clock_enable ;
-; dp:datapath|rf:Register_File|reg4bits:R3|FFJK:FF2|aux  ; Stuck at GND due to stuck port clock_enable ;
-; dp:datapath|rf:Register_File|reg4bits:R3|FFJK:FF1|aux  ; Stuck at GND due to stuck port clock_enable ;
-; dp:datapath|rf:Register_File|reg4bits:R3|FFJK:FF0|aux  ; Stuck at GND due to stuck port clock_enable ;
-; dp:datapath|rf:Register_File|reg4bits:R0|FFJK:FF3|aux  ; Stuck at GND due to stuck port clock_enable ;
-; dp:datapath|rf:Register_File|reg4bits:R0|FFJK:FF2|aux  ; Stuck at GND due to stuck port clock_enable ;
-; dp:datapath|rf:Register_File|reg4bits:R0|FFJK:FF1|aux  ; Stuck at GND due to stuck port clock_enable ;
-; dp:datapath|rf:Register_File|reg4bits:R0|FFJK:FF0|aux  ; Stuck at GND due to stuck port clock_enable ;
-; ctrl:controller|now_inst[3]                            ; Merged with ctrl:controller|now_inst[0]     ;
-; ctrl:controller|acc_shift_r                            ; Stuck at VCC due to stuck port data_in      ;
-; dp:datapath|reg4bit_shiftable:accumulador|FFJK:FF3|aux ; Stuck at GND due to stuck port data_in      ;
-; dp:datapath|reg4bit_shiftable:accumulador|FFJK:FF2|aux ; Stuck at GND due to stuck port data_in      ;
-; dp:datapath|reg4bit_shiftable:accumulador|FFJK:FF1|aux ; Stuck at GND due to stuck port data_in      ;
-; dp:datapath|reg4bit_shiftable:accumulador|FFJK:FF0|aux ; Stuck at GND due to stuck port data_in      ;
-; ctrl:controller|imm[0]                                 ; Lost fanout                                 ;
-; ctrl:controller|Alu_SW[0..2]                           ; Lost fanout                                 ;
-; ctrl:controller|SW_In_ACC[0,1]                         ; Lost fanout                                 ;
-; ctrl:controller|acc_ld                                 ; Lost fanout                                 ;
-; ctrl:controller|imm[1]                                 ; Lost fanout                                 ;
-; ctrl:controller|PC[2,3]                                ; Lost fanout                                 ;
-; Total Number of Removed Registers = 44                 ;                                             ;
-+--------------------------------------------------------+---------------------------------------------+
++-------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                              ;
++--------------------------------------------------------+----------------------------------------+
+; Register name                                          ; Reason for Removal                     ;
++--------------------------------------------------------+----------------------------------------+
+; ctrl:controller|acc_clr                                ; Stuck at GND due to stuck port data_in ;
+; ctrl:controller|acc_shift_l                            ; Stuck at VCC due to stuck port data_in ;
+; ctrl:controller|acc_shift_r                            ; Stuck at VCC due to stuck port data_in ;
+; dp:datapath|reg4bit_shiftable:accumulador|FFJK:FF3|aux ; Stuck at GND due to stuck port data_in ;
+; dp:datapath|rf:Register_File|reg4bits:R0|FFJK:FF3|aux  ; Stuck at GND due to stuck port data_in ;
+; dp:datapath|rf:Register_File|reg4bits:R1|FFJK:FF3|aux  ; Stuck at GND due to stuck port data_in ;
+; dp:datapath|rf:Register_File|reg4bits:R2|FFJK:FF3|aux  ; Stuck at GND due to stuck port data_in ;
+; dp:datapath|rf:Register_File|reg4bits:R3|FFJK:FF3|aux  ; Stuck at GND due to stuck port data_in ;
+; dp:datapath|reg4bit_shiftable:accumulador|FFJK:FF2|aux ; Stuck at GND due to stuck port data_in ;
+; dp:datapath|rf:Register_File|reg4bits:R0|FFJK:FF2|aux  ; Stuck at GND due to stuck port data_in ;
+; dp:datapath|rf:Register_File|reg4bits:R1|FFJK:FF2|aux  ; Stuck at GND due to stuck port data_in ;
+; dp:datapath|rf:Register_File|reg4bits:R2|FFJK:FF2|aux  ; Stuck at GND due to stuck port data_in ;
+; dp:datapath|rf:Register_File|reg4bits:R3|FFJK:FF2|aux  ; Stuck at GND due to stuck port data_in ;
+; dp:datapath|reg4bit_shiftable:accumulador|FFJK:FF1|aux ; Stuck at GND due to stuck port data_in ;
+; dp:datapath|rf:Register_File|reg4bits:R0|FFJK:FF1|aux  ; Stuck at GND due to stuck port data_in ;
+; dp:datapath|rf:Register_File|reg4bits:R1|FFJK:FF1|aux  ; Stuck at GND due to stuck port data_in ;
+; dp:datapath|rf:Register_File|reg4bits:R2|FFJK:FF1|aux  ; Stuck at GND due to stuck port data_in ;
+; dp:datapath|rf:Register_File|reg4bits:R3|FFJK:FF1|aux  ; Stuck at GND due to stuck port data_in ;
+; dp:datapath|reg4bit_shiftable:accumulador|FFJK:FF0|aux ; Stuck at GND due to stuck port data_in ;
+; dp:datapath|rf:Register_File|reg4bits:R0|FFJK:FF0|aux  ; Stuck at GND due to stuck port data_in ;
+; dp:datapath|rf:Register_File|reg4bits:R1|FFJK:FF0|aux  ; Stuck at GND due to stuck port data_in ;
+; dp:datapath|rf:Register_File|reg4bits:R2|FFJK:FF0|aux  ; Stuck at GND due to stuck port data_in ;
+; dp:datapath|rf:Register_File|reg4bits:R3|FFJK:FF0|aux  ; Stuck at GND due to stuck port data_in ;
+; ctrl:controller|imm[0]                                 ; Lost fanout                            ;
+; ctrl:controller|RF_R_addr[0,1]                         ; Lost fanout                            ;
+; ctrl:controller|RF_rd                                  ; Lost fanout                            ;
+; ctrl:controller|Alu_SW[0..2]                           ; Lost fanout                            ;
+; ctrl:controller|SW_In_ACC[0,1]                         ; Lost fanout                            ;
+; ctrl:controller|acc_ld                                 ; Lost fanout                            ;
+; ctrl:controller|imm[1..3]                              ; Lost fanout                            ;
+; ctrl:controller|RF_W_addr[0,1]                         ; Lost fanout                            ;
+; ctrl:controller|RF_wr                                  ; Lost fanout                            ;
+; Total Number of Removed Registers = 39                 ;                                        ;
++--------------------------------------------------------+----------------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------+
@@ -315,21 +309,30 @@ Encoding Type:  One-Hot
 +-----------------------------+---------------------------+-------------------------------------------------------------------------------------+
 ; Register name               ; Reason for Removal        ; Registers Removed due to This Register                                              ;
 +-----------------------------+---------------------------+-------------------------------------------------------------------------------------+
-; ctrl:controller|RF_wr       ; Stuck at GND              ; dp:datapath|rf:Register_File|reg4bits:R3|FFJK:FF3|aux,                              ;
-;                             ; due to stuck port data_in ; dp:datapath|rf:Register_File|reg4bits:R3|FFJK:FF2|aux,                              ;
-;                             ;                           ; dp:datapath|rf:Register_File|reg4bits:R3|FFJK:FF1|aux,                              ;
-;                             ;                           ; dp:datapath|rf:Register_File|reg4bits:R3|FFJK:FF0|aux,                              ;
-;                             ;                           ; dp:datapath|rf:Register_File|reg4bits:R0|FFJK:FF3|aux,                              ;
-;                             ;                           ; dp:datapath|rf:Register_File|reg4bits:R0|FFJK:FF2|aux,                              ;
-;                             ;                           ; dp:datapath|rf:Register_File|reg4bits:R0|FFJK:FF1|aux,                              ;
-;                             ;                           ; dp:datapath|rf:Register_File|reg4bits:R0|FFJK:FF0|aux, ctrl:controller|Alu_SW[2],   ;
-;                             ;                           ; ctrl:controller|Alu_SW[1], ctrl:controller|Alu_SW[0], ctrl:controller|PC[2]         ;
 ; ctrl:controller|acc_clr     ; Stuck at GND              ; dp:datapath|reg4bit_shiftable:accumulador|FFJK:FF3|aux,                             ;
-;                             ; due to stuck port data_in ; dp:datapath|reg4bit_shiftable:accumulador|FFJK:FF2|aux,                             ;
+;                             ; due to stuck port data_in ; dp:datapath|rf:Register_File|reg4bits:R0|FFJK:FF3|aux,                              ;
+;                             ;                           ; dp:datapath|rf:Register_File|reg4bits:R1|FFJK:FF3|aux,                              ;
+;                             ;                           ; dp:datapath|rf:Register_File|reg4bits:R2|FFJK:FF3|aux,                              ;
+;                             ;                           ; dp:datapath|rf:Register_File|reg4bits:R3|FFJK:FF3|aux,                              ;
+;                             ;                           ; dp:datapath|reg4bit_shiftable:accumulador|FFJK:FF2|aux,                             ;
+;                             ;                           ; dp:datapath|rf:Register_File|reg4bits:R0|FFJK:FF2|aux,                              ;
+;                             ;                           ; dp:datapath|rf:Register_File|reg4bits:R1|FFJK:FF2|aux,                              ;
+;                             ;                           ; dp:datapath|rf:Register_File|reg4bits:R2|FFJK:FF2|aux,                              ;
+;                             ;                           ; dp:datapath|rf:Register_File|reg4bits:R3|FFJK:FF2|aux,                              ;
 ;                             ;                           ; dp:datapath|reg4bit_shiftable:accumulador|FFJK:FF1|aux,                             ;
-;                             ;                           ; dp:datapath|reg4bit_shiftable:accumulador|FFJK:FF0|aux, ctrl:controller|acc_ld      ;
-; ctrl:controller|acc_shift_l ; Stuck at GND              ; ctrl:controller|imm[0], ctrl:controller|SW_In_ACC[1], ctrl:controller|SW_In_ACC[0], ;
-;                             ; due to stuck port data_in ; ctrl:controller|imm[1]                                                              ;
+;                             ;                           ; dp:datapath|rf:Register_File|reg4bits:R0|FFJK:FF1|aux,                              ;
+;                             ;                           ; dp:datapath|rf:Register_File|reg4bits:R1|FFJK:FF1|aux,                              ;
+;                             ;                           ; dp:datapath|rf:Register_File|reg4bits:R2|FFJK:FF1|aux,                              ;
+;                             ;                           ; dp:datapath|rf:Register_File|reg4bits:R3|FFJK:FF1|aux,                              ;
+;                             ;                           ; dp:datapath|reg4bit_shiftable:accumulador|FFJK:FF0|aux,                             ;
+;                             ;                           ; dp:datapath|rf:Register_File|reg4bits:R0|FFJK:FF0|aux,                              ;
+;                             ;                           ; dp:datapath|rf:Register_File|reg4bits:R1|FFJK:FF0|aux,                              ;
+;                             ;                           ; dp:datapath|rf:Register_File|reg4bits:R2|FFJK:FF0|aux,                              ;
+;                             ;                           ; dp:datapath|rf:Register_File|reg4bits:R3|FFJK:FF0|aux, ctrl:controller|acc_ld,      ;
+;                             ;                           ; ctrl:controller|RF_W_addr[1], ctrl:controller|RF_W_addr[0], ctrl:controller|RF_wr   ;
+; ctrl:controller|acc_shift_l ; Stuck at VCC              ; ctrl:controller|imm[0], ctrl:controller|RF_R_addr[1], ctrl:controller|RF_R_addr[0], ;
+;                             ; due to stuck port data_in ; ctrl:controller|RF_rd, ctrl:controller|SW_In_ACC[1], ctrl:controller|SW_In_ACC[0],  ;
+;                             ;                           ; ctrl:controller|imm[1], ctrl:controller|imm[2], ctrl:controller|imm[3]              ;
 +-----------------------------+---------------------------+-------------------------------------------------------------------------------------+
 
 
@@ -338,12 +341,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 13    ;
+; Total registers                              ; 21    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 7     ;
+; Number of registers using Clock Enable       ; 15    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -353,8 +356,8 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output       ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |cpu|ctrl:controller|now_inst[0] ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |cpu|ctrl:controller|PC[1]       ;
+; 16:1               ; 4 bits    ; 40 LEs        ; 32 LEs               ; 8 LEs                  ; Yes        ; |cpu|ctrl:controller|now_inst[0] ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |cpu|ctrl:controller|PC[3]       ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
 
 
@@ -602,7 +605,7 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.0 Build 156 04/24/2013 SJ Web Edition
-    Info: Processing started: Sun Dec 10 01:34:01 2017
+    Info: Processing started: Sun Dec 10 16:41:08 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off processador -c processador
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file components/reg8bits.vhd
@@ -754,17 +757,17 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "display1[4]" is stuck at GND
     Warning (13410): Pin "display1[5]" is stuck at GND
     Warning (13410): Pin "display1[6]" is stuck at VCC
-Info (17049): 18 registers lost all their fanouts during netlist optimizations.
+Info (17049): 16 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 65 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 88 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 46 output pins
-    Info (21061): Implemented 17 logic cells
+    Info (21061): Implemented 40 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 57 warnings
     Info: Peak virtual memory: 570 megabytes
-    Info: Processing ended: Sun Dec 10 01:34:04 2017
+    Info: Processing ended: Sun Dec 10 16:41:11 2017
     Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
 
 

@@ -51,7 +51,7 @@ display1[6] <= bin_to_disp:bin_decoder_tens.disp[6]
 
 
 |cpu|ctrl:controller
-start => Selector4.IN4
+start => Selector5.IN4
 start => state~0.DATAB
 clk => acc_shift_r~reg0.CLK
 clk => acc_shift_l~reg0.CLK
@@ -89,7 +89,7 @@ clk => PC[0].CLK
 clk => PC[1].CLK
 clk => PC[2].CLK
 clk => PC[3].CLK
-clk => state~9.DATAIN
+clk => state~7.DATAIN
 now_inst[0] <= now_inst[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 now_inst[1] <= now_inst[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 now_inst[2] <= now_inst[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE

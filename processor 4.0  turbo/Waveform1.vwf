@@ -1015,8 +1015,7 @@ TRANSITION_LIST("start")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 20.0;
-		LEVEL 0 FOR 980.0;
+		LEVEL 1 FOR 1000.0;
 	}
 }
 
